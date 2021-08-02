@@ -1,4 +1,7 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import { useHistory } from 'react-router-dom';
 import {
 	Card,
 	Background,
@@ -10,45 +13,40 @@ import {
 	Input,
 	Button,
 } from './styles';
-// import { Form, Input } from '@rocketseat/unform';
-// import * as Yup from 'yup';
-// import { toast } from 'react-toastify';
-// import { useHistory } from 'react-router-dom';
 // import api from '../../../services/api';
 
-// import { Container } from './styles';
-// const schema = Yup.object().shape({
-// 	name: Yup.string().required('Insira o nome do usuário'),
-// 	email: Yup.string()
-// 		.email('Insira um email válido')
-// 		.required('O email é obrigatório'),
-// 	password: Yup.string()
-// 		.min(6, 'sua senha precisa ter pelo menos 6 caracteres')
-// 		.required('A senha é obrigatória'),
-// 	password_confirmation: Yup.string()
-// 		.oneOf([Yup.ref('password'), null], 'Passwords must match')
-// 		.required('Confirme sua senha'),
-// });
-
 function UserSignIn() {
-	// const history = useHistory();
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm();
 
-	// async function handleSubmit(data) {
-	// 	console.tron.log(data);
-	// 	try {
-	// 		const response = await api.post('admin_auth/', data);
+	// const onSubmit = (data) => console.log(data);
+	console.log(watch('email')); // watch input value by passing the name of it
+	const history = useHistory();
 
-	// 		toast.success('Cadastro realizado com sucesso!');
-	// 		console.tron.log(response);
+	async function onSubmit(data) {
+		// console.tron.log(data);
+		try {
+			// const response = await api.post('admin_auth/sign_in', data);
 
-	// 		history.push('/');
-	// 	} catch (err) {
-	// 		const message = err.response.data.errors.full_messages[0];
-	// 		console.tron.log(message);
+			// const {client, uid, expiry} = response.headers;
+			// const token = response.headers['access-token'];
 
-	// 		toast.error(`Falha no cadastro: ${message}`);
-	// 	}
-	// }
+			// login(token, expiry, client, uid);
+			toast.success('Bem vindo!');
+			console.log(data);
+			history.push('/');
+		} catch (err) {
+			// const message = err.response.data.errors.full_messages[0];
+			// console.tron.log(message);
+
+			// toast.error(`Falha no cadastro: ${message}`);
+			toast.error(`Falha no cadastro:`);
+		}
+	}
 
 	return (
 		<Background>
@@ -58,18 +56,22 @@ function UserSignIn() {
 				</LogoContainer>
 				<FormContainer>
 					<FormLabel>Bem Vindo</FormLabel>
-					<Form action="/action_page.php">
+					<Form onSubmit={handleSubmit(onSubmit)}>
+						{errors.email && <span>Este campo é obrigatório</span>}
 						<Input
-							type="text"
+							type="email"
 							id="email"
-							name="fname"
+							name="email"
 							placeholder="Digite seu email"
+							{...register('email', { required: true })}
 						/>
+						{errors.password && <span>Este campo é obrigatório</span>}
 						<Input
-							type="text"
+							type="password"
 							id="fassword"
 							name="lname"
 							placeholder="Digite a senha"
+							{...register('password', { required: true })}
 						/>
 						<Button>Entrar</Button>
 					</Form>
