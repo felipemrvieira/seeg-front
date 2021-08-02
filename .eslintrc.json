@@ -27,6 +27,7 @@
 		"global-require": "off",
 		"no-param-reassign": "off",
 		"no-underscore-dangle": "off",
+		"react/destructuring-assignment": "off",
 		"import/extensions": [
 			"error",
 			"ignorePackages",
