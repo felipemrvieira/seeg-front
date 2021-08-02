@@ -1,14 +1,14 @@
+import React, { Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
+
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<p>
-					Edit
-					<code>src/App.js</code>
-					and save to reload.
-				</p>
-			</header>
-		</div>
+		<Suspense fallback={<h1>Loading...</h1>}>
+			<BrowserRouter>
+				<Routes />
+			</BrowserRouter>
+		</Suspense>
 	);
 }
 
