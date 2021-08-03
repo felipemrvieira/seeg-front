@@ -17,6 +17,9 @@ export const Card = styled.div`
 	width: 900px;
 	display: flex;
 	flex-direction: row;
+	box-shadow: 1px 1px 60px 0px rgba(128, 128, 128, 0.34);
+	-webkit-box-shadow: 1px 1px 60px 0px rgba(128, 128, 128, 0.34);
+	-moz-box-shadow: 1px 1px 60px 0px rgba(128, 128, 128, 0.34);
 `;
 
 export const LogoContainer = styled.div`
