@@ -8,20 +8,20 @@ import Form from '../../../components/Form';
 
 import Header from '../../../components/Header';
 
-function Solution() {
+function ShowSolution() {
 	const { id } = useParams();
 
 	return (
 		<Background>
 			<Header />
 			<Container>
-				<PageHeader>Editar Solução {id}</PageHeader>
+				<PageHeader>Exibir Solução {id}</PageHeader>
 				<Card>
-					<Form />
+					<Form disabled="true" id={id} />
 				</Card>
 			</Container>
 		</Background>
 	);
 }
 
-export default Solution;
+export default ShowSolution;

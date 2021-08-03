@@ -2,9 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Container from 'react-bootstrap/Container';
 import BTable from 'react-bootstrap/Table';
 import { useTable } from 'react-table';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Background } from './styles';
+import { Background, Link } from './styles';
 
 import Card from '../../../components/Card';
 import PageHeader from '../../../components/PageHeader';
@@ -78,17 +77,9 @@ export default function Solution() {
 				Header: '',
 				accessor: 'id',
 				Cell: (row) => (
-					<div>
-						<Link
-							className="btn btn-light btn-icon-split"
-							to={`/solutions/${row.value}`}
-						>
-							<span className="icon text-gray-600">
-								<i className="fas fa-arrow-right" />
-							</span>
-							<span className="text">Visualizar</span>
-						</Link>
-					</div>
+					<Link className="btn btn-light" to={`/solutions/${row.value}`}>
+						<span className="text">Visualizar</span>
+					</Link>
 				),
 			},
 		],
