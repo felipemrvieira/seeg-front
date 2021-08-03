@@ -38,7 +38,7 @@ export const Logo = styled.div`
 `;
 
 export const FormContainer = styled.div`
-	padding: 24px;
+	padding: 48px;
 	display: flex;
 	flex: 1;
 	justify-content: center;

@@ -39,8 +39,8 @@ export const Logo = styled.div`
 `;
 
 export const Button = styled.button`
-	padding: 10px 22px;
-	border-radius: 5px;
+	padding: 8px 30px;
+	border-radius: 25px;
 	border: none;
 	background-color: #f28d49;
 	color: white;
