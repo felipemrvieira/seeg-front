@@ -31,6 +31,15 @@ export const Input = styled.input`
 	margin-bottom: 10px;
 `;
 
+export const TextArea = styled.textarea`
+	padding: 8px;
+	border-radius: ${radius};
+	border-style: solid;
+	border-color: #d0d0d0;
+	outline-width: 0;
+	margin-bottom: 10px;
+`;
+
 export const Button = styled.button`
 	padding: 10px 0;
 	border-radius: ${radius};

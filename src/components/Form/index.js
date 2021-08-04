@@ -1,71 +1,74 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { FormContainer, Form, Input, Button, EditButton } from './styles';
+import api from '../../services/api';
 
-export default function Index({ disabled, id }) {
+import {
+	FormContainer,
+	Form,
+	Input,
+	TextArea,
+	Button,
+	EditButton,
+} from './styles';
+
+export default function Index({ disabled, id, solution }) {
 	const {
 		register,
 		handleSubmit,
-		watch,
-		formState: { errors },
+		// watch,
+		// formState: { errors },
+		reset,
 	} = useForm();
 
-	console.log(disabled);
-
-	// const onSubmit = (data) => console.log(data);
-	console.log(watch('email')); // watch input value by passing the name of it
+	useEffect(() => {
+		reset(solution);
+	}, [reset, solution]);
 
 	const history = useHistory();
+	// console.log(watch('number')); // watch input value by passing the name of it
 
 	async function onSubmit(data) {
-		// console.tron.log(data);
 		try {
-			// const response = await api.post('admin_auth/sign_in', data);
-
-			// const {client, uid, expiry} = response.headers;
-			// const token = response.headers['access-token'];
-
-			// login(token, expiry, client, uid);
-			toast.success('Bem vindo!');
-			console.log(data);
-			history.push('/');
+			await api.patch(`/solutions/${id}`, data);
+			toast.success('Informação atualizada com sucesso!!');
+			history.push('/solutions');
 		} catch (err) {
 			// const message = err.response.data.errors.full_messages[0];
-			// console.tron.log(message);
+			// console.log(message);
 
 			// toast.error(`Falha no cadastro: ${message}`);
-			toast.error(`Falha no cadastro:`);
+			toast.error(`Erro`);
 		}
 	}
 	return (
 		<FormContainer>
-			{/* <FormLabel>Bem Vindo</FormLabel> */}
 			<Form onSubmit={handleSubmit(onSubmit)}>
-				{errors.email && <span>Este campo é obrigatório</span>}
 				<Input
-					type="email"
-					id="email"
-					name="email"
-					placeholder="Digite seu email"
+					placeholder="Número da solução"
 					disabled={disabled}
-					{...register('email', { required: true })}
+					{...register('number')}
 				/>
-				{errors.password && <span>Este campo é obrigatório</span>}
-				<Input
-					type="password"
-					id="password"
-					name="lname"
-					placeholder="Digite a senha"
+				<TextArea
+					placeholder="Título"
 					disabled={disabled}
-					{...register('password', { required: true })}
+					rows="3"
+					{...register('title')}
+				>
+					{solution.title}
+				</TextArea>
+				<TextArea
+					placeholder="descrição"
+					disabled={disabled}
+					rows="10"
+					{...register('description')}
 				/>
 				{!disabled ? (
 					<Button disabled={disabled}>Salvar</Button>
 				) : (
-					<EditButton to={`/solutions/${id}/edit`}>Editar</EditButton>
+					<EditButton to={`/solutions/${id}/edit`}>Habilitar Edição</EditButton>
 				)}
 			</Form>
 		</FormContainer>
@@ -75,9 +78,16 @@ export default function Index({ disabled, id }) {
 Index.propTypes = {
 	disabled: PropTypes.string,
 	id: PropTypes.string,
+	solution: PropTypes.shape({
+		// id: PropTypes.number,
+		number: PropTypes.string,
+		title: PropTypes.string,
+		description: PropTypes.string,
+	}),
 };
 
 Index.defaultProps = {
 	disabled: '',
 	id: 0,
+	solution: { number: '#0', title: 'titulo', description: 'descricao' },
 };

@@ -4,6 +4,7 @@ import BTable from 'react-bootstrap/Table';
 import { useTable } from 'react-table';
 import PropTypes from 'prop-types';
 import { Background, Link } from './styles';
+import api from '../../../services/api';
 
 import Card from '../../../components/Card';
 import PageHeader from '../../../components/PageHeader';
@@ -49,12 +50,9 @@ export default function Solution() {
 	const [solutions, setSolutions] = useState([]);
 	async function loadSolutions() {
 		try {
-			// const response = await api.get('/solutions');
-			const response = [
-				{ id: '1', title: 'solucao 1' },
-				{ id: '2', title: 'solucao 2' },
-			];
-			setSolutions(response);
+			const response = await api.get('/solutions');
+			setSolutions(response.data);
+			console.log(response.data);
 			// console.tron.log(response.data);
 		} catch (err) {
 			// console.tron.log(err);
@@ -69,6 +67,10 @@ export default function Solution() {
 
 	const columns = React.useMemo(
 		() => [
+			{
+				Header: 'Número',
+				accessor: 'number',
+			},
 			{
 				Header: 'Nome',
 				accessor: 'title',
