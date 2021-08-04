@@ -14,9 +14,9 @@ export default function RouteWrapper({
 		return <Redirect to="/user/signin" />;
 	}
 
-	if (signed && !isPrivate) {
-		return <Redirect to="/page" />;
-	}
+	// if (signed && !isPrivate) {
+	// 	return <Redirect to="/solutions" />;
+	// }
 
 	return <Route {...rest} component={Component} />;
 }

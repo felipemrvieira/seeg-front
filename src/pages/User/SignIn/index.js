@@ -2,6 +2,10 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
+import api from '../../../services/api';
+// import axios from 'axios';
+import { login, isAuthenticated } from '../../../services/auth';
+
 import {
 	Card,
 	Background,
@@ -27,15 +31,26 @@ function UserSignIn() {
 	console.log(watch('email')); // watch input value by passing the name of it
 	const history = useHistory();
 
+	const signed = isAuthenticated();
+
 	async function onSubmit(data) {
-		// console.tron.log(data);
+		console.log(signed);
+		console.log(data);
 		try {
-			// const response = await api.post('admin_auth/sign_in', data);
+			const response = await api.post('auth/sign_in', data);
+			// const response = await axios.post(
+			// 	'localhost:3000/api/v1/auth/sign_in',
+			// 	data
+			// );
 
-			// const {client, uid, expiry} = response.headers;
-			// const token = response.headers['access-token'];
+			const { client, uid, expiry } = response.headers;
+			const token = response.headers['access-token'];
+			console.log(token);
+			console.log(client);
+			console.log(uid);
+			console.log(response.headers);
 
-			// login(token, expiry, client, uid);
+			login(token, expiry, client, uid);
 			toast.success('Bem vindo!');
 			console.log(data);
 			history.push('/');
@@ -44,7 +59,7 @@ function UserSignIn() {
 			// console.tron.log(message);
 
 			// toast.error(`Falha no cadastro: ${message}`);
-			toast.error(`Falha no cadastro:`);
+			toast.error(`Falha no login`);
 		}
 	}
 
