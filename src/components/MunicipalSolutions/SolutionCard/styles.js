@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-	background: red;
+	background: #ed9742;
 	margin: 20px;
 	width: 305px;
 	display: flex;
@@ -30,7 +30,7 @@ export const CardInfo = styled.div`
 `;
 export const CardFooter = styled.div`
 	padding: 12px 32px;
-	background-color: tomato;
+	background-color: #cd7217;
 	color: white;
 	font-size: 28px;
 	font-weight: normal;

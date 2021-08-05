@@ -1,12 +1,23 @@
 import styled from 'styled-components';
 
-export const Card = styled.div`
+export const Section = styled.div`
 	background: #fff;
 	padding: 32px;
 	border-radius: 0.35rem;
 	display: flex;
 	flex-direction: column;
-	box-shadow: 1px 1px 60px 0px rgba(199, 199, 199, 0.34);
-	-webkit-box-shadow: 1px 1px 60px 0px rgba(199, 199, 199, 0.34);
-	-moz-box-shadow: 1px 1px 60px 0px rgba(199, 199, 199, 0.34);
+`;
+
+export const SectorTitle = styled.h2`
+	color: #8e8d8b;
+`;
+export const SectorDescription = styled.p`
+	color: #8e8d8b;
+`;
+
+export const SolutionCardWrapper = styled.div`
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	overflow-x: scroll;
 `;
