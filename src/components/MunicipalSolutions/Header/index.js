@@ -1,20 +1,60 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { Section, SectionTitle, SectionDescription } from './styles';
+import {
+	Section1,
+	Section2,
+	SectionTitle,
+	SectionDescription,
+	SectionCapDescription,
+	Img,
+	GreyBar,
+} from './styles';
+import Image from './assets/image.png';
+import Header from '../../Header';
 
 export default function Sector() {
 	return (
-		<Section>
-			<SectionTitle>Soluções</SectionTitle>
-			<SectionDescription>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-				dignissimos doloremque neque est, ab fugit possimus maxime esse sit modi
-				perspiciatis, molestiae labore soluta iusto aut deleniti officiis
-				aperiam ducimus. Earum quaerat nemo ipsa dolorum pariatur nam
-				repellendus, molestiae incidunt ducimus officia, nihil nostrum
-				perferendis iure quae. Commodi est id rem, temporibus unde repudiandae
-			</SectionDescription>
-		</Section>
+		<>
+			<Header />
+			<Section1>
+				<SectionTitle>Soluções</SectionTitle>
+				<SectionDescription>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+					dignissimos doloremque neque est, ab fugit possimus maxime esse sit
+					modi perspiciatis, molestiae labore soluta iusto aut deleniti officiis
+					aperiam ducimus. Earum quaerat nemo ipsa dolorum pariatur nam
+					repellendus, molestiae incidunt ducimus officia, nihil nostrum
+					perferendis iure quae. Commodi est id rem, temporibus unde repudiandae
+				</SectionDescription>
+			</Section1>
+			<div>
+				<GreyBar />
+				<Section2>
+					<Img src={Image} alt="Main resource" />
+					<SectionCapDescription>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa autem,
+						aliquid aspernatur quisquam repellendus itaque illo pariatur
+						temporibus id, assumenda eveniet eos ipsum natus illum est dolores?
+						Libero, cumque consequatur! Consectetur exercitationem quidem magnam
+						beatae sequi explicabo tenetur magni eaque eius omnis odit,
+						necessitatibus quisquam voluptates. Rerum molestias dolorem eos
+						tempora soluta repellendus excepturi voluptate eligendi! Blanditiis
+						consequatur animi tempora. Ipsum quo aspernatur laudantium alias,
+						totam libero enim dolorum nihil sint neque cum hic quidem quas
+						officiis voluptatem cupiditate distinctio expedita rerum tempore
+						impedit delectus deleniti? Nesciunt iste id voluptas. Earum debitis
+						laborum dolorum labore sapiente modi blanditiis porro assumenda,
+						soluta, minima tempora aliquid cupiditate quis eum, vero illum
+						voluptatum beatae? Maxime optio nihil obcaecati possimus quos
+						voluptate dolore suscipit! Obcaecati, provident! Totam, impedit
+						sapiente sunt itaque vero, recusandae ex voluptatibus ipsum ab quae
+						eligendi hic eum nesciunt quas delectus architecto eos deleniti sint
+						officiis culpa ad quo laboriosam alias. Maxime explicabo, ipsum
+						suscipit vel fugit recusandae ducimus velit qui et repudiandae illum
+					</SectionCapDescription>
+				</Section2>
+			</div>
+		</>
 	);
 }
 
