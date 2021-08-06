@@ -5,7 +5,6 @@ import mutIcon from './assets/mut.png';
 import residuosIcon from './assets/residuos.png';
 
 const handleSectorIcon = (sectorTitle) => {
-	console.log(sectorTitle);
 	switch (sectorTitle) {
 		case 'Agropecuária':
 			return `background-image: url(${agroIcon});`;
@@ -21,7 +20,7 @@ const handleSectorIcon = (sectorTitle) => {
 };
 
 export const Section = styled.div`
-	background: #fff;
+	background: ${(props) => (props.isOdd ? '#fff' : '#f9f8f4')};
 	width: 100%;
 	padding: 32px 0;
 	border-radius: 0.35rem;

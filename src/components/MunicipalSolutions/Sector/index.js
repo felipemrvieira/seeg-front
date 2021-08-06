@@ -11,9 +11,9 @@ import {
 } from './styles';
 import SolutionCard from '../SolutionCard';
 
-export default function Sector({ sectorInfo }) {
+export default function Sector({ sectorInfo, isOdd }) {
 	return (
-		<Section>
+		<Section sectorTitle={sectorInfo.title} isOdd={isOdd}>
 			<SectorInfo>
 				<SectorWrapper>
 					<SectorIcon sectorTitle={sectorInfo.title} />
@@ -23,7 +23,7 @@ export default function Sector({ sectorInfo }) {
 			</SectorInfo>
 			<SolutionCardWrapper>
 				{sectorInfo.solutions.map((solution) => (
-					<SolutionCard solution={solution} />
+					<SolutionCard sectorTitle={sectorInfo.title} solution={solution} />
 				))}
 			</SolutionCardWrapper>
 		</Section>
@@ -32,4 +32,5 @@ export default function Sector({ sectorInfo }) {
 
 Sector.propTypes = {
 	sectorInfo: PropTypes.node.isRequired,
+	isOdd: PropTypes.node.isRequired,
 };

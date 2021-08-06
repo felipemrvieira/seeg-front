@@ -1,7 +1,36 @@
 import styled from 'styled-components';
 
+const handleCardColor = (sectorTitle) => {
+	switch (sectorTitle) {
+		case 'Agropecuária':
+			return 'background: #ed9742;';
+		case 'Energia':
+			return 'background: #d94b2b;';
+		case 'MUT':
+			return 'background: #7cad41;';
+		case 'Resíduos':
+			return 'background: #6bb7bf;';
+		default:
+			return 'background: grey;';
+	}
+};
+const handleCardFootColor = (sectorTitle) => {
+	switch (sectorTitle) {
+		case 'Agropecuária':
+			return 'background: #cd7217;';
+		case 'Energia':
+			return 'background: #c32f0e;';
+		case 'MUT':
+			return 'background: #518117;';
+		case 'Resíduos':
+			return 'background: #277d86;';
+		default:
+			return 'background: grey;';
+	}
+};
+
 export const Card = styled.div`
-	background: #ed9742;
+	${({ sectorTitle }) => handleCardColor(sectorTitle)}
 	margin: 20px;
 	width: 305px;
 	display: flex;
@@ -30,7 +59,7 @@ export const CardInfo = styled.div`
 `;
 export const CardFooter = styled.div`
 	padding: 12px 32px;
-	background-color: #cd7217;
+	${({ sectorTitle }) => handleCardFootColor(sectorTitle)}
 	color: white;
 	font-size: 28px;
 	font-weight: normal;

@@ -2,16 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardInfo, CardFooter } from './styles';
 
-export default function SolutionCard({ solution }) {
+export default function SolutionCard({ solution, sectorTitle }) {
 	return (
-		<Card>
+		<Card sectorTitle={sectorTitle}>
 			<CardHeader>{solution.number}</CardHeader>
 			<CardInfo>{solution.description}</CardInfo>
-			<CardFooter>{solution.category}</CardFooter>
+			<CardFooter sectorTitle={sectorTitle}>{solution.category}</CardFooter>
 		</Card>
 	);
 }
 
 SolutionCard.propTypes = {
 	solution: PropTypes.node.isRequired,
+	sectorTitle: PropTypes.node.isRequired,
 };

@@ -240,8 +240,8 @@ const data = [
 export default function MunicipalSolutions() {
 	return (
 		<>
-			{data.map((sector) => (
-				<Sector sectorInfo={sector} />
+			{data.map((sector, i) => (
+				<Sector sectorInfo={sector} isOdd={Boolean(i % 2)} />
 			))}
 		</>
 	);
