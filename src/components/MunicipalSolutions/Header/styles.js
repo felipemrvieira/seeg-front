@@ -49,3 +49,10 @@ export const GreyBar = styled.div`
 	height: 150px;
 	position: absolute;
 `;
+
+export const SectorCardContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-flow: wrap;
+`;

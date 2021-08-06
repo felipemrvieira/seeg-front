@@ -8,10 +8,13 @@ import {
 	SectionCapDescription,
 	Img,
 	GreyBar,
+	SectorCardContainer,
 } from './styles';
 import Image from './assets/image.png';
 import Header from '../../Header';
+import SectorCard from '../SectorCard';
 
+const solution_ = { title: 'Agropecuária', solutionsCount: '40' };
 export default function Sector() {
 	return (
 		<>
@@ -52,6 +55,13 @@ export default function Sector() {
 						officiis culpa ad quo laboriosam alias. Maxime explicabo, ipsum
 						suscipit vel fugit recusandae ducimus velit qui et repudiandae illum
 					</SectionCapDescription>
+
+					<SectorCardContainer>
+						<SectorCard solution={solution_} sectorTitle="Agropecuária" />
+						<SectorCard solution={solution_} sectorTitle="Energia" />
+						<SectorCard solution={solution_} sectorTitle="MUT" />
+						<SectorCard solution={solution_} sectorTitle="Resíduos" />
+					</SectorCardContainer>
 				</Section2>
 			</div>
 		</>

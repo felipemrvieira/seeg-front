@@ -13,7 +13,7 @@ import SolutionsShow from '../pages/Solution/Show';
 export default function Routes() {
 	return (
 		<Switch>
-			<Route path="/" exact component={Solutions} />
+			<Route path="/" exact component={MunicipalSolutions} />
 			<Route path="/municipalsolutions" exact component={MunicipalSolutions} />
 			<Route path="/solutions/" exact component={Solutions} isPrivate />
 			<Route path="/solutions/new" exact component={SolutionsNew} isPrivate />
