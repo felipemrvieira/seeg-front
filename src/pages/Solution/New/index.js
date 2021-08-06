@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import { toast } from 'react-toastify';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Background, ButtonWrapper, Label, Input } from './styles';
 import Card from '../../../components/Card';
 import PageHeader from '../../../components/PageHeader';
@@ -10,7 +10,7 @@ import api from '../../../services/api';
 
 function Solution() {
 	const [file, setFile] = useState({});
-	// const history = useHistory();
+	const history = useHistory();
 
 	function fileUpload(fileparam) {
 		const formData = new FormData();
@@ -29,7 +29,7 @@ function Solution() {
 		fileUpload(file).then((response) => {
 			console.log(response.data);
 			toast.success('Informação cadastrada com sucesso!!');
-			// history.push('/solutions');
+			history.push('/solutions');
 		});
 	}
 
