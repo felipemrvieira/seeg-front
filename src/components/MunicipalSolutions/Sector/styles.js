@@ -23,7 +23,6 @@ export const Section = styled.div`
 	background: ${(props) => (props.isOdd ? '#fff' : '#f9f8f4')};
 	width: 100%;
 	padding: 32px 0;
-	border-radius: 0.35rem;
 	display: flex;
 	flex-direction: column;
 `;
