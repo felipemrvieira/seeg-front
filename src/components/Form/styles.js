@@ -22,13 +22,18 @@ export const Form = styled.form`
 	flex-direction: column;
 `;
 
+export const Label = styled.label`
+	color: #7b7b7b;
+	font-size: 18px;
+`;
+
 export const Input = styled.input`
 	padding: 8px;
 	border-radius: ${radius};
 	border-style: solid;
 	border-color: #d0d0d0;
 	outline-width: 0;
-	margin-bottom: 10px;
+	margin-bottom: 22px;
 `;
 
 export const TextArea = styled.textarea`
@@ -37,7 +42,7 @@ export const TextArea = styled.textarea`
 	border-style: solid;
 	border-color: #d0d0d0;
 	outline-width: 0;
-	margin-bottom: 10px;
+	margin-bottom: 22px;
 `;
 
 export const Button = styled.button`
