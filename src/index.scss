@@ -19,3 +19,24 @@ a {
 		color: inherit;
 	}
 }
+
+.ql-toolbar {
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	// border-radius: 8px;
+	border-style: solid;
+	border-color: #d0d0d0;
+	border-width: 2px !important;
+	// margin-bottom: 4px;
+}
+.ql-container {
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+
+	// border-radius: 8px;
+	border-style: solid;
+	border-color: #d0d0d0;
+	border-width: 2px !important;
+	// border-top: 2px solid #d0d0d0 !important;
+	margin-bottom: 18px;
+}

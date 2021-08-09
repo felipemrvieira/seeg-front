@@ -34,6 +34,7 @@ export const Input = styled.input`
 	border-color: #d0d0d0;
 	outline-width: 0;
 	margin-bottom: 22px;
+	background: white;
 `;
 
 export const TextArea = styled.textarea`

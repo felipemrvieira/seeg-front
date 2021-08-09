@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+
 import api from '../../services/api';
 
 import {
 	FormContainer,
 	Form,
 	Input,
-	TextArea,
+	// TextArea,
 	Button,
 	EditButton,
 	Label,
@@ -19,17 +22,87 @@ export default function Index({ disabled, id, solution }) {
 	const {
 		register,
 		handleSubmit,
-		// watch,
-		// formState: { errors },
+		setValue,
+		watch,
 		reset,
+		formState: { errors },
 	} = useForm();
+
+	const [,] = useState('');
 
 	useEffect(() => {
 		reset(solution);
 	}, [reset, solution]);
 
+	useEffect(() => {
+		register('guiding_public_policies', { required: true, minLength: 11 });
+	}, [register]);
+
+	const onGuidingEditorStateChange = (editorState) => {
+		setValue('guiding_public_policies', editorState);
+	};
+	const onDescriptionEditorStateChange = (editorState) => {
+		setValue('description', editorState);
+	};
+	const onTechnicalEditorStateChange = (editorState) => {
+		setValue('technical_references', editorState);
+	};
+	const onExamplesEditorStateChange = (editorState) => {
+		setValue('examples_of_municipal_application', editorState);
+	};
+	const onActionEditorStateChange = (editorState) => {
+		setValue('action_category', editorState);
+	};
+	const onEnvironmentalEditorStateChange = (editorState) => {
+		setValue('environmental_cobenefits', editorState);
+	};
+	const onSocialEditorStateChange = (editorState) => {
+		setValue('social_cobenefits', editorState);
+	};
+	const onEcomomicEditorStateChange = (editorState) => {
+		setValue('economic_cobenefits', editorState);
+	};
+	const onMunicipalEditorStateChange = (editorState) => {
+		setValue('municipal_operating_mode', editorState);
+	};
+	const onAlignmentEditorStateChange = (editorState) => {
+		setValue('alignment_with_ndc', editorState);
+	};
+	const onNecessaryEditorStateChange = (editorState) => {
+		setValue('necessary_investment', editorState);
+	};
+	const onFinancingEditorStateChange = (editorState) => {
+		setValue('financing', editorState);
+	};
+	const onKeyEditorStateChange = (editorState) => {
+		setValue('key_actors', editorState);
+	};
+	const onChallengesEditorStateChange = (editorState) => {
+		setValue('challenges', editorState);
+	};
+	const onImplementationEditorStateChange = (editorState) => {
+		setValue('implementation_time', editorState);
+	};
+
+	const guidingPublicPoliciesValue = watch('guiding_public_policies');
+	const descriptionValue = watch('description');
+	const technicalReferencesValue = watch('technical_references');
+	const examplesOfMunicipalApplicationValue = watch(
+		'examples_of_municipal_application'
+	);
+	const actionCategoryValue = watch('action_category');
+	const environmentalCobenefitsValue = watch('environmental_cobenefits');
+	const socialCobenefitsValue = watch('social_cobenefits');
+	const economicCobenefitsValue = watch('economic_cobenefits');
+	const municipalOperatingModeValue = watch('municipal_operating_mode');
+	const alignmentWithNdcValue = watch('alignment_with_ndc');
+	const necessaryInvestmentValue = watch('necessary_investment');
+	const financingValue = watch('financing');
+	const keyActorsValue = watch('key_actors');
+	const challengesValue = watch('challenges');
+	const implementationTimeValue = watch('implementation_time');
+
 	const history = useHistory();
-	// console.log(watch('number')); // watch input value by passing the name of it
 
 	async function onSubmit(data) {
 		try {
@@ -44,6 +117,7 @@ export default function Index({ disabled, id, solution }) {
 			toast.error(`Erro`);
 		}
 	}
+
 	return (
 		<FormContainer>
 			{/* Visualização do texto formatado */}
@@ -60,134 +134,198 @@ export default function Index({ disabled, id, solution }) {
 				/>
 
 				<Label htmlFor="number">Título</Label>
-				<TextArea
+				<Input
 					placeholder="Título"
 					disabled={disabled}
-					rows="1"
 					{...register('title')}
-				>
-					{solution.title}
-				</TextArea>
-
-				<Label htmlFor="number">Descrição</Label>
-				<TextArea
-					placeholder="descrição"
-					disabled={disabled}
-					rows="8"
-					{...register('description')}
 				/>
+				<Label htmlFor="number">Descrição</Label>
+				<ReactQuill
+					theme="snow"
+					readOnly={disabled}
+					value={
+						descriptionValue
+							? descriptionValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onDescriptionEditorStateChange}
+				/>
+				<p className="Error">{errors.emailContent && 'Enter valid content'}</p>
 
 				<Label htmlFor="number">Guia de políticas públicas</Label>
-				<TextArea
-					placeholder="Guia de políticas públicas"
-					disabled={disabled}
-					rows="9"
-					{...register('guiding_public_policies')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						guidingPublicPoliciesValue
+							? guidingPublicPoliciesValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onGuidingEditorStateChange}
 				/>
+				<p className="Error">{errors.emailContent && 'Enter valid content'}</p>
 
 				<Label htmlFor="number">Referências técnicas</Label>
-				<TextArea
-					placeholder="Referências técnicas"
-					disabled={disabled}
-					rows="8"
-					{...register('technical_references')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						technicalReferencesValue
+							? technicalReferencesValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onTechnicalEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Exemplos de aplicação municipal</Label>
-				<TextArea
-					placeholder="Exemplos de aplicação municipal"
-					disabled={disabled}
-					rows="6"
-					{...register('examples_of_municipal_application')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						examplesOfMunicipalApplicationValue
+							? examplesOfMunicipalApplicationValue.replace(
+									/\r?\n/g,
+									'<br />'
+							  ) || ''
+							: ''
+					}
+					onChange={onExamplesEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Categoria da ação</Label>
-				<TextArea
-					placeholder="Categoria da ação"
-					disabled={disabled}
-					rows="3"
-					{...register('action_category')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						actionCategoryValue
+							? actionCategoryValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onActionEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Cobenefícios ambientais</Label>
-				<TextArea
-					placeholder="Cobenefícios ambientais"
-					disabled={disabled}
-					rows="6"
-					{...register('environmental_cobenefits')}
+
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						environmentalCobenefitsValue
+							? environmentalCobenefitsValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onEnvironmentalEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Cobenefìcios sociais</Label>
-				<TextArea
-					placeholder="Cobenefícios sociais"
-					disabled={disabled}
-					rows="6"
-					{...register('social_cobenefits')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						socialCobenefitsValue
+							? socialCobenefitsValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onSocialEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Cobenefícios econômicos</Label>
-				<TextArea
-					placeholder="Cobenefícios econômicos"
-					disabled={disabled}
-					rows="8"
-					{...register('economic_cobenefits')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						economicCobenefitsValue
+							? economicCobenefitsValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onEcomomicEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Modo de operação municipal</Label>
-				<TextArea
-					placeholder="Modo de operação municipal"
-					disabled={disabled}
-					rows="2"
-					{...register('municipal_operating_mode')}
+
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						municipalOperatingModeValue
+							? municipalOperatingModeValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onMunicipalEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Alinhamento com NDC</Label>
 
-				<TextArea
-					placeholder="Alinhamento com NDC"
-					disabled={disabled}
-					rows="2"
-					{...register('alignment_with_ndc')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						alignmentWithNdcValue
+							? alignmentWithNdcValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onAlignmentEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Investimento Necessário</Label>
-				<TextArea
-					placeholder="Investimento necessário"
-					disabled={disabled}
-					rows="2"
-					{...register('necessary_investment')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						necessaryInvestmentValue
+							? necessaryInvestmentValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onNecessaryEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Financiamento</Label>
-				<TextArea
-					placeholder="Financiamento"
-					disabled={disabled}
-					rows="5"
-					{...register('financing')}
+
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						financingValue
+							? financingValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onFinancingEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Atores chave</Label>
-				<TextArea
-					placeholder="Atores chave"
-					disabled={disabled}
-					rows="6"
-					{...register('key_actors')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						keyActorsValue
+							? keyActorsValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onKeyEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Desafios</Label>
-				<TextArea
-					placeholder="Desafios"
-					disabled={disabled}
-					rows="6"
-					{...register('challenges')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						challengesValue
+							? challengesValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onChallengesEditorStateChange}
 				/>
 
 				<Label htmlFor="number">Tempo de implementação</Label>
-				<TextArea
-					placeholder="Tempo de implementação"
-					disabled={disabled}
-					rows="2"
-					{...register('implementation_time')}
+				<ReactQuill
+					readOnly={disabled}
+					theme="snow"
+					value={
+						implementationTimeValue
+							? implementationTimeValue.replace(/\r?\n/g, '<br />') || ''
+							: ''
+					}
+					onChange={onImplementationEditorStateChange}
 				/>
 				{!disabled ? (
 					<Button disabled={disabled}>Salvar</Button>
