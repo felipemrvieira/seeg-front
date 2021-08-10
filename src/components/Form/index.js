@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import Select from 'react-select';
 
 import api from '../../services/api';
 
@@ -118,6 +119,96 @@ export default function Index({ disabled, id, solution }) {
 		}
 	}
 
+	const solutionOfOptions = [
+		{ id: 'mitigation', title: 'Mitigação' },
+		{ id: 'adaptation', title: 'Adaptação' },
+		{ id: 'mitigation_and_adaptation', title: 'Mitigação e Adaptação' },
+	].map((item) => ({
+		value: item.id,
+		label: item.title,
+	}));
+
+	function solutionOfHelper(solutionOf) {
+		switch (solutionOf) {
+			case 'mitigation':
+				return 'Mitigação';
+			case 'adaptation':
+				return 'Adaptaçåo';
+			case 'mitigation_and_adaptation':
+				return 'Mitigação e Adaptação';
+
+			default:
+				return 'Selecione';
+		}
+	}
+
+	const sphereOptions = [
+		{ id: 'state', title: 'Estadual' },
+		{ id: 'municipal', title: 'Municipal' },
+		{ id: 'cross', title: 'Transversal' },
+	].map((item) => ({
+		value: item.id,
+		label: item.title,
+	}));
+
+	function sphereHelper(impact) {
+		switch (impact) {
+			case 'state':
+				return 'Estadual';
+			case 'municipal':
+				return 'Municipal';
+			case 'cross':
+				return 'Transversal';
+
+			default:
+				return 'Selecione';
+		}
+	}
+	const sectorOptions = [
+		{ id: 'public_sector', title: 'Setor Público' },
+		{ id: 'private_sector', title: 'Setor Privado' },
+		{ id: 'public_and_private_sectors', title: 'Setores Público e Privado' },
+	].map((item) => ({
+		value: item.id,
+		label: item.title,
+	}));
+
+	function sectorHelper(impact) {
+		switch (impact) {
+			case 'public_sector':
+				return 'Setor Público';
+			case 'private_sector':
+				return 'Setor Privado';
+			case 'public_and_private_sectors':
+				return 'Setores Público e Privado';
+
+			default:
+				return 'Selecione';
+		}
+	}
+	const impactOptions = [
+		{ id: 'reduction', title: 'Redução' },
+		{ id: 'neutralization', title: 'Neutralização' },
+		{ id: 'removal', title: 'Remoção' },
+	].map((item) => ({
+		value: item.id,
+		label: item.title,
+	}));
+
+	function impactHelper(impact) {
+		switch (impact) {
+			case 'reduction':
+				return 'Redução';
+			case 'neutralization':
+				return 'Neutralização';
+			case 'removal':
+				return 'Remoção';
+
+			default:
+				return 'Selecione';
+		}
+	}
+
 	return (
 		<FormContainer>
 			{/* Visualização do texto formatado */}
@@ -149,6 +240,18 @@ export default function Index({ disabled, id, solution }) {
 							: ''
 					}
 					onChange={onDescriptionEditorStateChange}
+				/>
+				<Label htmlFor="number">Solução de</Label>
+				<Select
+					// isDisabled="true"
+					name="solution_of"
+					options={solutionOfOptions}
+					// onChange={handleSubjectChange}
+					placeholder="Selecione"
+					value={{
+						id: solution.solution_of,
+						label: solutionOfHelper(solution.solution_of),
+					}}
 				/>
 				<p className="Error">{errors.emailContent && 'Enter valid content'}</p>
 
@@ -190,6 +293,33 @@ export default function Index({ disabled, id, solution }) {
 							: ''
 					}
 					onChange={onExamplesEditorStateChange}
+				/>
+
+				<Label htmlFor="number">
+					Setor Fundamental para a realização da solução
+				</Label>
+				<Select
+					// isDisabled="true"
+					name="sector"
+					options={sectorOptions}
+					// onChange={handleSubjectChange}
+					placeholder="Selecione"
+					value={{
+						id: solution.fundamental_sector,
+						label: sectorHelper(solution.fundamental_sector),
+					}}
+				/>
+				<Label htmlFor="number">Impacto sobre as Emissões</Label>
+				<Select
+					// isDisabled="true"
+					name="impact"
+					options={impactOptions}
+					// onChange={handleSubjectChange}
+					placeholder="Selecione"
+					value={{
+						id: solution.impact_on_emissions,
+						label: impactHelper(solution.impact_on_emissions),
+					}}
 				/>
 
 				<Label htmlFor="number">Categoria da ação</Label>
@@ -239,6 +369,19 @@ export default function Index({ disabled, id, solution }) {
 							: ''
 					}
 					onChange={onEcomomicEditorStateChange}
+				/>
+
+				<Label htmlFor="number">Esfera</Label>
+				<Select
+					// isDisabled="true"
+					name="sphere"
+					options={sphereOptions}
+					// onChange={handleSubjectChange}
+					placeholder="Selecione"
+					value={{
+						id: solution.sphere,
+						label: sphereHelper(solution.sphere),
+					}}
 				/>
 
 				<Label htmlFor="number">Modo de operação municipal</Label>
@@ -346,6 +489,10 @@ Index.propTypes = {
 		title: PropTypes.string,
 		description: PropTypes.string,
 		guiding_public_policies: PropTypes.string,
+		solution_of: PropTypes.string,
+		impact_on_emissions: PropTypes.string,
+		fundamental_sector: PropTypes.string,
+		sphere: PropTypes.string,
 	}),
 };
 
@@ -357,5 +504,9 @@ Index.defaultProps = {
 		title: 'titulo',
 		description: 'descricao',
 		guiding_public_policies: 'Guia',
+		solution_of: 'Mitigação ou Adaptação',
+		impact_on_emissions: 'Impacto',
+		fundamental_sector: 'Setor fundamental',
+		sphere: 'Esfera',
 	},
 };
