@@ -119,6 +119,69 @@ export default function Index({ disabled, id, solution }) {
 		}
 	}
 
+	const odsOptions = [
+		{ id: 'ods_01', title: 'ODS 01' },
+		{ id: 'ods_02', title: 'ODS 02' },
+		{ id: 'ods_03', title: 'ODS 03' },
+		{ id: 'ods_04', title: 'ODS 04' },
+		{ id: 'ods_05', title: 'ODS 05' },
+		{ id: 'ods_06', title: 'ODS 06' },
+		{ id: 'ods_07', title: 'ODS 07' },
+		{ id: 'ods_08', title: 'ODS 08' },
+		{ id: 'ods_09', title: 'ODS 09' },
+		{ id: 'ods_10', title: 'ODS 10' },
+		{ id: 'ods_11', title: 'ODS 11' },
+		{ id: 'ods_12', title: 'ODS 12' },
+		{ id: 'ods_13', title: 'ODS 13' },
+		{ id: 'ods_14', title: 'ODS 14' },
+		{ id: 'ods_15', title: 'ODS 15' },
+		{ id: 'ods_16', title: 'ODS 16' },
+		{ id: 'ods_17', title: 'ODS 17' },
+	].map((item) => ({
+		value: item.id,
+		label: item.title,
+	}));
+
+	const regionsOptions = [
+		{ id: 'north', title: 'Norte' },
+		{ id: 'north_east', title: 'Nordeste' },
+		{ id: 'midwest', title: 'Centro-Oeste' },
+		{ id: 'south', title: 'Sul' },
+		{ id: 'southeast', title: 'Sudeste' },
+	].map((item) => ({
+		value: item.id,
+		label: item.title,
+	}));
+
+	// function selectRegions(regions) {
+	// 	const arrayOfRegions = [];
+
+	// 	function setArrayOfRegion(item) {
+	// 		const index = regionsOptions.findIndex((x) => x.value === item);
+	// 		arrayOfRegions.push(regionsOptions[index]);
+	// 	}
+
+	// 	regions.forEach(setArrayOfRegion);
+	// 	return arrayOfRegions;
+	// }
+
+	// const selectedRegions = selectRegions(solution.applicable_regions);
+	console.log(solution.applicable_regions);
+	// console.log(selectedRegions);
+
+	const rangesOptions = [
+		{ id: 'range_1', title: 'Faixa I - 0 a 10 mil' },
+		{ id: 'range_2', title: 'Faixa II - 10 mil a 50 mil' },
+		{ id: 'range_3', title: 'Faixa III - 50 mil a 100 mil' },
+		{ id: 'range_4', title: 'Faixa IV - 100 mil a 500 mil' },
+		{ id: 'range_5', title: 'Faixa V - 500 mil a 1 milhão' },
+		{ id: 'range_6', title: 'Faixa VI - 1 milhão a 5 milhões' },
+		{ id: 'range_7', title: 'Faixa VII - 5 milhões ou mais' },
+	].map((item) => ({
+		value: item.id,
+		label: item.title,
+	}));
+
 	const solutionOfOptions = [
 		{ id: 'mitigation', title: 'Mitigação' },
 		{ id: 'adaptation', title: 'Adaptação' },
@@ -223,7 +286,6 @@ export default function Index({ disabled, id, solution }) {
 					disabled={disabled}
 					{...register('number')}
 				/>
-
 				<Label htmlFor="number">Título</Label>
 				<Input
 					placeholder="Título"
@@ -254,7 +316,6 @@ export default function Index({ disabled, id, solution }) {
 					}}
 				/>
 				<p className="Error">{errors.emailContent && 'Enter valid content'}</p>
-
 				<Label htmlFor="number">Guia de políticas públicas</Label>
 				<ReactQuill
 					readOnly={disabled}
@@ -267,7 +328,6 @@ export default function Index({ disabled, id, solution }) {
 					onChange={onGuidingEditorStateChange}
 				/>
 				<p className="Error">{errors.emailContent && 'Enter valid content'}</p>
-
 				<Label htmlFor="number">Referências técnicas</Label>
 				<ReactQuill
 					readOnly={disabled}
@@ -279,7 +339,6 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onTechnicalEditorStateChange}
 				/>
-
 				<Label htmlFor="number">Exemplos de aplicação municipal</Label>
 				<ReactQuill
 					readOnly={disabled}
@@ -295,6 +354,40 @@ export default function Index({ disabled, id, solution }) {
 					onChange={onExamplesEditorStateChange}
 				/>
 
+				<Label htmlFor="number">Regiões Aplicáveis</Label>
+				<Select
+					// isDisabled="true"
+					name="regions"
+					isMulti
+					options={regionsOptions}
+					// onChange={handleSubjectChange}
+					placeholder="Selecione"
+
+					// defaultValue={selectedRegions}
+					// defaultValue={selectRegions(solution.applicable_regions)}
+					// defaultValue={[regionsOptions[2], regionsOptions[3]]}
+
+					// value={{
+					// 	id: solution.fundamental_sector,
+					// 	label: sectorHelper(solution.fundamental_sector),
+					// }}
+				/>
+
+				<Label htmlFor="number">Faixas Populacionais Aplicáveis</Label>
+				<Select
+					// isDisabled="true"
+					name="regions"
+					isMulti
+					options={rangesOptions}
+					// onChange={handleSubjectChange}
+					placeholder="Selecione"
+					defaultValue={[rangesOptions[2], rangesOptions[3]]}
+
+					// value={{
+					// 	id: solution.fundamental_sector,
+					// 	label: sectorHelper(solution.fundamental_sector),
+					// }}
+				/>
 				<Label htmlFor="number">
 					Setor Fundamental para a realização da solução
 				</Label>
@@ -321,7 +414,6 @@ export default function Index({ disabled, id, solution }) {
 						label: impactHelper(solution.impact_on_emissions),
 					}}
 				/>
-
 				<Label htmlFor="number">Categoria da ação</Label>
 				<ReactQuill
 					readOnly={disabled}
@@ -334,8 +426,23 @@ export default function Index({ disabled, id, solution }) {
 					onChange={onActionEditorStateChange}
 				/>
 
-				<Label htmlFor="number">Cobenefícios ambientais</Label>
+				<Label htmlFor="number">Objetivos do desenvolvimento sustentável</Label>
+				<Select
+					// isDisabled="true"
+					name="regions"
+					isMulti
+					options={odsOptions}
+					// onChange={handleSubjectChange}
+					placeholder="Selecione"
+					defaultValue={[odsOptions[2], odsOptions[3]]}
 
+					// value={{
+					// 	id: solution.fundamental_sector,
+					// 	label: sectorHelper(solution.fundamental_sector),
+					// }}
+				/>
+
+				<Label htmlFor="number">Cobenefícios ambientais</Label>
 				<ReactQuill
 					readOnly={disabled}
 					theme="snow"
@@ -346,7 +453,6 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onEnvironmentalEditorStateChange}
 				/>
-
 				<Label htmlFor="number">Cobenefìcios sociais</Label>
 				<ReactQuill
 					readOnly={disabled}
@@ -358,7 +464,6 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onSocialEditorStateChange}
 				/>
-
 				<Label htmlFor="number">Cobenefícios econômicos</Label>
 				<ReactQuill
 					readOnly={disabled}
@@ -370,7 +475,6 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onEcomomicEditorStateChange}
 				/>
-
 				<Label htmlFor="number">Esfera</Label>
 				<Select
 					// isDisabled="true"
@@ -383,9 +487,7 @@ export default function Index({ disabled, id, solution }) {
 						label: sphereHelper(solution.sphere),
 					}}
 				/>
-
 				<Label htmlFor="number">Modo de operação municipal</Label>
-
 				<ReactQuill
 					readOnly={disabled}
 					theme="snow"
@@ -396,9 +498,7 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onMunicipalEditorStateChange}
 				/>
-
 				<Label htmlFor="number">Alinhamento com NDC</Label>
-
 				<ReactQuill
 					readOnly={disabled}
 					theme="snow"
@@ -409,7 +509,6 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onAlignmentEditorStateChange}
 				/>
-
 				<Label htmlFor="number">Investimento Necessário</Label>
 				<ReactQuill
 					readOnly={disabled}
@@ -421,9 +520,7 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onNecessaryEditorStateChange}
 				/>
-
 				<Label htmlFor="number">Financiamento</Label>
-
 				<ReactQuill
 					readOnly={disabled}
 					theme="snow"
@@ -434,7 +531,6 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onFinancingEditorStateChange}
 				/>
-
 				<Label htmlFor="number">Atores chave</Label>
 				<ReactQuill
 					readOnly={disabled}
@@ -446,7 +542,6 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onKeyEditorStateChange}
 				/>
-
 				<Label htmlFor="number">Desafios</Label>
 				<ReactQuill
 					readOnly={disabled}
@@ -458,7 +553,6 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onChallengesEditorStateChange}
 				/>
-
 				<Label htmlFor="number">Tempo de implementação</Label>
 				<ReactQuill
 					readOnly={disabled}
@@ -493,6 +587,9 @@ Index.propTypes = {
 		impact_on_emissions: PropTypes.string,
 		fundamental_sector: PropTypes.string,
 		sphere: PropTypes.string,
+		applicable_regions: PropTypes.arrayOf(PropTypes.string),
+		applicable_population_ranges: PropTypes.arrayOf(PropTypes.string),
+		sustainable_development_goals: PropTypes.arrayOf(PropTypes.string),
 	}),
 };
 
@@ -508,5 +605,8 @@ Index.defaultProps = {
 		impact_on_emissions: 'Impacto',
 		fundamental_sector: 'Setor fundamental',
 		sphere: 'Esfera',
+		applicable_regions: ['reg'],
+		applicable_population_ranges: ['rang'],
+		sustainable_development_goals: ['goal'],
 	},
 };
