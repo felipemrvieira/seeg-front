@@ -2,12 +2,12 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Container from 'react-bootstrap/Container';
 import { useParams } from 'react-router-dom';
 import { Background } from './styles';
-import Card from '../../../components/Card';
-import PageHeader from '../../../components/PageHeader';
-import Form from '../../../components/Form';
-import api from '../../../services/api';
+import Card from '../../../../components/Card';
+import PageHeader from '../../../../components/PageHeader';
+import Form from '../../../../components/Form';
+import api from '../../../../services/api';
 
-import Header from '../../../components/Header';
+import Header from '../../../../components/Header';
 
 function Solution() {
 	const { id } = useParams();

@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container';
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import { Background, ButtonWrapper, Label, Input } from './styles';
-import Card from '../../../components/Card';
-import PageHeader from '../../../components/PageHeader';
-import Header from '../../../components/Header';
-import api from '../../../services/api';
+import Card from '../../../../components/Card';
+import PageHeader from '../../../../components/PageHeader';
+import Header from '../../../../components/Header';
+import api from '../../../../services/api';
 
 function Solution() {
 	const [file, setFile] = useState({});

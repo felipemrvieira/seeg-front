@@ -239,7 +239,7 @@ const data = [
 	},
 ];
 
-export default function MunicipalSolutions() {
+export default function Home() {
 	return (
 		<>
 			<Header />

@@ -2,9 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
-import api from '../../../services/api';
+import api from '../../../../services/api';
 // import axios from 'axios';
-import { login, isAuthenticated } from '../../../services/auth';
+import { login, isAuthenticated } from '../../../../services/auth';
 
 import {
 	Card,

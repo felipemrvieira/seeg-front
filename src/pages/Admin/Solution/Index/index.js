@@ -4,12 +4,12 @@ import BTable from 'react-bootstrap/Table';
 import { useTable } from 'react-table';
 import PropTypes from 'prop-types';
 import { Background, Link } from './styles';
-import api from '../../../services/api';
+import api from '../../../../services/api';
 
-import Card from '../../../components/Card';
-import PageHeader from '../../../components/PageHeader';
+import Card from '../../../../components/Card';
+import PageHeader from '../../../../components/PageHeader';
 
-import Header from '../../../components/Header';
+import Header from '../../../../components/Header';
 
 function Table({ columns, data }) {
 	// Use the state and functions returned from useTable to build your UI
