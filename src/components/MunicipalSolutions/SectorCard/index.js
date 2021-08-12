@@ -9,13 +9,14 @@ import {
 	SolutionsLabel,
 } from './styles';
 
-export default function SectorCard({ solution, sectorTitle }) {
+export default function SectorCard({ sector }) {
+	console.log(sector);
 	return (
-		<Card sectorTitle={sectorTitle}>
-			<SectorIcon sectorTitle={sectorTitle} />
-			<SectorTitle>{solution.title}</SectorTitle>
+		<Card sectorTitle={sector.title}>
+			<SectorIcon sectorTitle={sector.title} />
+			<SectorTitle>{sector.title}</SectorTitle>
 			<SectorSolutions>
-				<SolutionsCount>{solution.solutionsCount}</SolutionsCount>
+				<SolutionsCount>{sector.solutionsCount}</SolutionsCount>
 				<SolutionsLabel>Soluções</SolutionsLabel>
 			</SectorSolutions>
 		</Card>
@@ -23,6 +24,5 @@ export default function SectorCard({ solution, sectorTitle }) {
 }
 
 SectorCard.propTypes = {
-	solution: PropTypes.node.isRequired,
-	sectorTitle: PropTypes.node.isRequired,
+	sector: PropTypes.node.isRequired,
 };

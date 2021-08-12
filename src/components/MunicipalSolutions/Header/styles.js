@@ -55,4 +55,19 @@ export const SectorCardContainer = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 	flex-flow: wrap;
+	margin: 12px 0 32px 0;
+`;
+
+export const SubMenuContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-flow: wrap;
+	margin: 32px 24px 24px 24px;
+`;
+export const MenuItem = styled.a`
+	padding: 24px 32px;
+	font-size: 20px;
+	background: #c5c5c5;
+	color: #5a5959;
 `;

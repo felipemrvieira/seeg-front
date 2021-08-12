@@ -9,12 +9,20 @@ import {
 	Img,
 	GreyBar,
 	SectorCardContainer,
+	SubMenuContainer,
+	MenuItem,
 } from './styles';
 import Image from './assets/image.png';
 import Header from '../../Header';
 import SectorCard from '../SectorCard';
 
-const solution_ = { title: 'Agropecuária', solutionsCount: '40' };
+const sectorList = [
+	{ title: 'Agropecuária', solutionsCount: '28' },
+	{ title: 'Energia elétrica', solutionsCount: '14' },
+	{ title: 'Transporte', solutionsCount: '40' },
+	{ title: 'MUT', solutionsCount: '16' },
+	{ title: 'Resíduos', solutionsCount: '12' },
+];
 export default function Sector() {
 	return (
 		<>
@@ -57,11 +65,19 @@ export default function Sector() {
 					</SectionCapDescription>
 
 					<SectorCardContainer>
-						<SectorCard solution={solution_} sectorTitle="Agropecuária" />
-						<SectorCard solution={solution_} sectorTitle="Energia" />
-						<SectorCard solution={solution_} sectorTitle="MUT" />
-						<SectorCard solution={solution_} sectorTitle="Resíduos" />
+						{/* <SectorCard solution={sector} sectorTitle="Agropecuária" />
+						<SectorCard solution={sector} sectorTitle="Energia Elétrica" />
+						<SectorCard solution={sector} sectorTitle="Transporte" />
+						<SectorCard solution={sector} sectorTitle="MUT" />
+						<SectorCard solution={sector} sectorTitle="Resíduos" /> */}
+						{sectorList.map((sector) => (
+							<SectorCard sector={sector} />
+						))}
 					</SectorCardContainer>
+					<SubMenuContainer>
+						<MenuItem href="/">Ver todas as soluções</MenuItem>
+						<MenuItem href="/">Entenda as soluções</MenuItem>
+					</SubMenuContainer>
 				</Section2>
 			</div>
 		</>

@@ -8,8 +8,10 @@ const handleCardColor = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
 			return 'background: #ed9742;';
-		case 'Energia':
+		case 'Energia elétrica':
 			return 'background: #d94b2b;';
+		case 'Transporte':
+			return 'background: #d94d6b;';
 		case 'MUT':
 			return 'background: #7cad41;';
 		case 'Resíduos':
@@ -23,7 +25,7 @@ const handleSectorIcon = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
 			return `background-image: url(${agroIcon});`;
-		case 'Energia':
+		case 'Energia elétrica':
 			return `background-image: url(${energiaIcon});`;
 		case 'MUT':
 			return `background-image: url(${mutIcon});`;
@@ -36,9 +38,16 @@ const handleSectorIcon = (sectorTitle) => {
 
 export const Card = styled.div`
 	${({ sectorTitle }) => handleCardColor(sectorTitle)}
+	position: relative;
+	top: 0;
+	transition: top ease 0.3s;
+	&:hover {
+		top: -10px;
+		cursor: pointer;
+	}
 	width: 230px;
 	/* width: 23%; */
-	padding: 32px;
+	padding: 30px;
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 0;
