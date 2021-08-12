@@ -32,9 +32,9 @@ export const SectionDescription = styled.p`
 
 export const SectionCapDescription = styled.p`
 	color: #6b6b6b;
-	font-size: 18px;
-	line-height: 28px;
 	font-weight: 300;
+	font-size: 26px;
+	line-height: 36px;
 `;
 
 export const Img = styled.img`
