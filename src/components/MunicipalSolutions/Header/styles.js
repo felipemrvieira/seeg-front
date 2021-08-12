@@ -39,6 +39,7 @@ export const SectionCapDescription = styled.p`
 
 export const Img = styled.img`
 	max-width: 100%;
+	width: 100%;
 	margin-bottom: 32px;
 	z-index: 9;
 `;

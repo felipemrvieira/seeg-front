@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollReveal from '../ScrollReveal';
 // import PropTypes from 'prop-types';
 import {
 	Section1,
@@ -44,38 +45,45 @@ export default function Sector() {
 				<GreyBar />
 				<Section2>
 					<Img src={Image} alt="Main resource" />
-					<SectionCapDescription>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa autem,
-						aliquid aspernatur quisquam repellendus itaque illo pariatur
-						temporibus id, assumenda eveniet eos ipsum natus illum est dolores?
-						Libero, cumque consequatur! Consectetur exercitationem quidem magnam
-						beatae sequi explicabo tenetur magni eaque eius omnis odit,
-						necessitatibus quisquam voluptates. Rerum molestias dolorem eos
-						tempora soluta repellendus excepturi voluptate eligendi! Blanditiis
-						consequatur animi tempora. Ipsum quo aspernatur laudantium alias,
-						totam libero enim dolorum nihil sint neque cum hic quidem quas
-						officiis voluptatem cupiditate distinctio expedita rerum tempore
-						impedit delectus deleniti? Nesciunt iste id voluptas. Earum debitis
-						laborum dolorum labore sapiente modi blanditiis porro assumenda,
-						soluta, minima tempora aliquid cupiditate quis eum, vero illum
-						voluptatum beatae? Maxime optio nihil obcaecati possimus quos
-						voluptate dolore suscipit! Obcaecati, provident! Totam, impedit
-						sapiente sunt itaque vero, recusandae ex voluptatibus ipsum ab quae
-						eligendi hic eum nesciunt quas delectus architecto eos deleniti sint
-						officiis culpa ad quo laboriosam alias. Maxime explicabo, ipsum
-						suscipit vel fugit recusandae ducimus velit qui et repudiandae illum
-					</SectionCapDescription>
 
-					<SectorCardContainer>
-						{/* <SectorCard solution={sector} sectorTitle="Agropecuária" />
+					<ScrollReveal>
+						<SectionCapDescription>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+							autem, aliquid aspernatur quisquam repellendus itaque illo
+							pariatur temporibus id, assumenda eveniet eos ipsum natus illum
+							est dolores? Libero, cumque consequatur! Consectetur
+							exercitationem quidem magnam beatae sequi explicabo tenetur magni
+							eaque eius omnis odit, necessitatibus quisquam voluptates. Rerum
+							molestias dolorem eos tempora soluta repellendus excepturi
+							voluptate eligendi! Blanditiis consequatur animi tempora. Ipsum
+							quo aspernatur laudantium alias, totam libero enim dolorum nihil
+							sint neque cum hic quidem quas officiis voluptatem cupiditate
+							distinctio expedita rerum tempore impedit delectus deleniti?
+							Nesciunt iste id voluptas. Earum debitis laborum dolorum labore
+							sapiente modi blanditiis porro assumenda, soluta, minima tempora
+							aliquid cupiditate quis eum, vero illum voluptatum beatae? Maxime
+							optio nihil obcaecati possimus quos voluptate dolore suscipit!
+							Obcaecati, provident! Totam, impedit sapiente sunt itaque vero,
+							recusandae ex voluptatibus ipsum ab quae eligendi hic eum nesciunt
+							quas delectus architecto eos deleniti sint officiis culpa ad quo
+							laboriosam alias. Maxime explicabo, ipsum suscipit vel fugit
+							recusandae ducimus velit qui et repudiandae illum
+						</SectionCapDescription>
+					</ScrollReveal>
+
+					<ScrollReveal>
+						<SectorCardContainer>
+							{/* <SectorCard solution={sector} sectorTitle="Agropecuária" />
 						<SectorCard solution={sector} sectorTitle="Energia Elétrica" />
 						<SectorCard solution={sector} sectorTitle="Transporte" />
 						<SectorCard solution={sector} sectorTitle="MUT" />
 						<SectorCard solution={sector} sectorTitle="Resíduos" /> */}
-						{sectorList.map((sector) => (
-							<SectorCard sector={sector} />
-						))}
-					</SectorCardContainer>
+							{sectorList.map((sector) => (
+								<SectorCard sector={sector} />
+							))}
+						</SectorCardContainer>
+					</ScrollReveal>
+
 					<SubMenuContainer>
 						<Button>
 							<TextButton>Ver todas as soluções</TextButton>

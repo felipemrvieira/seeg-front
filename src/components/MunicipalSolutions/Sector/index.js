@@ -10,22 +10,27 @@ import {
 	SolutionCardWrapper,
 } from './styles';
 import SolutionCard from '../SolutionCard';
+import ScrollReveal from '../ScrollReveal';
 
 export default function Sector({ sectorInfo, isOdd }) {
 	return (
 		<Section sectorTitle={sectorInfo.title} isOdd={isOdd}>
-			<SectorInfo>
-				<SectorWrapper>
-					<SectorIcon sectorTitle={sectorInfo.title} />
-					<SectorTitle>{sectorInfo.title}</SectorTitle>
-				</SectorWrapper>
-				<SectorDescription>{sectorInfo.description}</SectorDescription>
-			</SectorInfo>
-			<SolutionCardWrapper>
-				{sectorInfo.solutions.map((solution) => (
-					<SolutionCard sectorTitle={sectorInfo.title} solution={solution} />
-				))}
-			</SolutionCardWrapper>
+			<ScrollReveal>
+				<SectorInfo>
+					<SectorWrapper>
+						<SectorIcon sectorTitle={sectorInfo.title} />
+						<SectorTitle>{sectorInfo.title}</SectorTitle>
+					</SectorWrapper>
+					<SectorDescription>{sectorInfo.description}</SectorDescription>
+				</SectorInfo>
+			</ScrollReveal>
+			<ScrollReveal>
+				<SolutionCardWrapper>
+					{sectorInfo.solutions.map((solution) => (
+						<SolutionCard sectorTitle={sectorInfo.title} solution={solution} />
+					))}
+				</SolutionCardWrapper>
+			</ScrollReveal>
 		</Section>
 	);
 }
