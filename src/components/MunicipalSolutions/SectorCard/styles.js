@@ -48,6 +48,7 @@ export const Card = styled.div`
 	width: 230px;
 	/* width: 23%; */
 	padding: 30px;
+	margin-bottom: 12px;
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 0;
