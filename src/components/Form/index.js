@@ -109,7 +109,7 @@ export default function Index({ disabled, id, solution }) {
 		try {
 			await api.patch(`/solutions/${id}`, data);
 			toast.success('Informação atualizada com sucesso!!');
-			history.push('/solutions');
+			history.push('/admin/solutions');
 		} catch (err) {
 			// const message = err.response.data.errors.full_messages[0];
 			// console.log(message);
@@ -567,7 +567,9 @@ export default function Index({ disabled, id, solution }) {
 				{!disabled ? (
 					<Button disabled={disabled}>Salvar</Button>
 				) : (
-					<EditButton to={`/solutions/${id}/edit`}>Habilitar Edição</EditButton>
+					<EditButton to={`/admin/solutions/${id}/edit`}>
+						Habilitar Edição
+					</EditButton>
 				)}
 			</Form>
 		</FormContainer>

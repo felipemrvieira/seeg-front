@@ -79,7 +79,7 @@ export default function Solution() {
 				Header: '',
 				accessor: 'id',
 				Cell: (row) => (
-					<Link className="btn btn-light" to={`/solutions/${row.value}`}>
+					<Link className="btn btn-light" to={`/admin/solutions/${row.value}`}>
 						<span className="text">Visualizar</span>
 					</Link>
 				),

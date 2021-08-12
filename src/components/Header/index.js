@@ -21,7 +21,7 @@ function Header() {
 		<NavbarWrapper>
 			<Navbar bg="white" expand="lg">
 				<Container>
-					<Navbar.Brand href="#home">
+					<Navbar.Brand href="/">
 						<LogoContainer>
 							<Logo />
 						</LogoContainer>
@@ -30,10 +30,10 @@ function Header() {
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="me-auto">
 							<Nav.Link>
-								<Link to="/solutions">Listar Soluções</Link>
+								<Link to="/admin/solutions">Listar Soluções</Link>
 							</Nav.Link>
 							<Nav.Link>
-								<Link to="/solutions/new">Cadastrar Soluções</Link>
+								<Link to="/admin/solutions/new">Cadastrar Soluções</Link>
 							</Nav.Link>
 							{/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
 							<NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

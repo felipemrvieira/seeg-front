@@ -29,7 +29,7 @@ function Solution() {
 		fileUpload(file).then((response) => {
 			console.log(response.data);
 			toast.success('Informação cadastrada com sucesso!!');
-			history.push('/solutions');
+			history.push('/admin/solutions');
 		});
 	}
 

@@ -15,11 +15,21 @@ export default function Routes() {
 		<Switch>
 			<Route path="/" exact component={MunicipalSolutions} />
 			<Route path="/municipalsolutions" exact component={MunicipalSolutions} />
-			<Route path="/solutions/" exact component={Solutions} isPrivate />
-			<Route path="/solutions/new" exact component={SolutionsNew} isPrivate />
-			<Route path="/solutions/:id" exact component={SolutionsShow} isPrivate />
+			<Route path="/admin/solutions/" exact component={Solutions} isPrivate />
 			<Route
-				path="/solutions/:id/edit"
+				path="/admin/solutions/new"
+				exact
+				component={SolutionsNew}
+				isPrivate
+			/>
+			<Route
+				path="/admin/solutions/:id"
+				exact
+				component={SolutionsShow}
+				isPrivate
+			/>
+			<Route
+				path="/admin/solutions/:id/edit"
 				exact
 				component={SolutionsEdit}
 				isPrivate
