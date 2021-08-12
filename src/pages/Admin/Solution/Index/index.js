@@ -52,7 +52,6 @@ export default function Solution() {
 		try {
 			const response = await api.get('/solutions');
 			setSolutions(response.data);
-			console.log(response.data);
 			// console.tron.log(response.data);
 		} catch (err) {
 			// console.tron.log(err);

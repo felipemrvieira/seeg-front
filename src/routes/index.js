@@ -2,39 +2,48 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import Route from './Route';
 
+// Open routes
 import Home from '../pages/Home';
-import UserSignIn from '../pages/Admin/User/SignIn';
-import Solutions from '../pages/Admin/Solution/Index';
-import SolutionsEdit from '../pages/Admin/Solution/Edit';
-import SolutionsNew from '../pages/Admin/Solution/New';
-import SolutionsShow from '../pages/Admin/Solution/Show';
-// import UserRegister from '../pages/User/SignUp';
+import Solutions from '../pages/Solutions';
+
+// Admin routes
+import AdminSolutions from '../pages/Admin/Solution/Index';
+import AdminSolutionsEdit from '../pages/Admin/Solution/Edit';
+import AdminSolutionsNew from '../pages/Admin/Solution/New';
+import AdminSolutionsShow from '../pages/Admin/Solution/Show';
+import AdminUserSignIn from '../pages/Admin/User/SignIn';
 
 export default function Routes() {
 	return (
 		<Switch>
 			<Route path="/" exact component={Home} />
 			<Route path="/home" exact component={Home} />
-			<Route path="/admin/solutions/" exact component={Solutions} isPrivate />
+			<Route path="/solutions" exact component={Solutions} />
+			<Route
+				path="/admin/solutions/"
+				exact
+				component={AdminSolutions}
+				isPrivate
+			/>
 			<Route
 				path="/admin/solutions/new"
 				exact
-				component={SolutionsNew}
+				component={AdminSolutionsNew}
 				isPrivate
 			/>
 			<Route
 				path="/admin/solutions/:id"
 				exact
-				component={SolutionsShow}
+				component={AdminSolutionsShow}
 				isPrivate
 			/>
 			<Route
 				path="/admin/solutions/:id/edit"
 				exact
-				component={SolutionsEdit}
+				component={AdminSolutionsEdit}
 				isPrivate
 			/>
-			<Route path="/user/signin" component={UserSignIn} />
+			<Route path="/user/signin" component={AdminUserSignIn} />
 			{/* <Route path="/user/register" component={UserRegister} isPrivate /> */}
 		</Switch>
 	);

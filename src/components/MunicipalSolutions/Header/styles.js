@@ -79,6 +79,4 @@ export const TextButton = styled.p`
 	color: white;
 	font-size: 22px;
 	font-weight: 400;
-	display: flex;
-	flex-direction: column;
 `;

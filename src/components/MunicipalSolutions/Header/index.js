@@ -15,7 +15,7 @@ import {
 	// MenuItem,
 } from './styles';
 import Image from './assets/image.png';
-import Header from '../../Header';
+import Nav from '../../Header';
 import SectorCard from '../SectorCard';
 import Button from '../../Button';
 
@@ -29,7 +29,7 @@ const sectorList = [
 export default function Sector() {
 	return (
 		<>
-			<Header />
+			<Nav />
 			<Section1>
 				<SectionTitle>Soluções</SectionTitle>
 				<SectionDescription>
@@ -85,7 +85,7 @@ export default function Sector() {
 					</ScrollReveal>
 
 					<SubMenuContainer>
-						<Button>
+						<Button to="solutions">
 							<TextButton>Ver todas as soluções</TextButton>
 						</Button>
 						<Button>
