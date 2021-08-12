@@ -1,6 +1,7 @@
 import React from 'react';
 import {} from './styles';
 import Header from '../../components/MunicipalSolutions/Header';
+import Footer from '../../components/MunicipalSolutions/Footer';
 import Sector from '../../components/MunicipalSolutions/Sector';
 
 const data = [
@@ -245,6 +246,7 @@ export default function MunicipalSolutions() {
 			{data.map((sector, i) => (
 				<Sector sectorInfo={sector} isOdd={Boolean(i % 2)} />
 			))}
+			<Footer />
 		</>
 	);
 }

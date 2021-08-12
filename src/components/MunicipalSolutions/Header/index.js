@@ -10,11 +10,13 @@ import {
 	GreyBar,
 	SectorCardContainer,
 	SubMenuContainer,
-	MenuItem,
+	TextButton,
+	// MenuItem,
 } from './styles';
 import Image from './assets/image.png';
 import Header from '../../Header';
 import SectorCard from '../SectorCard';
+import Button from '../../Button';
 
 const sectorList = [
 	{ title: 'Agropecuária', solutionsCount: '28' },
@@ -75,8 +77,12 @@ export default function Sector() {
 						))}
 					</SectorCardContainer>
 					<SubMenuContainer>
-						<MenuItem href="/">Ver todas as soluções</MenuItem>
-						<MenuItem href="/">Entenda as soluções</MenuItem>
+						<Button>
+							<TextButton>Ver todas as soluções</TextButton>
+						</Button>
+						<Button>
+							<TextButton>Entenda as soluções</TextButton>
+						</Button>
 					</SubMenuContainer>
 				</Section2>
 			</div>

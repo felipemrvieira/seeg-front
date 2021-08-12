@@ -71,3 +71,13 @@ export const MenuItem = styled.a`
 	background: #c5c5c5;
 	color: #5a5959;
 `;
+
+export const TextButton = styled.p`
+	padding: 6px 16px;
+	margin: 0;
+	color: white;
+	font-size: 22px;
+	font-weight: 400;
+	display: flex;
+	flex-direction: column;
+`;
