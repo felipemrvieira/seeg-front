@@ -9,7 +9,7 @@ import api from '../../../../services/api';
 import Card from '../../../../components/Card';
 import PageHeader from '../../../../components/PageHeader';
 
-import Header from '../../../../components/Header';
+import Nav from '../../../../components/Nav';
 
 function Table({ columns, data }) {
 	// Use the state and functions returned from useTable to build your UI
@@ -88,7 +88,7 @@ export default function Solution() {
 	);
 	return (
 		<Background>
-			<Header />
+			<Nav />
 			<Container>
 				<PageHeader>Listar Soluções</PageHeader>
 				<Card>

@@ -6,7 +6,7 @@ import Card from '../../../../components/Card';
 import PageHeader from '../../../../components/PageHeader';
 import Form from '../../../../components/Form';
 import api from '../../../../services/api';
-import Header from '../../../../components/Header';
+import Header from '../../../../components/Nav';
 
 function ShowSolution() {
 	const { id } = useParams();

@@ -45,15 +45,11 @@ function UserSignIn() {
 
 			const { client, uid, expiry } = response.headers;
 			const token = response.headers['access-token'];
-			console.log(token);
-			console.log(client);
-			console.log(uid);
-			console.log(response.headers);
 
 			login(token, expiry, client, uid);
 			toast.success('Bem vindo!');
 			console.log(data);
-			history.push('/');
+			history.push('/admin/solutions');
 		} catch (err) {
 			// const message = err.response.data.errors.full_messages[0];
 			// console.tron.log(message);

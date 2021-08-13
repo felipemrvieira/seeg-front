@@ -1,18 +1,19 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import Routes from './routes';
+import { ToastContainer } from 'react-toastify'; // Carregado quando necessário
 
 import 'react-toastify/dist/ReactToastify.css';
+// import Routes from './routes';
+const Routes = React.lazy(() => import('./routes'));
 
 function App() {
 	return (
-		<Suspense fallback={<h1>Loading...</h1>}>
-			<BrowserRouter>
-				<ToastContainer />
+		<BrowserRouter>
+			<ToastContainer />
+			<Suspense fallback={<h1>Loading...</h1>}>
 				<Routes />
-			</BrowserRouter>
-		</Suspense>
+			</Suspense>
+		</BrowserRouter>
 	);
 }
 

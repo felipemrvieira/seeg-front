@@ -7,7 +7,7 @@ import PageHeader from '../../../../components/PageHeader';
 import Form from '../../../../components/Form';
 import api from '../../../../services/api';
 
-import Header from '../../../../components/Header';
+import Nav from '../../../../components/Nav';
 
 function Solution() {
 	const { id } = useParams();
@@ -29,7 +29,7 @@ function Solution() {
 
 	return (
 		<Background>
-			<Header />
+			<Nav />
 			<Container>
 				<PageHeader>Editar Solução {id}</PageHeader>
 				<Card>

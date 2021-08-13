@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { Background, ButtonWrapper, Label, Input } from './styles';
 import Card from '../../../../components/Card';
 import PageHeader from '../../../../components/PageHeader';
-import Header from '../../../../components/Header';
+import Header from '../../../../components/Nav';
 import api from '../../../../services/api';
 
 function Solution() {

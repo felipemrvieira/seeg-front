@@ -15,7 +15,7 @@ import {
 	// MenuItem,
 } from './styles';
 import Image from './assets/image.png';
-import Nav from '../../Header';
+import Nav from '../../Nav';
 import SectorCard from '../SectorCard';
 import Button from '../../Button';
 
