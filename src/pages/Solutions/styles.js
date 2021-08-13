@@ -7,6 +7,39 @@ import energiaIcon from './assets/energia.png';
 import mutIcon from './assets/mut.png';
 import residuosIcon from './assets/residuos.png';
 
+const handleCardColor = (sectorTitle) => {
+	switch (sectorTitle) {
+		case 'Agropecuária':
+			return 'background: #ed9742;';
+		case 'Energia elétrica':
+			return 'background: #d94b2b;';
+		case 'Transporte':
+			return 'background: #d94d6b;';
+		case 'MUT':
+			return 'background: #7cad41;';
+		case 'Resíduos':
+			return 'background: #6bb7bf;';
+		default:
+			return 'background: grey;';
+	}
+};
+const handleBorderColor = (sectorTitle) => {
+	switch (sectorTitle) {
+		case 'Agropecuária':
+			return `border-color: ${darken(0.2, '#ed9742')} transparent;`;
+		case 'Energia elétrica':
+			return `border-color: ${darken(0.2, '#d94b2b')} transparent;`;
+		case 'Transporte':
+			return `border-color: ${darken(0.2, '#d94d6b')} transparent;`;
+		case 'MUT':
+			return `border-color: ${darken(0.2, '#7cad41')} transparent;`;
+		case 'Resíduos':
+			return `border-color: ${darken(0.2, '#6bb7bf')} transparent;`;
+		default:
+			return `border-color: ${darken(0.2, '#ed9742')} transparent;`;
+	}
+};
+
 const handleSectorIcon = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
@@ -41,7 +74,7 @@ export const SolutionTagWrapper = styled.div`
 	position: absolute;
 `;
 export const SolutionTag = styled.div`
-	background: #e98695;
+	${({ sectorTitle }) => handleCardColor(sectorTitle)}
 	margin-right: 8px;
 	display: flex;
 	flex-direction: column;
@@ -62,7 +95,7 @@ export const SolutionTag = styled.div`
 		left: -18px;
 		border-width: 0 0 18px 18px;
 		border-style: solid;
-		border-color: ${darken(0.2, '#e98695')} transparent;
+		${({ sectorTitle }) => handleBorderColor(sectorTitle)}
 	}
 
 	&:before {
@@ -92,6 +125,7 @@ export const SectorTitle = styled.div`
 	text-transform: uppercase;
 	color: white;
 	font-size: 24px;
+	line-height: 24px;
 	font-weight: 400;
 `;
 
@@ -124,6 +158,7 @@ export const SolutionTitle = styled.div`
 export const SolutionMetaInfoContainer = styled.div`
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	margin: 12px 0;
 `;
 export const SolutionMetaInfo = styled.div`

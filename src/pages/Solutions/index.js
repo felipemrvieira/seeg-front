@@ -44,9 +44,9 @@ export default function Home() {
 					<ScrollReveal key={solution.number}>
 						<Solution>
 							<SolutionTagWrapper>
-								<SolutionTag>
-									<SolutionIcon sectorTitle="agro" />
-									<SectorTitle>Agropecuária</SectorTitle>
+								<SolutionTag sectorTitle="Energia elétrica">
+									<SolutionIcon sectorTitle="Energia elétrica" />
+									<SectorTitle>Energia Elétrica</SectorTitle>
 								</SolutionTag>
 							</SolutionTagWrapper>
 							<SolutionInfoWrapper>
