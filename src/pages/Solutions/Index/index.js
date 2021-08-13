@@ -16,9 +16,9 @@ import {
 	SolutionMetaInfoValue,
 	Link,
 } from './styles';
-import Nav from '../../components/Nav';
-import api from '../../services/api';
-import ScrollReveal from '../../components/MunicipalSolutions/ScrollReveal';
+import Nav from '../../../components/Nav';
+import api from '../../../services/api';
+import ScrollReveal from '../../../components/MunicipalSolutions/ScrollReveal';
 
 export default function Home() {
 	const [solutions, setSolutions] = useState([]);
@@ -79,7 +79,9 @@ export default function Home() {
 											</SolutionMetaInfoValue>
 										</SolutionMetaInfo>
 									</SolutionMetaInfoContainer>
-									<Link to="/">veja mais sobre esta solução</Link>
+									<Link to={`/solutions/${solution.id}`}>
+										veja mais sobre esta solução
+									</Link>
 								</SolutionInfo>
 							</SolutionInfoWrapper>
 						</Solution>

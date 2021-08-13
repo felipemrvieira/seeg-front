@@ -4,7 +4,8 @@ import Route from './Route';
 
 // Open routes
 import Home from '../pages/Home';
-import Solutions from '../pages/Solutions';
+import Solutions from '../pages/Solutions/Index';
+import SolutionsShow from '../pages/Solutions/Show';
 
 // Admin routes
 import AdminSolutions from '../pages/Admin/Solution/Index';
@@ -19,6 +20,7 @@ export default function Routes() {
 			<Route path="/" exact component={Home} />
 			<Route path="/home" exact component={Home} />
 			<Route path="/solutions" exact component={Solutions} />
+			<Route path="/solutions/:id" exact component={SolutionsShow} />
 			<Route
 				path="/admin/solutions/"
 				exact
