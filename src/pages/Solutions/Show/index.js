@@ -45,6 +45,11 @@ import {
 	CobenefitsInfo,
 	CobenefitsTitle,
 	CobenefitsText,
+	ChallengeSection,
+	ChallengeSectionIcon,
+	ChallengeSectionTitle,
+	ChallengeSectionText,
+	Footer,
 } from './styles';
 import Nav from '../../../components/Nav';
 import api from '../../../services/api';
@@ -313,6 +318,27 @@ export default function Home() {
 					</Meta2Text>
 				</SectionMeta2Item>
 			</Section>
+			<ChallengeSection>
+				<ChallengeSectionIcon />
+				<ChallengeSectionTitle>Desafios</ChallengeSectionTitle>
+				<ChallengeSectionText>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odit
+					libero, temporibus veritatis eos non, placeat quibusdam sapiente, fuga
+					deleniti optio excepturi velit dolores? Laborum dolorum accusantium
+					tenetur quaerat veniam. Lorem ipsum dolor sit amet consectetur
+					adipisicing elit. Numquam corrupti rem harum doloribus minus adipisci
+					doloremque quae consectetur. Labore, cum sunt. Numquam deleniti enim,
+					doloribus laudantium est esse inventore aperiam? Lorem ipsum dolor sit
+					amet consectetur adipisicing elit. Magni, excepturi velit. Reiciendis,
+					rem enim pariatur expedita minus distinctio voluptas eum, quaerat,
+					illum unde necessitatibus asperiores? Ratione, quod soluta. Molestiae,
+					est. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
+					explicabo neque modi, consectetur quaerat atque expedita odio.
+					Assumenda, fuga veniam saepe eligendi voluptatem debitis earum
+					praesentium inventore quidem sit aspernatur.
+				</ChallengeSectionText>
+			</ChallengeSection>
+			<Footer />
 		</>
 	);
 }

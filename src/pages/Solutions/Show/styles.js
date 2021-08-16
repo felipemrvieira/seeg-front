@@ -54,6 +54,8 @@ import ambientais from './assets/cobenefits/ambientais.png';
 import sociais from './assets/cobenefits/sociais.png';
 import economicos from './assets/cobenefits/economicos.png';
 
+import desafios from './assets/desafios.png';
+
 // const handleCardColor = (sectorTitle) => {
 // 	switch (sectorTitle) {
 // 		case 'Agropecuária':
@@ -355,12 +357,13 @@ export const Meta2Title = styled.div`
 	line-height: 32px;
 	font-weight: 500;
 	margin: 12px 0 24px 0;
-	color: #ec9742;
-	color: ${({ color }) => color}};
+	/* color: #ec9742; */
+	color: ${({ color }) => color || '#ec9742'};
 `;
+
 export const Meta2Text = styled.div`
 	font-size: 26px;
-	color: #838d8b;
+	color: #8e8d8b;
 `;
 
 export const CategorySection = styled.div`
@@ -515,4 +518,38 @@ export const CobenefitsTitle = styled.div`
 export const CobenefitsText = styled.div`
 	font-size: 24px;
 	color: #838d8b;
+`;
+
+export const ChallengeSection = styled.div`
+	background: #ec9742;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 60px 210px;
+`;
+
+export const ChallengeSectionIcon = styled.div`
+	background-image: url(${desafios});
+	/* display: flex; */
+	height: 85px;
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-bottom: 42px;
+`;
+
+export const ChallengeSectionTitle = styled.h3`
+	font-size: 44px;
+	margin-bottom: 30px;
+	color: white;
+`;
+
+export const ChallengeSectionText = styled.div`
+	font-size: 24px;
+	color: white;
+`;
+
+export const Footer = styled.div`
+	background: #747474;
+	height: 200px;
 `;
