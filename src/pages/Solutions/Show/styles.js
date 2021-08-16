@@ -12,6 +12,13 @@ import esfera from './assets/meta/esfera.png';
 import financiamento from './assets/meta/financiamento.png';
 import investimento from './assets/meta/investimento.png';
 
+import alinhamento from './assets/meta/alinhamento.png';
+import faixa from './assets/meta/faixa.png';
+import impacto from './assets/meta/impacto.png';
+import regioes from './assets/meta/regioes.png';
+import setor from './assets/meta/setor.png';
+import tempo from './assets/meta/tempo.png';
+
 // const handleCardColor = (sectorTitle) => {
 // 	switch (sectorTitle) {
 // 		case 'Agropecuária':
@@ -70,6 +77,18 @@ const handleMetaIcon = (sectorTitle) => {
 			return `background-image: url(${financiamento});`;
 		case 'investimento':
 			return `background-image: url(${investimento});`;
+		case 'alinhamento':
+			return `background-image: url(${alinhamento});`;
+		case 'faixa':
+			return `background-image: url(${faixa});`;
+		case 'impacto':
+			return `background-image: url(${impacto});`;
+		case 'regioes':
+			return `background-image: url(${regioes});`;
+		case 'setor':
+			return `background-image: url(${setor});`;
+		case 'tempo':
+			return `background-image: url(${tempo});`;
 		default:
 			return `background-image: url(${investimento});`;
 	}
@@ -171,6 +190,7 @@ export const SectionMeta = styled.div`
 	flex-wrap: wrap;
 	padding: 60px 210px;
 `;
+
 export const SectionMetaItem = styled.div`
 	/* border: 1px solid #c9c9c9; */
 	margin: 0;
@@ -201,6 +221,52 @@ export const MetaTitle = styled.div`
 	color: #838d8b;
 `;
 export const MetaText = styled.div`
+	font-size: 26px;
+	color: #838d8b;
+`;
+
+export const SectionMeta2 = styled.div`
+	background: #ffffff;
+	min-height: 60vh;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 60px 210px;
+`;
+
+export const SectionMeta2Item = styled.div`
+	border: 10px solid;
+	border-image-slice: 1;
+	border-width: 5px;
+	border-image-source: linear-gradient(to bottom, #ec9742, #dd8a37);
+	margin: 0;
+	padding: 25px;
+	flex: 0 0 28%;
+	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+`;
+export const Meta2Icon = styled.div`
+	${({ metaTitle }) => handleMetaIcon(metaTitle)}
+	/* display: flex; */
+	height: 85px;
+	width: 130px;
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 28px;
+`;
+
+export const Meta2Title = styled.div`
+	font-size: 32px;
+	line-height: 32px;
+	font-weight: 500;
+	margin: 12px 0 24px 0;
+	color: #ec9742;
+`;
+export const Meta2Text = styled.div`
 	font-size: 26px;
 	color: #838d8b;
 `;

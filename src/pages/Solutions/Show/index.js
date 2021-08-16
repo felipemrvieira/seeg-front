@@ -20,6 +20,11 @@ import {
 	SolutionInfo,
 	SolutionNumber,
 	SolutionDescription,
+	SectionMeta2,
+	SectionMeta2Item,
+	Meta2Icon,
+	Meta2Title,
+	Meta2Text,
 } from './styles';
 import Nav from '../../../components/Nav';
 import api from '../../../services/api';
@@ -120,6 +125,38 @@ export default function Home() {
 					</MetaInfo>
 				</SectionMetaItem>
 			</SectionMeta>
+			<SectionMeta2>
+				<SectionMeta2Item>
+					<Meta2Icon metaTitle="faixa" />
+					<Meta2Title>Faixas populacionais aplicáveis</Meta2Title>
+					<Meta2Text>asdasdasd</Meta2Text>
+				</SectionMeta2Item>
+				<SectionMeta2Item>
+					<Meta2Icon metaTitle="regioes" />
+					<Meta2Title>Regiões apliáveis</Meta2Title>
+					<Meta2Text>asdasdasd</Meta2Text>
+				</SectionMeta2Item>
+				<SectionMeta2Item>
+					<Meta2Icon metaTitle="tempo" />
+					<Meta2Title>Tempo de implementação</Meta2Title>
+					<Meta2Text>asdasdasd</Meta2Text>
+				</SectionMeta2Item>
+				<SectionMeta2Item>
+					<Meta2Icon metaTitle="impacto" />
+					<Meta2Title>Impacto sobre s emissões</Meta2Title>
+					<Meta2Text>asdasdasd</Meta2Text>
+				</SectionMeta2Item>
+				<SectionMeta2Item>
+					<Meta2Icon metaTitle="setor" />
+					<Meta2Title>Setor Fundamental da solução</Meta2Title>
+					<Meta2Text>asdasdasd</Meta2Text>
+				</SectionMeta2Item>
+				<SectionMeta2Item>
+					<Meta2Icon metaTitle="alinhamento" />
+					<Meta2Title>Alinhamento com NDC</Meta2Title>
+					<Meta2Text>asdasdasd</Meta2Text>
+				</SectionMeta2Item>
+			</SectionMeta2>
 		</>
 	);
 }
