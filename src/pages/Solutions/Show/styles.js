@@ -19,6 +19,11 @@ import regioes from './assets/meta/regioes.png';
 import setor from './assets/meta/setor.png';
 import tempo from './assets/meta/tempo.png';
 
+import politicas from './assets/meta/politicas.png';
+import aplicacao from './assets/meta/aplicacao.png';
+import atuacao from './assets/meta/atuacao.png';
+import referencias from './assets/meta/referencias.png';
+
 import comunicacao from './assets/category/comunicacao.png';
 import educacao from './assets/category/educacao.png';
 import engajamento from './assets/category/engajamento.png';
@@ -167,6 +172,14 @@ const handleMetaIcon = (sectorTitle) => {
 			return `background-image: url(${ODS16});`;
 		case '17':
 			return `background-image: url(${ODS17});`;
+		case 'politicas':
+			return `background-image: url(${politicas});`;
+		case 'aplicacao':
+			return `background-image: url(${aplicacao});`;
+		case 'atuacao':
+			return `background-image: url(${atuacao});`;
+		case 'referencias':
+			return `background-image: url(${referencias});`;
 		default:
 			return `background-image: url(${investimento});`;
 	}
@@ -343,6 +356,7 @@ export const Meta2Title = styled.div`
 	font-weight: 500;
 	margin: 12px 0 24px 0;
 	color: #ec9742;
+	color: ${({ color }) => color}};
 `;
 export const Meta2Text = styled.div`
 	font-size: 26px;

@@ -269,6 +269,50 @@ export default function Home() {
 					</CobenefitsInfo>
 				</CobenefitsItem>
 			</CobenefitsSection>
+			<Section>
+				<SectionMeta2Item>
+					<Meta2Icon metaTitle="politicas" />
+					<Meta2Title color="#8e8d8b">
+						Políticas públicas orientadoras
+					</Meta2Title>
+					<Meta2Text>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at
+						deleniti fugit veritatis, dolor nisi modi eaque dolorum officiis,
+						laudantium quas asperiores itaque facilis explicabo fuga maxime illo
+						illum. Beatae?
+					</Meta2Text>
+				</SectionMeta2Item>
+				<SectionMeta2Item>
+					<Meta2Icon metaTitle="atuacao" />
+					<Meta2Title color="#8e8d8b">Modo de atuação do município</Meta2Title>
+					<Meta2Text>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at
+						deleniti fugit veritatis, dolor nisi modi eaque dolorum officiis,
+						laudantium quas asperiores itaque facilis explicabo fuga maxime illo
+						illum. Beatae?
+					</Meta2Text>
+				</SectionMeta2Item>
+				<SectionMeta2Item>
+					<Meta2Icon metaTitle="exemplo" />
+					<Meta2Title color="#8e8d8b">Exemplo de atuação municipal</Meta2Title>
+					<Meta2Text>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at
+						deleniti fugit veritatis, dolor nisi modi eaque dolorum officiis,
+						laudantium quas asperiores itaque facilis explicabo fuga maxime illo
+						illum. Beatae?
+					</Meta2Text>
+				</SectionMeta2Item>
+				<SectionMeta2Item>
+					<Meta2Icon metaTitle="referencias" />
+					<Meta2Title color="#8e8d8b">Referências técnicas</Meta2Title>
+					<Meta2Text>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at
+						deleniti fugit veritatis, dolor nisi modi eaque dolorum officiis,
+						laudantium quas asperiores itaque facilis explicabo fuga maxime illo
+						illum. Beatae?
+					</Meta2Text>
+				</SectionMeta2Item>
+			</Section>
 		</>
 	);
 }
