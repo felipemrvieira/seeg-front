@@ -19,6 +19,14 @@ import regioes from './assets/meta/regioes.png';
 import setor from './assets/meta/setor.png';
 import tempo from './assets/meta/tempo.png';
 
+import comunicacao from './assets/category/comunicacao.png';
+import educacao from './assets/category/educacao.png';
+import engajamento from './assets/category/engajamento.png';
+import infraestrutura from './assets/category/infraestrutura.png';
+import monitoramento from './assets/category/monitoramento.png';
+import planejamento from './assets/category/planejamento.png';
+import regramento from './assets/category/regramento.png';
+
 // const handleCardColor = (sectorTitle) => {
 // 	switch (sectorTitle) {
 // 		case 'Agropecuária':
@@ -89,6 +97,20 @@ const handleMetaIcon = (sectorTitle) => {
 			return `background-image: url(${setor});`;
 		case 'tempo':
 			return `background-image: url(${tempo});`;
+		case 'comunicacao':
+			return `background-image: url(${comunicacao});`;
+		case 'educacao':
+			return `background-image: url(${educacao});`;
+		case 'engajamento':
+			return `background-image: url(${engajamento});`;
+		case 'infraestrutura':
+			return `background-image: url(${infraestrutura});`;
+		case 'monitoramento':
+			return `background-image: url(${monitoramento});`;
+		case 'planejamento':
+			return `background-image: url(${planejamento});`;
+		case 'regramento':
+			return `background-image: url(${regramento});`;
 		default:
 			return `background-image: url(${investimento});`;
 	}
@@ -267,6 +289,50 @@ export const Meta2Title = styled.div`
 	color: #ec9742;
 `;
 export const Meta2Text = styled.div`
+	font-size: 26px;
+	color: #838d8b;
+`;
+
+export const CategorySection = styled.div`
+	background: #ffffff;
+	min-height: 60vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 60px 210px;
+`;
+export const CategorySectionTitle = styled.h3`
+	font-size: 42px;
+	color: #8e8b8d;
+`;
+
+export const CategoryItensWrapper = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+`;
+export const CategoryItem = styled.div`
+	margin: 0;
+	padding: 25px;
+	flex: 0 0 25%;
+	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+`;
+
+export const CategoryIcon = styled.div`
+	${({ categoryTitle }) => handleMetaIcon(categoryTitle)}
+	/* display: flex; */
+	height: 110px;
+	/* width: 130px; */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+`;
+
+export const CategoryText = styled.div`
 	font-size: 26px;
 	color: #838d8b;
 `;

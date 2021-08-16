@@ -25,6 +25,12 @@ import {
 	Meta2Icon,
 	Meta2Title,
 	Meta2Text,
+	CategorySection,
+	CategorySectionTitle,
+	CategoryItensWrapper,
+	CategoryItem,
+	CategoryIcon,
+	CategoryText,
 } from './styles';
 import Nav from '../../../components/Nav';
 import api from '../../../services/api';
@@ -157,6 +163,39 @@ export default function Home() {
 					<Meta2Text>asdasdasd</Meta2Text>
 				</SectionMeta2Item>
 			</SectionMeta2>
+			<CategorySection>
+				<CategorySectionTitle>Categoria da ação</CategorySectionTitle>
+				<CategoryItensWrapper>
+					<CategoryItem>
+						<CategoryIcon categoryTitle="comunicacao" />
+						<CategoryText>Comunicação</CategoryText>
+					</CategoryItem>
+					<CategoryItem>
+						<CategoryIcon categoryTitle="educacao" />
+						<CategoryText>Educação</CategoryText>
+					</CategoryItem>
+					<CategoryItem>
+						<CategoryIcon categoryTitle="engajamento" />
+						<CategoryText>Engajamento</CategoryText>
+					</CategoryItem>
+					<CategoryItem>
+						<CategoryIcon categoryTitle="infraestrutura" />
+						<CategoryText>infraestrutura</CategoryText>
+					</CategoryItem>
+					<CategoryItem>
+						<CategoryIcon categoryTitle="monitoramento" />
+						<CategoryText>Monitoramento</CategoryText>
+					</CategoryItem>
+					<CategoryItem>
+						<CategoryIcon categoryTitle="planejamento" />
+						<CategoryText>Planejamento</CategoryText>
+					</CategoryItem>
+					<CategoryItem>
+						<CategoryIcon categoryTitle="regramento" />
+						<CategoryText>Regramento</CategoryText>
+					</CategoryItem>
+				</CategoryItensWrapper>
+			</CategorySection>
 		</>
 	);
 }
