@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link as Anchor } from 'react-router-dom';
+// import { Link as Anchor } from 'react-router-dom';
 import { darken } from 'polished';
 
 import agroIcon from './assets/agro.png';
@@ -7,36 +7,41 @@ import energiaIcon from './assets/energia.png';
 import mutIcon from './assets/mut.png';
 import residuosIcon from './assets/residuos.png';
 
-const handleCardColor = (sectorTitle) => {
+import atores from './assets/meta/atores.png';
+import esfera from './assets/meta/esfera.png';
+import financiamento from './assets/meta/financiamento.png';
+import investimento from './assets/meta/investimento.png';
+
+// const handleCardColor = (sectorTitle) => {
+// 	switch (sectorTitle) {
+// 		case 'Agropecuária':
+// 			return 'background: #ed9742;';
+// 		case 'Energia elétrica':
+// 			return 'background: #d94b2b;';
+// 		case 'Transporte':
+// 			return 'background: #d94d6b;';
+// 		case 'MUT':
+// 			return 'background: #7cad41;';
+// 		case 'Resíduos':
+// 			return 'background: #6bb7bf;';
+// 		default:
+// 			return 'background: grey;';
+// 	}
+// };
+const handleDarkenColor = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
-			return 'background: #ed9742;';
+			return `${darken(0.15, '#ed9742')}`;
 		case 'Energia elétrica':
-			return 'background: #d94b2b;';
+			return `${darken(0.15, '#d94b2b')}`;
 		case 'Transporte':
-			return 'background: #d94d6b;';
+			return `${darken(0.15, '#d94d6b')}`;
 		case 'MUT':
-			return 'background: #7cad41;';
+			return `${darken(0.15, '#7cad41')}`;
 		case 'Resíduos':
-			return 'background: #6bb7bf;';
+			return `${darken(0.15, '#6bb7bf')}`;
 		default:
-			return 'background: grey;';
-	}
-};
-const handleBorderColor = (sectorTitle) => {
-	switch (sectorTitle) {
-		case 'Agropecuária':
-			return `border-color: ${darken(0.2, '#ed9742')} transparent;`;
-		case 'Energia elétrica':
-			return `border-color: ${darken(0.2, '#d94b2b')} transparent;`;
-		case 'Transporte':
-			return `border-color: ${darken(0.2, '#d94d6b')} transparent;`;
-		case 'MUT':
-			return `border-color: ${darken(0.2, '#7cad41')} transparent;`;
-		case 'Resíduos':
-			return `border-color: ${darken(0.2, '#6bb7bf')} transparent;`;
-		default:
-			return `border-color: ${darken(0.2, '#ed9742')} transparent;`;
+			return `${darken(0.15, '#ed9742')}`;
 	}
 };
 
@@ -55,138 +60,147 @@ const handleSectorIcon = (sectorTitle) => {
 	}
 };
 
-export const Background = styled.div`
-	background: #eeeeee;
-	min-height: 100vh;
+const handleMetaIcon = (sectorTitle) => {
+	switch (sectorTitle) {
+		case 'atores':
+			return `background-image: url(${atores});`;
+		case 'esfera':
+			return `background-image: url(${esfera});`;
+		case 'financiamento':
+			return `background-image: url(${financiamento});`;
+		case 'investimento':
+			return `background-image: url(${investimento});`;
+		default:
+			return `background-image: url(${investimento});`;
+	}
+};
+
+export const Header = styled.div`
+	background: #ed9742;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	padding: 32px 140px 96px 140px;
+	padding: 60px 210px;
 `;
-export const Solution = styled.div`
-	background: white;
-	margin: 22px 0;
+
+export const Sector = styled.div`
 	display: flex;
 	flex-direction: row;
-	padding: 36px;
 `;
-export const SolutionTagWrapper = styled.div`
-	position: absolute;
-`;
-export const SolutionTag = styled.div`
-	${({ sectorTitle }) => handleCardColor(sectorTitle)}
-	margin-right: 8px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	align-items: center;
-	padding: 32px;
-	width: 200px;
-	height: 200px;
-	flex-grow: 0;
-	flex-shrink: 0;
-	position: relative;
-	top: -54px;
-	&:after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: -18px;
-		border-width: 0 0 18px 18px;
-		border-style: solid;
-		${({ sectorTitle }) => handleBorderColor(sectorTitle)}
-	}
-
-	&:before {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: -18px;
-		border-width: 0px 18px 18px 0px;
-		border-style: solid;
-		border-color: ${darken(0.2, '#e98695')} transparent;
-	}
-`;
-
-export const SolutionIcon = styled.div`
+export const SectorIcon = styled.div`
 	${({ sectorTitle }) => handleSectorIcon(sectorTitle)}
 	display: flex;
-	height: 80px;
-	width: 109px;
+	height: 50px;
+	width: 70px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
+	margin-right: 32px;
 `;
-
-export const SectorTitle = styled.div`
-	margin-top: 12px;
-	color: white;
-	text-transform: uppercase;
-	color: white;
-	font-size: 24px;
-	line-height: 24px;
-	font-weight: 400;
-`;
-
-export const SolutionInfoWrapper = styled.div`
-	margin-left: 200px;
-	display: flex;
-	flex-direction: row;
-`;
-export const SolutionNumber = styled.div`
+export const SectorInfo = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin: 0 18px;
-
-	font-size: 28px;
+	color: white;
+`;
+export const SectorTitle = styled.div`
+	font-size: 50px;
+	font-weight: 600;
+	line-height: 45px;
+`;
+export const SubSectorWrapper = styled.div`
+	display: flex;
+	flex-direction: row;
+	margin-top: 24px;
+`;
+export const SubSector = styled.div`
+	background: ${({ sectorTitle }) => handleDarkenColor(sectorTitle)};
+	margin-right: 12px;
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 25px;
+	padding: 10px 22px;
 	font-weight: 500;
-	color: #5f6060;
+    font-size: 20px;
+}
 `;
 export const SolutionInfo = styled.div`
 	display: flex;
 	flex-direction: column;
+`;
+export const SolutionNumber = styled.div`
+	color: white;
+	font-size: 80px;
+`;
+export const SolutionDescription = styled.div`
+	color: white;
+	font-size: 50px;
+	line-height: 60px;
+`;
+
+export const Section = styled.div`
+	background: #ffffff;
+	min-height: 60vh;
 	margin: 0;
-`;
-export const SolutionTitle = styled.div`
-	color: #5f6060;
-	/* color: #8e8d8b; */
-	font-size: 26px;
-	line-height: 26px;
-	font-weight: 300;
-`;
-export const SolutionMetaInfoContainer = styled.div`
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin: 12px 0;
-`;
-export const SolutionMetaInfo = styled.div`
 	display: flex;
 	flex-direction: column;
-	background: #d9d8d8;
-	border-radius: 20px;
-	padding: 10px 32px;
-	margin-top: 6px;
-	margin-right: 24px;
+	padding: 60px 210px;
 `;
-
-export const SolutionMetaInfoLabel = styled.div`
-	font-size: 12px;
-	line-height: 10px;
-	color: #696869;
+export const SectionTitle = styled.h2`
+	color: #838d8b;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 40px;
+	font-size: 46px;
+	font-weight: 600;
 `;
-export const SolutionMetaInfoValue = styled.div`
+export const SectionParagraph = styled.p`
+	color: #838d8b;
+	padding: 0;
+	margin: 0;
 	font-size: 24px;
-	line-height: 22px;
-	color: #696869;
+	font-weight: 300;
 `;
 
-export const Link = styled(Anchor)`
-	color: #f28d49;
-	cursor: pointer;
-	text-decoration: underline;
-	&:hover {
-		color: #bf560f;
-	}
+export const SectionMeta = styled.div`
+	background: #f9f8f4;
+	min-height: 60vh;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 60px 210px;
+`;
+export const SectionMetaItem = styled.div`
+	/* border: 1px solid #c9c9c9; */
+	margin: 0;
+	padding: 32px;
+	flex: 0 0 49%;
+	display: flex;
+	flex-direction: row;
+`;
+export const MetaIcon = styled.div`
+	${({ metaTitle }) => handleMetaIcon(metaTitle)}
+	/* display: flex; */
+	/* height: 85px; */
+	width: 130px;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 28px;
+`;
+export const MetaInfo = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+export const MetaTitle = styled.div`
+	font-size: 32px;
+	line-height: 32px;
+	font-weight: 500;
+	margin: 12px 0 24px 0;
+	color: #838d8b;
+`;
+export const MetaText = styled.div`
+	font-size: 26px;
+	color: #838d8b;
 `;
