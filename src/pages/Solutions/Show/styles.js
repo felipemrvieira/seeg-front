@@ -27,6 +27,24 @@ import monitoramento from './assets/category/monitoramento.png';
 import planejamento from './assets/category/planejamento.png';
 import regramento from './assets/category/regramento.png';
 
+import ODS1 from './assets/ODS/ODS-1.svg';
+import ODS2 from './assets/ODS/ODS-2.svg';
+import ODS3 from './assets/ODS/ODS-3.svg';
+import ODS4 from './assets/ODS/ODS-4.svg';
+import ODS5 from './assets/ODS/ODS-5.svg';
+import ODS6 from './assets/ODS/ODS-6.svg';
+import ODS7 from './assets/ODS/ODS-7.svg';
+import ODS8 from './assets/ODS/ODS-8.svg';
+import ODS9 from './assets/ODS/ODS-9.svg';
+import ODS10 from './assets/ODS/ODS-10.svg';
+import ODS11 from './assets/ODS/ODS-11.svg';
+import ODS12 from './assets/ODS/ODS-12.svg';
+import ODS13 from './assets/ODS/ODS-13.svg';
+import ODS14 from './assets/ODS/ODS-14.svg';
+import ODS15 from './assets/ODS/ODS-15.svg';
+import ODS16 from './assets/ODS/ODS-16.svg';
+import ODS17 from './assets/ODS/ODS-17.svg';
+
 // const handleCardColor = (sectorTitle) => {
 // 	switch (sectorTitle) {
 // 		case 'Agropecuária':
@@ -111,6 +129,40 @@ const handleMetaIcon = (sectorTitle) => {
 			return `background-image: url(${planejamento});`;
 		case 'regramento':
 			return `background-image: url(${regramento});`;
+		case '1':
+			return `background-image: url(${ODS1});`;
+		case '2':
+			return `background-image: url(${ODS2});`;
+		case '3':
+			return `background-image: url(${ODS3});`;
+		case '4':
+			return `background-image: url(${ODS4});`;
+		case '5':
+			return `background-image: url(${ODS5});`;
+		case '6':
+			return `background-image: url(${ODS6});`;
+		case '7':
+			return `background-image: url(${ODS7});`;
+		case '8':
+			return `background-image: url(${ODS8});`;
+		case '9':
+			return `background-image: url(${ODS9});`;
+		case '10':
+			return `background-image: url(${ODS10});`;
+		case '11':
+			return `background-image: url(${ODS11});`;
+		case '12':
+			return `background-image: url(${ODS12});`;
+		case '13':
+			return `background-image: url(${ODS13});`;
+		case '14':
+			return `background-image: url(${ODS14});`;
+		case '15':
+			return `background-image: url(${ODS15});`;
+		case '16':
+			return `background-image: url(${ODS16});`;
+		case '17':
+			return `background-image: url(${ODS17});`;
 		default:
 			return `background-image: url(${investimento});`;
 	}
@@ -335,4 +387,44 @@ export const CategoryIcon = styled.div`
 export const CategoryText = styled.div`
 	font-size: 26px;
 	color: #838d8b;
+`;
+export const ODSSection = styled.div`
+	background: #ffffff;
+	min-height: 60vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 60px 210px;
+`;
+
+export const ODSSectionTitle = styled.h3`
+	font-size: 42px;
+	color: #8e8b8d;
+`;
+
+export const ODSItensWrapper = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 32px;
+`;
+export const ODSItem = styled.div`
+	margin: 0;
+	/* padding: 25px; */
+	flex: 0 0 25%;
+	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+`;
+
+export const ODSIcon = styled.div`
+	${({ ODSTitle }) => handleMetaIcon(ODSTitle)}
+	/* display: flex; */
+	height: 170px;
+	/* width: 130px; */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
 `;

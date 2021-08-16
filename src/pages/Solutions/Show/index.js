@@ -31,6 +31,11 @@ import {
 	CategoryItem,
 	CategoryIcon,
 	CategoryText,
+	ODSSection,
+	ODSSectionTitle,
+	ODSItensWrapper,
+	ODSItem,
+	ODSIcon,
 } from './styles';
 import Nav from '../../../components/Nav';
 import api from '../../../services/api';
@@ -196,6 +201,25 @@ export default function Home() {
 					</CategoryItem>
 				</CategoryItensWrapper>
 			</CategorySection>
+			<ODSSection>
+				<ODSSectionTitle>
+					Objetivos do desenvolvimento sustentável
+				</ODSSectionTitle>
+				<ODSItensWrapper>
+					<ODSItem>
+						<ODSIcon ODSTitle="5" />
+					</ODSItem>
+					<ODSItem>
+						<ODSIcon ODSTitle="11" />
+					</ODSItem>
+					<ODSItem>
+						<ODSIcon ODSTitle="13" />
+					</ODSItem>
+					<ODSItem>
+						<ODSIcon ODSTitle="15" />
+					</ODSItem>
+				</ODSItensWrapper>
+			</ODSSection>
 		</>
 	);
 }
