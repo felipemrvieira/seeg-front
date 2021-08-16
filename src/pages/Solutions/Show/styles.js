@@ -45,6 +45,10 @@ import ODS15 from './assets/ODS/ODS-15.svg';
 import ODS16 from './assets/ODS/ODS-16.svg';
 import ODS17 from './assets/ODS/ODS-17.svg';
 
+import ambientais from './assets/cobenefits/ambientais.png';
+import sociais from './assets/cobenefits/sociais.png';
+import economicos from './assets/cobenefits/economicos.png';
+
 // const handleCardColor = (sectorTitle) => {
 // 	switch (sectorTitle) {
 // 		case 'Agropecuária':
@@ -390,7 +394,7 @@ export const CategoryText = styled.div`
 `;
 export const ODSSection = styled.div`
 	background: #ffffff;
-	min-height: 60vh;
+	/* min-height: 60vh; */
 	margin: 0;
 	display: flex;
 	flex-direction: column;
@@ -427,4 +431,74 @@ export const ODSIcon = styled.div`
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
+`;
+
+export const CobenefitsSection = styled.div`
+	background: #f9f8f4;
+	min-height: 60vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 60px 210px;
+`;
+
+export const CobenefitsSectionTitle = styled.h3`
+	font-size: 44px;
+	margin-bottom: 24px;
+	color: #8e8b8d;
+`;
+
+export const CobenefitsItem = styled.div`
+	/* border: 1px solid #c9c9c9; */
+	margin: 0;
+	/* padding: 32px; */
+	margin: 23px 0;
+	flex: 0 0 49%;
+	display: flex;
+	flex-direction: row;
+`;
+export const SocialCobenefitsIcon = styled.div`
+	background-image: url(${sociais});
+	/* display: flex; */
+	/* height: 85px; */
+	width: 225px;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 20px;
+`;
+export const EconomicCobenefitsIcon = styled.div`
+	background-image: url(${economicos});
+	/* display: flex; */
+	/* height: 85px; */
+	width: 225px;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 20px;
+`;
+export const EnvironmentalCobenefitsIcon = styled.div`
+	background-image: url(${ambientais});
+	/* display: flex; */
+	/* height: 85px; */
+	width: 225px;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 20px;
+`;
+export const CobenefitsInfo = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+export const CobenefitsTitle = styled.div`
+	font-size: 36px;
+	line-height: 32px;
+	font-weight: 500;
+	margin: 12px 0 24px 0;
+	color: #838d8b;
+`;
+export const CobenefitsText = styled.div`
+	font-size: 24px;
+	color: #838d8b;
 `;

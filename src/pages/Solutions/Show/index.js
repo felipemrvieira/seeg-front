@@ -36,6 +36,15 @@ import {
 	ODSItensWrapper,
 	ODSItem,
 	ODSIcon,
+	CobenefitsSection,
+	CobenefitsSectionTitle,
+	CobenefitsItem,
+	SocialCobenefitsIcon,
+	EnvironmentalCobenefitsIcon,
+	EconomicCobenefitsIcon,
+	CobenefitsInfo,
+	CobenefitsTitle,
+	CobenefitsText,
 } from './styles';
 import Nav from '../../../components/Nav';
 import api from '../../../services/api';
@@ -220,6 +229,46 @@ export default function Home() {
 					</ODSItem>
 				</ODSItensWrapper>
 			</ODSSection>
+
+			<CobenefitsSection>
+				<CobenefitsSectionTitle>Cobenefícios</CobenefitsSectionTitle>
+				<CobenefitsItem>
+					<EnvironmentalCobenefitsIcon />
+					<CobenefitsInfo>
+						<CobenefitsTitle>Ambientais</CobenefitsTitle>
+						<CobenefitsText>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Distinctio magni illo possimus impedit officia. Voluptatum
+							accusamus, dignissimos placeat molestiae eius optio in, hic
+							ducimus, dolore distinctio et doloribus sequi accusantium.
+						</CobenefitsText>
+					</CobenefitsInfo>
+				</CobenefitsItem>
+				<CobenefitsItem>
+					<SocialCobenefitsIcon />
+					<CobenefitsInfo>
+						<CobenefitsTitle>Sociais</CobenefitsTitle>
+						<CobenefitsText>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Distinctio magni illo possimus impedit officia. Voluptatum
+							accusamus, dignissimos placeat molestiae eius optio in, hic
+							ducimus, dolore distinctio et doloribus sequi accusantium.
+						</CobenefitsText>
+					</CobenefitsInfo>
+				</CobenefitsItem>
+				<CobenefitsItem>
+					<EconomicCobenefitsIcon />
+					<CobenefitsInfo>
+						<CobenefitsTitle>Econômicos</CobenefitsTitle>
+						<CobenefitsText>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Distinctio magni illo possimus impedit officia. Voluptatum
+							accusamus, dignissimos placeat molestiae eius optio in, hic
+							ducimus, dolore distinctio et doloribus sequi accusantium.
+						</CobenefitsText>
+					</CobenefitsInfo>
+				</CobenefitsItem>
+			</CobenefitsSection>
 		</>
 	);
 }
