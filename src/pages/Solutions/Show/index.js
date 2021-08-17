@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {
+	solutionOfHelper,
+	sphereHelper,
+	sectorHelper,
+	impactHelper,
+	regionHelper,
+	rangeHelper,
+} from '../../../helpers';
+import {
 	Header,
 	Section,
 	SectionTitle,
@@ -58,7 +66,9 @@ import api from '../../../services/api';
 
 export default function Home() {
 	const { id } = useParams();
-	const [solution, setSolution] = useState([]);
+	const [solution, setSolution] = useState({
+		sustainable_development_goals: [],
+	});
 	async function loadSolution() {
 		try {
 			const response = await api.get(`/solutions/${id}`);
@@ -72,6 +82,8 @@ export default function Home() {
 		loadSolution();
 	}, []);
 
+	console.log(solution);
+	// const odsGoals = solution.sustainable_development_goals || [''];
 	return (
 		<>
 			<Nav />
@@ -95,7 +107,9 @@ export default function Home() {
 				</SolutionInfo>
 			</Header>
 			<Section>
-				<SectionTitle>Solução de {solution.solution_of}</SectionTitle>
+				<SectionTitle>
+					Solução de {solutionOfHelper(solution.solution_of)}
+				</SectionTitle>
 				<SectionParagraph
 					dangerouslySetInnerHTML={{
 						__html: solution.description,
@@ -109,7 +123,7 @@ export default function Home() {
 						<MetaTitle>Esfera administrativa de competencia</MetaTitle>
 						<MetaText
 							dangerouslySetInnerHTML={{
-								__html: solution.sphere,
+								__html: sphereHelper(solution.sphere),
 							}}
 						/>
 					</MetaInfo>
@@ -154,7 +168,7 @@ export default function Home() {
 					<Meta2Title>Faixas populacionais aplicáveis</Meta2Title>
 					<Meta2Text
 						dangerouslySetInnerHTML={{
-							__html: solution.applicable_population_ranges,
+							__html: rangeHelper(solution.applicable_population_ranges),
 						}}
 					/>
 				</SectionMeta2Item>
@@ -163,7 +177,7 @@ export default function Home() {
 					<Meta2Title>Regiões apliáveis</Meta2Title>
 					<Meta2Text
 						dangerouslySetInnerHTML={{
-							__html: solution.applicable_regions,
+							__html: regionHelper(solution.applicable_regions),
 						}}
 					/>
 				</SectionMeta2Item>
@@ -181,7 +195,7 @@ export default function Home() {
 					<Meta2Title>Impacto sobre as emissões</Meta2Title>
 					<Meta2Text
 						dangerouslySetInnerHTML={{
-							__html: solution.impact_on_emissions,
+							__html: impactHelper(solution.impact_on_emissions),
 						}}
 					/>
 				</SectionMeta2Item>
@@ -190,7 +204,7 @@ export default function Home() {
 					<Meta2Title>Setor Fundamental da solução</Meta2Title>
 					<Meta2Text
 						dangerouslySetInnerHTML={{
-							__html: solution.fundamental_sector,
+							__html: sectorHelper(solution.fundamental_sector),
 						}}
 					/>
 				</SectionMeta2Item>
@@ -222,7 +236,7 @@ export default function Home() {
 					</CategoryItem>
 					<CategoryItem>
 						<CategoryIcon categoryTitle="infraestrutura" />
-						<CategoryText>infraestrutura</CategoryText>
+						<CategoryText>Infraestrutura</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
 						<CategoryIcon categoryTitle="monitoramento" />
@@ -242,20 +256,12 @@ export default function Home() {
 				<ODSSectionTitle>
 					Objetivos do desenvolvimento sustentável
 				</ODSSectionTitle>
-				{solution.sustainable_development_goals}
 				<ODSItensWrapper>
-					<ODSItem>
-						<ODSIcon ODSTitle="5" />
-					</ODSItem>
-					<ODSItem>
-						<ODSIcon ODSTitle="11" />
-					</ODSItem>
-					<ODSItem>
-						<ODSIcon ODSTitle="13" />
-					</ODSItem>
-					<ODSItem>
-						<ODSIcon ODSTitle="15" />
-					</ODSItem>
+					{solution.sustainable_development_goals.map((ods) => (
+						<ODSItem key={ods}>
+							<ODSIcon ODSTitle={ods} />
+						</ODSItem>
+					))}
 				</ODSItensWrapper>
 			</ODSSection>
 

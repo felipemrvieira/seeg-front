@@ -105,6 +105,7 @@ const handleSectorIcon = (sectorTitle) => {
 };
 
 const handleMetaIcon = (sectorTitle) => {
+	// console.log(sectorTitle);
 	switch (sectorTitle) {
 		case 'atores':
 			return `background-image: url(${atores});`;
@@ -140,39 +141,39 @@ const handleMetaIcon = (sectorTitle) => {
 			return `background-image: url(${planejamento});`;
 		case 'regramento':
 			return `background-image: url(${regramento});`;
-		case '1':
+		case 'ods_01':
 			return `background-image: url(${ODS1});`;
-		case '2':
+		case 'ods_02':
 			return `background-image: url(${ODS2});`;
-		case '3':
+		case 'ods_03':
 			return `background-image: url(${ODS3});`;
-		case '4':
+		case 'ods_04':
 			return `background-image: url(${ODS4});`;
-		case '5':
+		case 'ods_05':
 			return `background-image: url(${ODS5});`;
-		case '6':
+		case 'ods_06':
 			return `background-image: url(${ODS6});`;
-		case '7':
+		case 'ods_07':
 			return `background-image: url(${ODS7});`;
-		case '8':
+		case 'ods_08':
 			return `background-image: url(${ODS8});`;
-		case '9':
+		case 'ods_09':
 			return `background-image: url(${ODS9});`;
-		case '10':
+		case 'ods_10':
 			return `background-image: url(${ODS10});`;
-		case '11':
+		case 'ods_11':
 			return `background-image: url(${ODS11});`;
-		case '12':
+		case 'ods_12':
 			return `background-image: url(${ODS12});`;
-		case '13':
+		case 'ods_13':
 			return `background-image: url(${ODS13});`;
-		case '14':
+		case 'ods_14':
 			return `background-image: url(${ODS14});`;
-		case '15':
+		case 'ods_15':
 			return `background-image: url(${ODS15});`;
-		case '16':
+		case 'ods_16':
 			return `background-image: url(${ODS16});`;
-		case '17':
+		case 'ods_17':
 			return `background-image: url(${ODS17});`;
 		case 'politicas':
 			return `background-image: url(${politicas});`;
@@ -570,5 +571,5 @@ export const ChallengeSectionText = styled.div`
 
 export const Footer = styled.div`
 	background: #747474;
-	height: 200px;
+	height: 62px;
 `;
