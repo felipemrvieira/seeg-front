@@ -57,7 +57,7 @@ import api from '../../../services/api';
 
 export default function Home() {
 	const { id } = useParams();
-	const [, setSolution] = useState([]);
+	const [solution, setSolution] = useState([]);
 	async function loadSolution() {
 		try {
 			const response = await api.get(`/solutions/${id}`);
@@ -89,64 +89,61 @@ export default function Home() {
 					</SectorInfo>
 				</Sector>
 				<SolutionInfo>
-					<SolutionNumber>12</SolutionNumber>
-					<SolutionDescription>
-						Incluir o zoneamento agropecuário e Lorem ipsum dolor, sit amet.
-					</SolutionDescription>
+					<SolutionNumber>{solution.number}</SolutionNumber>
+					<SolutionDescription>{solution.title}</SolutionDescription>
 				</SolutionInfo>
 			</Header>
 			<Section>
-				<SectionTitle>Solução de mitigação e adaptação</SectionTitle>
-				<SectionParagraph>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla placeat
-					est perspiciatis ratione iure rem voluptas omnis in adipisci? Itaque,
-					voluptatum. Quasi deserunt corrupti odit doloribus dolores expedita
-					dicta voluptatem. Odio quia repudiandae veritatis vitae repellendus
-					cupiditate tempore odit ratione nostrum deserunt numquam excepturi
-					natus saepe error laudantium doloribus, tenetur ab cumque at,
-					assumenda quidem maiores earum! Cum, itaque animi! Quaerat, eius
-					sapiente, repellendus eos minus corrupti vel et nostrum magni
-					molestiae aliquam quo atque excepturi, laborum natus? Fuga, nobis
-					debitis illum laudantium vel vero? Qui minima modi quisquam? Impedit.
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla placeat
-					est perspiciatis ratione iure rem voluptas omnis in adipisci? Itaque,
-					voluptatum. Quasi deserunt corrupti odit doloribus dolores expedita
-					dicta voluptatem. Odio quia repudiandae veritatis vitae repellendus
-					cupiditate tempore odit ratione nostrum deserunt numquam excepturi
-					natus saepe error laudantium doloribus, tenetur ab cumque at,
-					assumenda quidem maiores earum! Cum, itaque animi! Quaerat, eius
-					sapiente, repellendus eos minus corrupti vel et nostrum magni
-					molestiae aliquam quo atque excepturi, laborum natus? Fuga, nobis
-					debitis illum laudantium vel vero? Qui minima modi quisquam? Impedit.
-				</SectionParagraph>
+				<SectionTitle>Solução de {solution.solution_of}</SectionTitle>
+				<SectionParagraph
+					dangerouslySetInnerHTML={{
+						__html: solution.description,
+					}}
+				/>
 			</Section>
 			<SectionMeta>
 				<SectionMetaItem>
 					<MetaIcon metaTitle="esfera" />
 					<MetaInfo>
 						<MetaTitle>Esfera administrativa de competencia</MetaTitle>
-						<MetaText>Transversal</MetaText>
+						<MetaText
+							dangerouslySetInnerHTML={{
+								__html: solution.sphere,
+							}}
+						/>
 					</MetaInfo>
 				</SectionMetaItem>
 				<SectionMetaItem>
 					<MetaIcon metaTitle="investimento" />
 					<MetaInfo>
 						<MetaTitle>Investimento necessário</MetaTitle>
-						<MetaText>Transversal</MetaText>
+						<MetaText
+							dangerouslySetInnerHTML={{
+								__html: solution.necessary_investment,
+							}}
+						/>
 					</MetaInfo>
 				</SectionMetaItem>
 				<SectionMetaItem>
 					<MetaIcon metaTitle="financiamento" />
 					<MetaInfo>
 						<MetaTitle>Financiamento</MetaTitle>
-						<MetaText>Transversal</MetaText>
+						<MetaText
+							dangerouslySetInnerHTML={{
+								__html: solution.financing,
+							}}
+						/>
 					</MetaInfo>
 				</SectionMetaItem>
 				<SectionMetaItem>
 					<MetaIcon metaTitle="atores" />
 					<MetaInfo>
 						<MetaTitle>Atores-chave</MetaTitle>
-						<MetaText>Transversal</MetaText>
+						<MetaText
+							dangerouslySetInnerHTML={{
+								__html: solution.key_actors,
+							}}
+						/>
 					</MetaInfo>
 				</SectionMetaItem>
 			</SectionMeta>
@@ -154,36 +151,61 @@ export default function Home() {
 				<SectionMeta2Item>
 					<Meta2Icon metaTitle="faixa" />
 					<Meta2Title>Faixas populacionais aplicáveis</Meta2Title>
-					<Meta2Text>asdasdasd</Meta2Text>
+					<Meta2Text
+						dangerouslySetInnerHTML={{
+							__html: solution.applicable_population_ranges,
+						}}
+					/>
 				</SectionMeta2Item>
 				<SectionMeta2Item>
 					<Meta2Icon metaTitle="regioes" />
 					<Meta2Title>Regiões apliáveis</Meta2Title>
-					<Meta2Text>asdasdasd</Meta2Text>
+					<Meta2Text
+						dangerouslySetInnerHTML={{
+							__html: solution.applicable_regions,
+						}}
+					/>
 				</SectionMeta2Item>
 				<SectionMeta2Item>
 					<Meta2Icon metaTitle="tempo" />
 					<Meta2Title>Tempo de implementação</Meta2Title>
-					<Meta2Text>asdasdasd</Meta2Text>
+					<Meta2Text
+						dangerouslySetInnerHTML={{
+							__html: solution.implementation_time,
+						}}
+					/>
 				</SectionMeta2Item>
 				<SectionMeta2Item>
 					<Meta2Icon metaTitle="impacto" />
-					<Meta2Title>Impacto sobre s emissões</Meta2Title>
-					<Meta2Text>asdasdasd</Meta2Text>
+					<Meta2Title>Impacto sobre as emissões</Meta2Title>
+					<Meta2Text
+						dangerouslySetInnerHTML={{
+							__html: solution.impact_on_emissions,
+						}}
+					/>
 				</SectionMeta2Item>
 				<SectionMeta2Item>
 					<Meta2Icon metaTitle="setor" />
 					<Meta2Title>Setor Fundamental da solução</Meta2Title>
-					<Meta2Text>asdasdasd</Meta2Text>
+					<Meta2Text
+						dangerouslySetInnerHTML={{
+							__html: solution.fundamental_sector,
+						}}
+					/>
 				</SectionMeta2Item>
 				<SectionMeta2Item>
 					<Meta2Icon metaTitle="alinhamento" />
 					<Meta2Title>Alinhamento com NDC</Meta2Title>
-					<Meta2Text>asdasdasd</Meta2Text>
+					<Meta2Text
+						dangerouslySetInnerHTML={{
+							__html: solution.alignment_with_ndc,
+						}}
+					/>
 				</SectionMeta2Item>
 			</SectionMeta2>
 			<CategorySection>
 				<CategorySectionTitle>Categoria da ação</CategorySectionTitle>
+				{solution.action_category}
 				<CategoryItensWrapper>
 					<CategoryItem>
 						<CategoryIcon categoryTitle="comunicacao" />
@@ -219,6 +241,7 @@ export default function Home() {
 				<ODSSectionTitle>
 					Objetivos do desenvolvimento sustentável
 				</ODSSectionTitle>
+				{solution.sustainable_development_goals}
 				<ODSItensWrapper>
 					<ODSItem>
 						<ODSIcon ODSTitle="5" />
@@ -241,36 +264,33 @@ export default function Home() {
 					<EnvironmentalCobenefitsIcon />
 					<CobenefitsInfo>
 						<CobenefitsTitle>Ambientais</CobenefitsTitle>
-						<CobenefitsText>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Distinctio magni illo possimus impedit officia. Voluptatum
-							accusamus, dignissimos placeat molestiae eius optio in, hic
-							ducimus, dolore distinctio et doloribus sequi accusantium.
-						</CobenefitsText>
+						<CobenefitsText
+							dangerouslySetInnerHTML={{
+								__html: solution.environmental_cobenefits,
+							}}
+						/>
 					</CobenefitsInfo>
 				</CobenefitsItem>
 				<CobenefitsItem>
 					<SocialCobenefitsIcon />
 					<CobenefitsInfo>
 						<CobenefitsTitle>Sociais</CobenefitsTitle>
-						<CobenefitsText>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Distinctio magni illo possimus impedit officia. Voluptatum
-							accusamus, dignissimos placeat molestiae eius optio in, hic
-							ducimus, dolore distinctio et doloribus sequi accusantium.
-						</CobenefitsText>
+						<CobenefitsText
+							dangerouslySetInnerHTML={{
+								__html: solution.social_cobenefits,
+							}}
+						/>
 					</CobenefitsInfo>
 				</CobenefitsItem>
 				<CobenefitsItem>
 					<EconomicCobenefitsIcon />
 					<CobenefitsInfo>
 						<CobenefitsTitle>Econômicos</CobenefitsTitle>
-						<CobenefitsText>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Distinctio magni illo possimus impedit officia. Voluptatum
-							accusamus, dignissimos placeat molestiae eius optio in, hic
-							ducimus, dolore distinctio et doloribus sequi accusantium.
-						</CobenefitsText>
+						<CobenefitsText
+							dangerouslySetInnerHTML={{
+								__html: solution.economic_cobenefits,
+							}}
+						/>
 					</CobenefitsInfo>
 				</CobenefitsItem>
 			</CobenefitsSection>
@@ -280,63 +300,46 @@ export default function Home() {
 					<Meta2Title color="#8e8d8b">
 						Políticas públicas orientadoras
 					</Meta2Title>
-					<Meta2Text>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at
-						deleniti fugit veritatis, dolor nisi modi eaque dolorum officiis,
-						laudantium quas asperiores itaque facilis explicabo fuga maxime illo
-						illum. Beatae?
-					</Meta2Text>
+					<Meta2Text
+						dangerouslySetInnerHTML={{
+							__html: solution.guiding_public_policies,
+						}}
+					/>
 				</SectionMeta2Item>
 				<SectionMeta2Item>
 					<Meta2Icon metaTitle="atuacao" />
 					<Meta2Title color="#8e8d8b">Modo de atuação do município</Meta2Title>
-					<Meta2Text>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at
-						deleniti fugit veritatis, dolor nisi modi eaque dolorum officiis,
-						laudantium quas asperiores itaque facilis explicabo fuga maxime illo
-						illum. Beatae?
-					</Meta2Text>
+					<Meta2Text
+						dangerouslySetInnerHTML={{
+							__html: solution.municipal_operating_mode,
+						}}
+					/>
 				</SectionMeta2Item>
 				<SectionMeta2Item>
 					<Meta2Icon metaTitle="exemplo" />
 					<Meta2Title color="#8e8d8b">Exemplo de atuação municipal</Meta2Title>
-					<Meta2Text>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at
-						deleniti fugit veritatis, dolor nisi modi eaque dolorum officiis,
-						laudantium quas asperiores itaque facilis explicabo fuga maxime illo
-						illum. Beatae?
-					</Meta2Text>
+					<Meta2Text
+						dangerouslySetInnerHTML={{
+							__html: solution.examples_of_municipal_application,
+						}}
+					/>
 				</SectionMeta2Item>
 				<SectionMeta2Item>
 					<Meta2Icon metaTitle="referencias" />
 					<Meta2Title color="#8e8d8b">Referências técnicas</Meta2Title>
-					<Meta2Text>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at
-						deleniti fugit veritatis, dolor nisi modi eaque dolorum officiis,
-						laudantium quas asperiores itaque facilis explicabo fuga maxime illo
-						illum. Beatae?
-					</Meta2Text>
+					<Meta2Text
+						dangerouslySetInnerHTML={{ __html: solution.technical_references }}
+					/>
 				</SectionMeta2Item>
 			</Section>
 			<ChallengeSection>
 				<ChallengeSectionIcon />
 				<ChallengeSectionTitle>Desafios</ChallengeSectionTitle>
-				<ChallengeSectionText>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odit
-					libero, temporibus veritatis eos non, placeat quibusdam sapiente, fuga
-					deleniti optio excepturi velit dolores? Laborum dolorum accusantium
-					tenetur quaerat veniam. Lorem ipsum dolor sit amet consectetur
-					adipisicing elit. Numquam corrupti rem harum doloribus minus adipisci
-					doloremque quae consectetur. Labore, cum sunt. Numquam deleniti enim,
-					doloribus laudantium est esse inventore aperiam? Lorem ipsum dolor sit
-					amet consectetur adipisicing elit. Magni, excepturi velit. Reiciendis,
-					rem enim pariatur expedita minus distinctio voluptas eum, quaerat,
-					illum unde necessitatibus asperiores? Ratione, quod soluta. Molestiae,
-					est. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
-					explicabo neque modi, consectetur quaerat atque expedita odio.
-					Assumenda, fuga veniam saepe eligendi voluptatem debitis earum
-					praesentium inventore quidem sit aspernatur.
-				</ChallengeSectionText>
+				<ChallengeSectionText
+					dangerouslySetInnerHTML={{
+						__html: solution.challenges,
+					}}
+				/>
 			</ChallengeSection>
 			<Footer />
 		</>
