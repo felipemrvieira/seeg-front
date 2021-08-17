@@ -105,7 +105,7 @@ export const SolutionTag = styled.div`
 		right: -18px;
 		border-width: 0px 18px 18px 0px;
 		border-style: solid;
-		border-color: ${darken(0.2, '#e98695')} transparent;
+		${({ sectorTitle }) => handleBorderColor(sectorTitle)}
 	}
 `;
 
@@ -166,9 +166,9 @@ export const SolutionMetaInfo = styled.div`
 	flex-direction: column;
 	background: #d9d8d8;
 	border-radius: 20px;
-	padding: 10px 32px;
+	padding: 10px 28px;
 	margin-top: 6px;
-	margin-right: 24px;
+	margin-right: 18px;
 `;
 
 export const SolutionMetaInfoLabel = styled.div`
@@ -177,7 +177,7 @@ export const SolutionMetaInfoLabel = styled.div`
 	color: #696869;
 `;
 export const SolutionMetaInfoValue = styled.div`
-	font-size: 24px;
+	font-size: 22px;
 	line-height: 22px;
 	color: #696869;
 `;
@@ -189,4 +189,9 @@ export const Link = styled(Anchor)`
 	&:hover {
 		color: #bf560f;
 	}
+`;
+
+export const Footer = styled.div`
+	background: #747474;
+	height: 62px;
 `;

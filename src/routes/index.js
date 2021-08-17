@@ -1,5 +1,6 @@
-import React from 'react';
-import { Switch } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useLocation, Switch } from 'react-router-dom';
+
 import Route from './Route';
 
 // Open routes
@@ -15,6 +16,12 @@ import AdminSolutionsShow from '../pages/Admin/Solution/Show';
 import AdminUserSignIn from '../pages/Admin/User/SignIn';
 
 export default function Routes() {
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
 	return (
 		<Switch>
 			<Route path="/" exact component={Home} />

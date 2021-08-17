@@ -15,7 +15,9 @@ import {
 	SolutionMetaInfoLabel,
 	SolutionMetaInfoValue,
 	Link,
+	Footer,
 } from './styles';
+import { solutionOfHelper, sectorHelper, impactHelper } from '../../../helpers';
 import Nav from '../../../components/Nav';
 import api from '../../../services/api';
 import ScrollReveal from '../../../components/MunicipalSolutions/ScrollReveal';
@@ -26,7 +28,6 @@ export default function Home() {
 		try {
 			const response = await api.get('/solutions');
 			setSolutions(response.data);
-			console.log(solutions);
 		} catch (err) {
 			// console.tron.log(err);
 		}
@@ -59,23 +60,21 @@ export default function Home() {
 												Tipo de ação
 											</SolutionMetaInfoLabel>
 											<SolutionMetaInfoValue>
-												{solution.impact_on_emissions}
+												{solutionOfHelper(solution.solution_of)}
+											</SolutionMetaInfoValue>
+										</SolutionMetaInfo>
+										<SolutionMetaInfo>
+											<SolutionMetaInfoLabel>Potencial</SolutionMetaInfoLabel>
+											<SolutionMetaInfoValue>
+												{impactHelper(solution.impact_on_emissions)}
 											</SolutionMetaInfoValue>
 										</SolutionMetaInfo>
 										<SolutionMetaInfo>
 											<SolutionMetaInfoLabel>
-												Tipo de ação
+												Setores fundamentais
 											</SolutionMetaInfoLabel>
 											<SolutionMetaInfoValue>
-												{solution.impact_on_emissions}
-											</SolutionMetaInfoValue>
-										</SolutionMetaInfo>
-										<SolutionMetaInfo>
-											<SolutionMetaInfoLabel>
-												Tipo de ação
-											</SolutionMetaInfoLabel>
-											<SolutionMetaInfoValue>
-												{solution.impact_on_emissions}
+												{sectorHelper(solution.fundamental_sector)}
 											</SolutionMetaInfoValue>
 										</SolutionMetaInfo>
 									</SolutionMetaInfoContainer>
@@ -88,6 +87,7 @@ export default function Home() {
 					</ScrollReveal>
 				))}
 			</Background>
+			<Footer />
 		</>
 	);
 }
