@@ -56,22 +56,22 @@ import economicos from './assets/cobenefits/economicos.png';
 
 import desafios from './assets/desafios.png';
 
-// const handleCardColor = (sectorTitle) => {
-// 	switch (sectorTitle) {
-// 		case 'Agropecuária':
-// 			return 'background: #ed9742;';
-// 		case 'Energia elétrica':
-// 			return 'background: #d94b2b;';
-// 		case 'Transporte':
-// 			return 'background: #d94d6b;';
-// 		case 'MUT':
-// 			return 'background: #7cad41;';
-// 		case 'Resíduos':
-// 			return 'background: #6bb7bf;';
-// 		default:
-// 			return 'background: grey;';
-// 	}
-// };
+const handleColor = (sectorTitle) => {
+	switch (sectorTitle) {
+		case 'Agropecuária':
+			return 'background: #ed9742;';
+		case 'Energia elétrica':
+			return 'background: #d94b2b;';
+		case 'Transporte':
+			return 'background: #d94d6b;';
+		case 'MUT':
+			return 'background: #7cad41;';
+		case 'Resíduos':
+			return 'background: #6bb7bf;';
+		default:
+			return 'background: grey;';
+	}
+};
 const handleDarkenColor = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
@@ -189,7 +189,8 @@ const handleMetaIcon = (sectorTitle) => {
 };
 
 export const Header = styled.div`
-	background: #ed9742;
+	/* background: #ed9742; */
+	${({ sectorTitle }) => handleColor(sectorTitle)};
 	margin: 0;
 	display: flex;
 	flex-direction: column;

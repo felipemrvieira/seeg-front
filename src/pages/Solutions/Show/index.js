@@ -87,17 +87,15 @@ export default function Home() {
 	return (
 		<>
 			<Nav />
-			<Header>
+			<Header sectorTitle="MUT">
 				<Sector>
-					<SectorIcon sectorTitle="Agropecuária" />
+					<SectorIcon sectorTitle="MUT" />
 					<SectorInfo>
-						<SectorTitle>Agropecuária</SectorTitle>
+						<SectorTitle>MUT</SectorTitle>
 						<SubSectorWrapper>
-							<SubSector sectorTitle="Agropecuária">Cultivo de arroz</SubSector>
-							<SubSector sectorTitle="Agropecuária">
-								Fermentação entèrica
-							</SubSector>
-							<SubSector sectorTitle="Agropecuária">Solos manejados</SubSector>
+							<SubSector sectorTitle="MUT">Cultivo de arroz</SubSector>
+							<SubSector sectorTitle="MUT">Fermentação entèrica</SubSector>
+							<SubSector sectorTitle="MUT">Solos manejados</SubSector>
 						</SubSectorWrapper>
 					</SectorInfo>
 				</Sector>
