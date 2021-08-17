@@ -294,9 +294,10 @@ export const SectionMetaItem = styled.div`
 `;
 export const MetaIcon = styled.div`
 	${({ metaTitle }) => handleMetaIcon(metaTitle)}
-	/* display: flex; */
+	display: flex;
+	flex-shrink: 0;
 	/* height: 85px; */
-	width: 130px;
+	width: 100px;
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -336,8 +337,22 @@ export const SectionMeta2Item = styled.div`
 	border-image-source: linear-gradient(to bottom, #ec9742, #dd8a37);
 	margin: 0;
 	padding: 25px;
-	flex: 0 0 28%;
+	/* flex: 0 0 28%; */
+	width: 28%;
 	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+`;
+export const SectionMeta2FullWidthItem = styled.div`
+	border: 10px solid;
+	border-image-slice: 1;
+	border-width: 5px;
+	border-image-source: linear-gradient(to bottom, #ec9742, #dd8a37);
+	margin: 0;
+	padding: 25px;
+	/* flex: 0 0 28%; */
+	width: 100%;
+	margin-bottom: 44px;
 	display: flex;
 	flex-direction: column;
 `;
@@ -364,6 +379,7 @@ export const Meta2Title = styled.div`
 export const Meta2Text = styled.div`
 	font-size: 26px;
 	color: #8e8d8b;
+	overflow: hidden;
 `;
 
 export const CategorySection = styled.div`
@@ -476,9 +492,10 @@ export const CobenefitsItem = styled.div`
 `;
 export const SocialCobenefitsIcon = styled.div`
 	background-image: url(${sociais});
-	/* display: flex; */
+	display: flex;
 	/* height: 85px; */
-	width: 225px;
+	width: 110px;
+	flex-shrink: 0;
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -486,9 +503,10 @@ export const SocialCobenefitsIcon = styled.div`
 `;
 export const EconomicCobenefitsIcon = styled.div`
 	background-image: url(${economicos});
-	/* display: flex; */
+	display: flex;
 	/* height: 85px; */
-	width: 225px;
+	width: 110px;
+	flex-shrink: 0;
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -496,9 +514,10 @@ export const EconomicCobenefitsIcon = styled.div`
 `;
 export const EnvironmentalCobenefitsIcon = styled.div`
 	background-image: url(${ambientais});
-	/* display: flex; */
+	display: flex;
 	/* height: 85px; */
-	width: 225px;
+	width: 110px;
+	flex-shrink: 0;
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: contain;

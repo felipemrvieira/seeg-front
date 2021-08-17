@@ -22,6 +22,7 @@ import {
 	SolutionDescription,
 	SectionMeta2,
 	SectionMeta2Item,
+	SectionMeta2FullWidthItem,
 	Meta2Icon,
 	Meta2Title,
 	Meta2Text,
@@ -295,7 +296,7 @@ export default function Home() {
 				</CobenefitsItem>
 			</CobenefitsSection>
 			<Section>
-				<SectionMeta2Item>
+				<SectionMeta2FullWidthItem>
 					<Meta2Icon metaTitle="politicas" />
 					<Meta2Title color="#8e8d8b">
 						Políticas públicas orientadoras
@@ -305,8 +306,8 @@ export default function Home() {
 							__html: solution.guiding_public_policies,
 						}}
 					/>
-				</SectionMeta2Item>
-				<SectionMeta2Item>
+				</SectionMeta2FullWidthItem>
+				<SectionMeta2FullWidthItem>
 					<Meta2Icon metaTitle="atuacao" />
 					<Meta2Title color="#8e8d8b">Modo de atuação do município</Meta2Title>
 					<Meta2Text
@@ -314,8 +315,8 @@ export default function Home() {
 							__html: solution.municipal_operating_mode,
 						}}
 					/>
-				</SectionMeta2Item>
-				<SectionMeta2Item>
+				</SectionMeta2FullWidthItem>
+				<SectionMeta2FullWidthItem>
 					<Meta2Icon metaTitle="exemplo" />
 					<Meta2Title color="#8e8d8b">Exemplo de atuação municipal</Meta2Title>
 					<Meta2Text
@@ -323,14 +324,14 @@ export default function Home() {
 							__html: solution.examples_of_municipal_application,
 						}}
 					/>
-				</SectionMeta2Item>
-				<SectionMeta2Item>
+				</SectionMeta2FullWidthItem>
+				<SectionMeta2FullWidthItem>
 					<Meta2Icon metaTitle="referencias" />
 					<Meta2Title color="#8e8d8b">Referências técnicas</Meta2Title>
 					<Meta2Text
 						dangerouslySetInnerHTML={{ __html: solution.technical_references }}
 					/>
-				</SectionMeta2Item>
+				</SectionMeta2FullWidthItem>
 			</Section>
 			<ChallengeSection>
 				<ChallengeSectionIcon />
