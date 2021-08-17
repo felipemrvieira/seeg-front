@@ -55,6 +55,13 @@ const handleSectorIcon = (sectorTitle) => {
 	}
 };
 
+export const Filter = styled.div`
+	background: #eaeaea;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 32px 140px;
+`;
 export const Background = styled.div`
 	background: #eeeeee;
 	min-height: 100vh;

@@ -82,7 +82,7 @@ export default function Home() {
 		loadSolution();
 	}, []);
 
-	console.log(solution);
+	// console.log(solution);
 	// const odsGoals = solution.sustainable_development_goals || [''];
 	return (
 		<>
@@ -101,7 +101,11 @@ export default function Home() {
 				</Sector>
 				<SolutionInfo>
 					<SolutionNumber>{solution.number}</SolutionNumber>
-					<SolutionDescription>{solution.title}</SolutionDescription>
+					<SolutionDescription
+						dangerouslySetInnerHTML={{
+							__html: solution.title,
+						}}
+					/>
 				</SolutionInfo>
 			</Header>
 			<Section>
