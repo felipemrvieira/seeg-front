@@ -8,7 +8,7 @@ export default function Index({ children }) {
 	useEffect(() => {
 		if (sectionRef.current)
 			scrollReveal().reveal(sectionRef.current, {
-				reset: true,
+				reset: false,
 				delay: 250,
 			});
 	}, []);
