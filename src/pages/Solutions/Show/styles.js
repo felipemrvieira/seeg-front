@@ -24,13 +24,21 @@ import aplicacao from './assets/meta/aplicacao.png';
 import atuacao from './assets/meta/atuacao.png';
 import referencias from './assets/meta/referencias.png';
 
-import comunicacao from './assets/category/comunicacao.png';
-import educacao from './assets/category/educacao.png';
-import engajamento from './assets/category/engajamento.png';
-import infraestrutura from './assets/category/infraestrutura.png';
-import monitoramento from './assets/category/monitoramento.png';
-import planejamento from './assets/category/planejamento.png';
-import regramento from './assets/category/regramento.png';
+import comunicacao from './assets/category/comunicacao.svg';
+import educacao from './assets/category/educacao.svg';
+import engajamento from './assets/category/engajamento.svg';
+import infraestrutura from './assets/category/infraestrutura.svg';
+import monitoramento from './assets/category/monitoramento.svg';
+import planejamento from './assets/category/planejamento.svg';
+import regramento from './assets/category/regramento.svg';
+
+// import comunicacao from './assets/category/comunicacao.png';
+// import educacao from './assets/category/educacao.png';
+// import engajamento from './assets/category/engajamento.png';
+// import infraestrutura from './assets/category/infraestrutura.png';
+// import monitoramento from './assets/category/monitoramento.png';
+// import planejamento from './assets/category/planejamento.png';
+// import regramento from './assets/category/regramento.png';
 
 import ODS1 from './assets/ODS/ODS-1.svg';
 import ODS2 from './assets/ODS/ODS-2.svg';
@@ -425,14 +433,22 @@ export const CategoryItem = styled.div`
 	text-align: center;
 `;
 
+export const CategoryIconWrapper = styled.div`
+	height: 110px;
+	width: 110px;
+	background: #faebd7;
+	border-radius: 60%;
+	align-self: center;
+	/* width: 130px; */
+`;
 export const CategoryIcon = styled.div`
 	${({ categoryTitle }) => handleMetaIcon(categoryTitle)}
-	/* display: flex; */
 	height: 110px;
-	/* width: 130px; */
+	width: 110px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
+	filter: brightness(15);
 `;
 
 export const CategoryText = styled.div`

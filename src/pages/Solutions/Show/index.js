@@ -38,6 +38,7 @@ import {
 	CategorySectionTitle,
 	CategoryItensWrapper,
 	CategoryItem,
+	CategoryIconWrapper,
 	CategoryIcon,
 	CategoryText,
 	ODSSection,
@@ -232,31 +233,46 @@ export default function Home() {
 				{solution.action_category}
 				<CategoryItensWrapper>
 					<CategoryItem>
-						<CategoryIcon categoryTitle="comunicacao" />
+						<CategoryIconWrapper>
+							<CategoryIcon categoryTitle="comunicacao" />
+						</CategoryIconWrapper>
 						<CategoryText>Comunicação</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
-						<CategoryIcon categoryTitle="educacao" />
+						<CategoryIconWrapper>
+							<CategoryIcon categoryTitle="educacao" />
+						</CategoryIconWrapper>
+
 						<CategoryText>Educação</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
-						<CategoryIcon categoryTitle="engajamento" />
+						<CategoryIconWrapper>
+							<CategoryIcon categoryTitle="engajamento" />
+						</CategoryIconWrapper>
 						<CategoryText>Engajamento</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
-						<CategoryIcon categoryTitle="infraestrutura" />
+						<CategoryIconWrapper>
+							<CategoryIcon categoryTitle="infraestrutura" />
+						</CategoryIconWrapper>
 						<CategoryText>Infraestrutura</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
-						<CategoryIcon categoryTitle="monitoramento" />
+						<CategoryIconWrapper>
+							<CategoryIcon categoryTitle="monitoramento" />
+						</CategoryIconWrapper>
 						<CategoryText>Monitoramento</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
-						<CategoryIcon categoryTitle="planejamento" />
+						<CategoryIconWrapper>
+							<CategoryIcon categoryTitle="planejamento" />
+						</CategoryIconWrapper>
 						<CategoryText>Planejamento</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
-						<CategoryIcon categoryTitle="regramento" />
+						<CategoryIconWrapper>
+							<CategoryIcon categoryTitle="regramento" />
+						</CategoryIconWrapper>
 						<CategoryText>Regramento</CategoryText>
 					</CategoryItem>
 				</CategoryItensWrapper>
