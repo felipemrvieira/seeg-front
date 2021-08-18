@@ -68,6 +68,7 @@ export default function Home() {
 	const { id } = useParams();
 	const [solution, setSolution] = useState({
 		sustainable_development_goals: [],
+		sector: {},
 	});
 	async function loadSolution() {
 		try {
@@ -87,15 +88,21 @@ export default function Home() {
 	return (
 		<>
 			<Nav />
-			<Header sectorTitle="MUT">
+			<Header sectorTitle={solution.sector.name}>
 				<Sector>
-					<SectorIcon sectorTitle="MUT" />
+					<SectorIcon sectorTitle={solution.sector.name} />
 					<SectorInfo>
-						<SectorTitle>MUT</SectorTitle>
+						<SectorTitle>{solution.sector.name}</SectorTitle>
 						<SubSectorWrapper>
-							<SubSector sectorTitle="MUT">Cultivo de arroz</SubSector>
-							<SubSector sectorTitle="MUT">Fermentação entèrica</SubSector>
-							<SubSector sectorTitle="MUT">Solos manejados</SubSector>
+							<SubSector sectorTitle={solution.sector.name}>
+								Cultivo de arroz
+							</SubSector>
+							<SubSector sectorTitle={solution.sector.name}>
+								Fermentação entèrica
+							</SubSector>
+							<SubSector sectorTitle={solution.sector.name}>
+								Solos manejados
+							</SubSector>
 						</SubSectorWrapper>
 					</SectorInfo>
 				</Sector>

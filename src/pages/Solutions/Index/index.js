@@ -56,7 +56,7 @@ export default function Home() {
 		}
 	}
 	filterSolution();
-
+	console.log(solutions);
 	return (
 		<>
 			<Nav />
@@ -74,9 +74,9 @@ export default function Home() {
 					// <ScrollReveal key={solution.number}>
 					<Solution key={solution.number}>
 						<SolutionTagWrapper>
-							<SolutionTag sectorTitle="Energia elétrica">
-								<SolutionIcon sectorTitle="Energia elétrica" />
-								<SectorTitle>Energia Elétrica</SectorTitle>
+							<SolutionTag sectorTitle={solution.sector.name}>
+								<SolutionIcon sectorTitle={solution.sector.name} />
+								<SectorTitle>{solution.sector.name}</SectorTitle>
 							</SolutionTag>
 						</SolutionTagWrapper>
 						<SolutionInfoWrapper>

@@ -60,10 +60,14 @@ const handleColor = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
 			return 'background: #ed9742;';
+		case 'Energia':
+			return 'background: #d94b2b;';
 		case 'Energia elétrica':
 			return 'background: #d94b2b;';
 		case 'Transporte':
 			return 'background: #d94d6b;';
+		case 'Mudança de Uso da Terra e Florestas':
+			return 'background: #7cad41;';
 		case 'MUT':
 			return 'background: #7cad41;';
 		case 'Resíduos':
@@ -76,10 +80,14 @@ const handleDarkenColor = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
 			return `${darken(0.15, '#ed9742')}`;
+		case 'Energia':
+			return `${darken(0.15, '#d94b2b')}`;
 		case 'Energia elétrica':
 			return `${darken(0.15, '#d94b2b')}`;
 		case 'Transporte':
 			return `${darken(0.15, '#d94d6b')}`;
+		case 'Mudança de Uso da Terra e Florestas':
+			return `${darken(0.15, '#7cad41')}`;
 		case 'MUT':
 			return `${darken(0.15, '#7cad41')}`;
 		case 'Resíduos':
@@ -93,9 +101,13 @@ const handleSectorIcon = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
 			return `background-image: url(${agroIcon});`;
+		case 'Energia':
+			return `background-image: url(${energiaIcon});`;
 		case 'Energia elétrica':
 			return `background-image: url(${energiaIcon});`;
 		case 'MUT':
+			return `background-image: url(${mutIcon});`;
+		case 'Mudança de Uso da Terra e Florestas':
 			return `background-image: url(${mutIcon});`;
 		case 'Resíduos':
 			return `background-image: url(${residuosIcon});`;
