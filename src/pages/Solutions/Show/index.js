@@ -7,6 +7,7 @@ import {
 	impactHelper,
 	regionHelper,
 	rangeHelper,
+	breakLineHelper,
 } from '../../../helpers';
 import {
 	Header,
@@ -111,14 +112,14 @@ export default function Home() {
 					<SolutionNumber>{solution.number}</SolutionNumber>
 					<SolutionDescription
 						dangerouslySetInnerHTML={{
-							__html: solution.title,
+							__html: breakLineHelper(solution.title),
 						}}
 					/>
 				</SolutionInfo>
 			</Header>
 			<Section>
 				<SectionTitle>
-					Solução de {solutionOfHelper(solution.solution_of)}
+					Solução de {breakLineHelper(solutionOfHelper(solution.solution_of))}
 				</SectionTitle>
 				<SectionParagraph
 					dangerouslySetInnerHTML={{
@@ -133,7 +134,7 @@ export default function Home() {
 						<MetaTitle>Esfera administrativa de competencia</MetaTitle>
 						<MetaText
 							dangerouslySetInnerHTML={{
-								__html: sphereHelper(solution.sphere),
+								__html: sphereHelper(breakLineHelper(solution.sphere)),
 							}}
 						/>
 					</MetaInfo>
@@ -144,7 +145,7 @@ export default function Home() {
 						<MetaTitle>Investimento necessário</MetaTitle>
 						<MetaText
 							dangerouslySetInnerHTML={{
-								__html: solution.necessary_investment,
+								__html: breakLineHelper(solution.necessary_investment),
 							}}
 						/>
 					</MetaInfo>
@@ -155,7 +156,7 @@ export default function Home() {
 						<MetaTitle>Financiamento</MetaTitle>
 						<MetaText
 							dangerouslySetInnerHTML={{
-								__html: solution.financing,
+								__html: breakLineHelper(solution.financing),
 							}}
 						/>
 					</MetaInfo>
@@ -166,7 +167,7 @@ export default function Home() {
 						<MetaTitle>Atores-chave</MetaTitle>
 						<MetaText
 							dangerouslySetInnerHTML={{
-								__html: solution.key_actors,
+								__html: breakLineHelper(solution.key_actors),
 							}}
 						/>
 					</MetaInfo>
@@ -298,7 +299,7 @@ export default function Home() {
 						<CobenefitsTitle>Ambientais</CobenefitsTitle>
 						<CobenefitsText
 							dangerouslySetInnerHTML={{
-								__html: solution.environmental_cobenefits,
+								__html: breakLineHelper(solution.environmental_cobenefits),
 							}}
 						/>
 					</CobenefitsInfo>
@@ -309,7 +310,7 @@ export default function Home() {
 						<CobenefitsTitle>Sociais</CobenefitsTitle>
 						<CobenefitsText
 							dangerouslySetInnerHTML={{
-								__html: solution.social_cobenefits,
+								__html: breakLineHelper(solution.social_cobenefits),
 							}}
 						/>
 					</CobenefitsInfo>
@@ -320,7 +321,7 @@ export default function Home() {
 						<CobenefitsTitle>Econômicos</CobenefitsTitle>
 						<CobenefitsText
 							dangerouslySetInnerHTML={{
-								__html: solution.economic_cobenefits,
+								__html: breakLineHelper(solution.economic_cobenefits),
 							}}
 						/>
 					</CobenefitsInfo>
@@ -334,7 +335,7 @@ export default function Home() {
 					</Meta2Title>
 					<Meta2Text
 						dangerouslySetInnerHTML={{
-							__html: solution.guiding_public_policies,
+							__html: breakLineHelper(solution.guiding_public_policies),
 						}}
 					/>
 				</SectionMeta2FullWidthItem>
@@ -343,7 +344,7 @@ export default function Home() {
 					<Meta2Title color="#8e8d8b">Modo de atuação do município</Meta2Title>
 					<Meta2Text
 						dangerouslySetInnerHTML={{
-							__html: solution.municipal_operating_mode,
+							__html: breakLineHelper(solution.municipal_operating_mode),
 						}}
 					/>
 				</SectionMeta2FullWidthItem>
@@ -352,7 +353,9 @@ export default function Home() {
 					<Meta2Title color="#8e8d8b">Exemplo de atuação municipal</Meta2Title>
 					<Meta2Text
 						dangerouslySetInnerHTML={{
-							__html: solution.examples_of_municipal_application,
+							__html: breakLineHelper(
+								solution.examples_of_municipal_application
+							),
 						}}
 					/>
 				</SectionMeta2FullWidthItem>
@@ -360,7 +363,9 @@ export default function Home() {
 					<Meta2Icon metaTitle="referencias" />
 					<Meta2Title color="#8e8d8b">Referências técnicas</Meta2Title>
 					<Meta2Text
-						dangerouslySetInnerHTML={{ __html: solution.technical_references }}
+						dangerouslySetInnerHTML={{
+							__html: breakLineHelper(solution.technical_references),
+						}}
 					/>
 				</SectionMeta2FullWidthItem>
 			</Section>

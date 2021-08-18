@@ -79,3 +79,10 @@ export function rangeHelper(range = []) {
 
 	return ran;
 }
+
+export function breakLineHelper(text) {
+	if (text) {
+		return text.replace(/\r?\n/g, '<br />');
+	}
+	return '';
+}
