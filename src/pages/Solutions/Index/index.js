@@ -43,6 +43,14 @@ export default function Home() {
 		label: item.title,
 	}));
 
+	function handleSelectChange(e) {
+		if (e) {
+			setSelectedSolutions(e.value);
+		} else {
+			setSelectedSolutions('');
+		}
+	}
+
 	useEffect(() => {
 		loadSolutions();
 	}, []);
@@ -65,8 +73,9 @@ export default function Home() {
 				<Select
 					name="selectedSolution"
 					options={solutionOptions}
-					onChange={(event) => setSelectedSolutions(event.value)}
+					onChange={(event) => handleSelectChange(event)}
 					placeholder="Digite ou Selecione"
+					isClearable
 				/>
 			</Filter>
 			<Background>
