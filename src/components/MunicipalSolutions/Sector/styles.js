@@ -46,6 +46,9 @@ export const Section = styled.div`
 
 export const SectorInfo = styled.h2`
 	padding: 0 200px;
+	@media (max-width: 900px) {
+		padding: 0 60px;
+	}
 `;
 
 export const SectorWrapper = styled.div`
@@ -62,12 +65,20 @@ export const SectorIcon = styled.div`
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
+	flex-shrink: 0;
+	@media (max-width: 900px) {
+		height: 40px;
+		width: 55px;
+	}
 `;
 
 export const SectorTitle = styled.h2`
 	color: #8e8d8b;
 	font-size: 45px;
 	font-weight: 400;
+	@media (max-width: 900px) {
+		font-size: 36px;
+	}
 `;
 export const SectorDescription = styled.p`
 	color: #8e8d8b;

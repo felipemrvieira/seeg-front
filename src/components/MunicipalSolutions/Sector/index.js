@@ -12,6 +12,8 @@ import {
 import SolutionCard from '../SolutionCard';
 import ScrollReveal from '../ScrollReveal';
 
+import { sectorDescriptionHelper } from '../../../helpers';
+
 export default function Sector({ sectorInfo, isOdd }) {
 	return (
 		<Section sectorTitle={sectorInfo.name} isOdd={isOdd}>
@@ -21,7 +23,9 @@ export default function Sector({ sectorInfo, isOdd }) {
 						<SectorIcon sectorTitle={sectorInfo.name} />
 						<SectorTitle>{sectorInfo.name}</SectorTitle>
 					</SectorWrapper>
-					<SectorDescription>{sectorInfo.description}</SectorDescription>
+					<SectorDescription>
+						{sectorDescriptionHelper(sectorInfo.name)}
+					</SectorDescription>
 				</SectorInfo>
 			</ScrollReveal>
 			<ScrollReveal>

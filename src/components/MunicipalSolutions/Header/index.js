@@ -34,12 +34,14 @@ export default function Sector({ solutionsBySector }) {
 			<Section1>
 				<SectionTitle>Soluções</SectionTitle>
 				<SectionDescription>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-					dignissimos doloremque neque est, ab fugit possimus maxime esse sit
-					modi perspiciatis, molestiae labore soluta iusto aut deleniti officiis
-					aperiam ducimus. Earum quaerat nemo ipsa dolorum pariatur nam
-					repellendus, molestiae incidunt ducimus officia, nihil nostrum
-					perferendis iure quae. Commodi est id rem, temporibus unde repudiandae
+					Para além de identificar as emissões de GEE de cada município do
+					Brasil, o SEEG se propôs a mapear e compilar de maneira didática ações
+					de mitigação e adaptação a nível local, a fim de promover o
+					desenvolvimento sustentável com redução de emissões,
+					instrumentalizando e engajando atores-chave para enfrentarem esse
+					desafio. Nesta primeira edição, foram elencadas 87 soluções nos
+					setores de Transportes, Energia Elétrica, Resíduos, Agropecuária e
+					Mudanças de Uso da Terra e Florestas.
 				</SectionDescription>
 			</Section1>
 			<div>
@@ -49,26 +51,20 @@ export default function Sector({ solutionsBySector }) {
 
 					<ScrollReveal>
 						<SectionCapDescription>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-							autem, aliquid aspernatur quisquam repellendus itaque illo
-							pariatur temporibus id, assumenda eveniet eos ipsum natus illum
-							est dolores? Libero, cumque consequatur! Consectetur
-							exercitationem quidem magnam beatae sequi explicabo tenetur magni
-							eaque eius omnis odit, necessitatibus quisquam voluptates. Rerum
-							molestias dolorem eos tempora soluta repellendus excepturi
-							voluptate eligendi! Blanditiis consequatur animi tempora. Ipsum
-							quo aspernatur laudantium alias, totam libero enim dolorum nihil
-							sint neque cum hic quidem quas officiis voluptatem cupiditate
-							distinctio expedita rerum tempore impedit delectus deleniti?
-							Nesciunt iste id voluptas. Earum debitis laborum dolorum labore
-							sapiente modi blanditiis porro assumenda, soluta, minima tempora
-							aliquid cupiditate quis eum, vero illum voluptatum beatae? Maxime
-							optio nihil obcaecati possimus quos voluptate dolore suscipit!
-							Obcaecati, provident! Totam, impedit sapiente sunt itaque vero,
-							recusandae ex voluptatibus ipsum ab quae eligendi hic eum nesciunt
-							quas delectus architecto eos deleniti sint officiis culpa ad quo
-							laboriosam alias. Maxime explicabo, ipsum suscipit vel fugit
-							recusandae ducimus velit qui et repudiandae illum
+							Cada solução carrega um conjunto de mais de 20 informações
+							complementares que buscam dar suporte para sua implementação nos
+							municípios. Ao consultar uma solução proposta é possível, por
+							exemplo, verificar seu impacto sobre as emissões, a indicação de
+							para qual porte de município ela é recomendada ou quais
+							cobenefícios e Objetivos de Desenvolvimento Sustentável (ODS)
+							estão relacionados a tal ação. O SEEG Soluções é uma iniciativa
+							dinâmica, e será constantemente atualizado para revisar as ações e
+							incluir outras que contribuam para a construção de um futuro com
+							desenvolvimento socioeconômico neutro em emissões de GEE. Nesse
+							sentido, vale ressaltar ainda a importância de que a implementação
+							municipal dessas soluções seja feita de maneira participativa,
+							considerando as particularidades locais e as questões de gênero,
+							raça e classe que permeiam a sociedade.
 						</SectionCapDescription>
 					</ScrollReveal>
 

@@ -215,6 +215,12 @@ export const Header = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 60px 210px;
+	@media (max-width: 900px) {
+		padding: 60px;
+	}
+	@media (max-width: 500px) {
+		padding: 45px 20px;
+	}
 `;
 
 export const Sector = styled.div`
@@ -241,6 +247,9 @@ export const SectorTitle = styled.div`
 	font-size: 50px;
 	font-weight: 600;
 	line-height: 45px;
+	@media (max-width: 900px) {
+		font-size: 42px;
+	}
 `;
 export const SubSectorWrapper = styled.div`
 	display: flex;
@@ -267,11 +276,18 @@ export const SolutionInfo = styled.div`
 export const SolutionNumber = styled.div`
 	color: white;
 	font-size: 80px;
+	@media (max-width: 900px) {
+		font-size: 42px;
+	}
 `;
 export const SolutionDescription = styled.div`
 	color: white;
 	font-size: 50px;
 	line-height: 60px;
+	@media (max-width: 900px) {
+		font-size: 28px;
+		line-height: 40px;
+	}
 `;
 
 export const Section = styled.div`
@@ -281,6 +297,12 @@ export const Section = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 60px 210px;
+	@media (max-width: 900px) {
+		padding: 60px;
+	}
+	@media (max-width: 500px) {
+		padding: 45px 20px;
+	}
 `;
 export const SectionTitle = styled.h2`
 	color: #838d8b;
@@ -307,6 +329,12 @@ export const SectionMeta = styled.div`
 	justify-content: space-between;
 	flex-wrap: wrap;
 	padding: 60px 210px;
+	@media (max-width: 900px) {
+		padding: 60px;
+	}
+	@media (max-width: 500px) {
+		padding: 45px 20px;
+	}
 `;
 
 export const SectionMetaItem = styled.div`
@@ -316,6 +344,10 @@ export const SectionMetaItem = styled.div`
 	flex: 0 0 49%;
 	display: flex;
 	flex-direction: row;
+	@media (max-width: 500px) {
+		flex-direction: column;
+		flex: 0 0 100%;
+	}
 `;
 export const MetaIcon = styled.div`
 	${({ metaTitle }) => handleMetaIcon(metaTitle)}
@@ -327,6 +359,10 @@ export const MetaIcon = styled.div`
 	background-repeat: no-repeat;
 	background-size: contain;
 	margin-right: 28px;
+	@media (max-width: 900px) {
+		width: 50px;
+		height: 50px;
+	}
 `;
 export const MetaInfo = styled.div`
 	display: flex;
@@ -353,6 +389,12 @@ export const SectionMeta2 = styled.div`
 	justify-content: space-between;
 	flex-wrap: wrap;
 	padding: 60px 210px;
+	@media (max-width: 900px) {
+		padding: 60px;
+	}
+	@media (max-width: 500px) {
+		padding: 45px 20px;
+	}
 `;
 
 export const SectionMeta2Item = styled.div`
@@ -367,6 +409,12 @@ export const SectionMeta2Item = styled.div`
 	margin-bottom: 24px;
 	display: flex;
 	flex-direction: column;
+	@media (max-width: 900px) {
+		width: 100%;
+	}
+	@media (max-width: 500px) {
+		width: 100%;
+	}
 `;
 export const SectionMeta2FullWidthItem = styled.div`
 	border: 10px solid;
@@ -414,6 +462,12 @@ export const CategorySection = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 60px 210px;
+	@media (max-width: 900px) {
+		padding: 60px;
+	}
+	@media (max-width: 500px) {
+		padding: 45px 20px;
+	}
 `;
 export const CategorySectionTitle = styled.h3`
 	font-size: 42px;
@@ -434,6 +488,10 @@ export const CategoryItem = styled.div`
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+	@media (max-width: 900px) {
+		padding: 10px;
+		flex: 0 0 49%;
+	}
 `;
 
 export const CategoryIconWrapper = styled.div`
@@ -465,6 +523,12 @@ export const ODSSection = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 60px 210px;
+	@media (max-width: 900px) {
+		padding: 60px;
+	}
+	@media (max-width: 500px) {
+		padding: 45px 20px;
+	}
 `;
 
 export const ODSSectionTitle = styled.h3`
@@ -506,6 +570,12 @@ export const CobenefitsSection = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 60px 210px;
+	@media (max-width: 900px) {
+		padding: 60px;
+	}
+	@media (max-width: 500px) {
+		padding: 45px 20px;
+	}
 `;
 
 export const CobenefitsSectionTitle = styled.h3`
@@ -578,6 +648,12 @@ export const ChallengeSection = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 60px 210px;
+	@media (max-width: 900px) {
+		padding: 60px;
+	}
+	@media (max-width: 500px) {
+		padding: 45px 20px;
+	}
 `;
 
 export const ChallengeSectionIcon = styled.div`

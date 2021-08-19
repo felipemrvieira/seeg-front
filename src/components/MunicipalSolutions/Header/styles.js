@@ -6,6 +6,9 @@ export const Section1 = styled.div`
 	padding: 96px 200px 10px 200px;
 	display: flex;
 	flex-direction: column;
+	@media (max-width: 900px) {
+		padding: 96px 60px 10px 60px;
+	}
 `;
 export const Section2 = styled.div`
 	background: white;
@@ -13,6 +16,9 @@ export const Section2 = styled.div`
 	padding: 32px 200px 96px 200px;
 	display: flex;
 	flex-direction: column;
+	@media (max-width: 900px) {
+		padding: 96px 60px 10px 60px;
+	}
 `;
 
 export const SectionTitle = styled.h2`

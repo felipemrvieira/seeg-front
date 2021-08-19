@@ -14,6 +14,9 @@ export const ButtonArea = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	@media (max-width: 900px) {
+		padding: 32px 40px 96px 40px;
+	}
 `;
 
 export const Button = styled.div`

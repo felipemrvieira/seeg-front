@@ -70,6 +70,7 @@ export const SectorIcon = styled.div`
 	background-position: left;
 	background-repeat: no-repeat;
 	background-size: contain;
+	flex-shrink: 0;
 `;
 
 export const SectorTitle = styled.div`
