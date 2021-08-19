@@ -86,3 +86,15 @@ export function breakLineHelper(text) {
 	}
 	return '';
 }
+export function solutionNameHelper(text) {
+	if (text === 'Mudança de Uso da Terra e Florestas') {
+		return 'MUT';
+	}
+	return text;
+}
+export function solutionSubNameHelper(text) {
+	if (text !== 'Mudança de Uso da Terra e Florestas') {
+		return '';
+	}
+	return text;
+}

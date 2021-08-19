@@ -12,7 +12,11 @@ const handleCardColor = (sectorTitle) => {
 			return 'background: #d94b2b;';
 		case 'Transporte':
 			return 'background: #d94d6b;';
+		case 'Energia':
+			return 'background: #d94b2b;';
 		case 'MUT':
+			return 'background: #7cad41;';
+		case 'Mudança de Uso da Terra e Florestas':
 			return 'background: #7cad41;';
 		case 'Resíduos':
 			return 'background: #6bb7bf;';
@@ -27,7 +31,11 @@ const handleSectorIcon = (sectorTitle) => {
 			return `background-image: url(${agroIcon});`;
 		case 'Energia elétrica':
 			return `background-image: url(${energiaIcon});`;
+		case 'Energia':
+			return `background-image: url(${energiaIcon});`;
 		case 'MUT':
+			return `background-image: url(${mutIcon});`;
+		case 'Mudança de Uso da Terra e Florestas':
 			return `background-image: url(${mutIcon});`;
 		case 'Resíduos':
 			return `background-image: url(${residuosIcon});`;
@@ -68,14 +76,23 @@ export const SectorTitle = styled.div`
 	color: white;
 	font-size: 24px;
 	font-weight: 600;
-	margin: 12px 0;
+	display: flex;
+	margin: 2px 0 0 0;
+	flex-direction: column;
+`;
+export const SectorSubTitle = styled.div`
+	color: white;
+	font-size: 11px;
+	margin: 0 0 12px 0;
 	display: flex;
 	flex-direction: column;
 `;
+
 export const SectorSolutions = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	margin-top: auto;
 `;
 export const SolutionsCount = styled.div`
 	color: white;

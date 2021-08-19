@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ScrollReveal from '../ScrollReveal';
-// import PropTypes from 'prop-types';
 import {
 	Section1,
 	Section2,
@@ -19,14 +19,15 @@ import Nav from '../../Nav';
 import SectorCard from '../SectorCard';
 import Button from '../../Button';
 
-const sectorList = [
-	{ title: 'Agropecuária', solutionsCount: '28' },
-	{ title: 'Energia elétrica', solutionsCount: '14' },
-	{ title: 'Transporte', solutionsCount: '40' },
-	{ title: 'MUT', solutionsCount: '16' },
-	{ title: 'Resíduos', solutionsCount: '12' },
-];
-export default function Sector() {
+// const sectorList = [
+// 	{ title: 'Agropecuária', solutionsCount: '28' },
+// 	{ title: 'Energia', solutionsCount: '14' },
+// 	// { title: 'Transporte', solutionsCount: '40' },
+// 	{ title: 'MUT', solutionsCount: '16' },
+// 	{ title: 'Resíduos', solutionsCount: '12' },
+// ];
+export default function Sector({ solutionsBySector }) {
+	console.log(solutionsBySector);
 	return (
 		<>
 			<Nav />
@@ -78,7 +79,7 @@ export default function Sector() {
 						<SectorCard solution={sector} sectorTitle="Transporte" />
 						<SectorCard solution={sector} sectorTitle="MUT" />
 						<SectorCard solution={sector} sectorTitle="Resíduos" /> */}
-							{sectorList.map((sector) => (
+							{solutionsBySector.map((sector) => (
 								<SectorCard sector={sector} />
 							))}
 						</SectorCardContainer>
@@ -98,7 +99,7 @@ export default function Sector() {
 	);
 }
 
-// Sector.propTypes = {
-// 	sectorInfo: PropTypes.node.isRequired,
-// 	isOdd: PropTypes.node.isRequired,
-// };
+Sector.propTypes = {
+	solutionsBySector: PropTypes.node.isRequired,
+	// isOdd: PropTypes.node.isRequired,
+};

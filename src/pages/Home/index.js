@@ -24,7 +24,7 @@ export default function Home() {
 
 	return (
 		<>
-			<Header />
+			<Header solutionsBySector={solutions} />
 			{solutions.map((sector, i) => (
 				<Sector sectorInfo={sector} isOdd={Boolean(i % 2)} />
 			))}
