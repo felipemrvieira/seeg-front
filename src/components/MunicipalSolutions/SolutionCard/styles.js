@@ -46,18 +46,18 @@ export const Card = styled(Anchor)`
 	flex-shrink: 0;
 `;
 export const CardHeader = styled.div`
-	padding: 24px 32px 6px 32px;
+	padding: 16px 16px 6px 16px;
 	color: white;
-	font-size: 40px;
+	font-size: 26px;
 	font-weight: bolder;
 	display: flex;
 	flex-direction: column;
 `;
 export const CardInfo = styled.div`
-	padding: 6px 16px 32px 16px;
+	padding: 5px 16px 16px 16px;
 	color: white;
-	font-size: 25px;
-	line-height: 36px;
+	font-size: 20px;
+	line-height: 32px;
 	font-weight: bolder;
 	display: flex;
 	flex-direction: column;

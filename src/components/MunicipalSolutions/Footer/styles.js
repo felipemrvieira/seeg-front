@@ -26,7 +26,7 @@ export const TextButton = styled.p`
 	padding: 12px 32px;
 	margin: 0;
 	color: white;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bolder;
 	display: flex;
 	flex-direction: column;

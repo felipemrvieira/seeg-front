@@ -49,7 +49,7 @@ export const SectorIcon = styled.div`
 
 export const SectorTitle = styled.h2`
 	color: #8e8d8b;
-	font-size: 70px;
+	font-size: 45px;
 	font-weight: 400;
 `;
 export const SectorDescription = styled.p`

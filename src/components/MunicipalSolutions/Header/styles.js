@@ -18,14 +18,15 @@ export const Section2 = styled.div`
 export const SectionTitle = styled.h2`
 	color: white;
 	text-transform: uppercase;
-	font-size: 60px;
+	/* font-size: 60px; */
+	font-size: 2.5em;
 	font-weight: 300;
 	margin-bottom: 32px;
 `;
 
 export const SectionDescription = styled.p`
 	color: #6b6b6b;
-	font-size: 28px;
+	font-size: 23px;
 	font-weight: 300;
 	margin-bottom: 0;
 `;
@@ -33,7 +34,7 @@ export const SectionDescription = styled.p`
 export const SectionCapDescription = styled.p`
 	color: #6b6b6b;
 	font-weight: 300;
-	font-size: 26px;
+	font-size: 22px;
 	line-height: 36px;
 `;
 
