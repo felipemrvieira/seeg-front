@@ -224,6 +224,7 @@ export const Sector = styled.div`
 export const SectorIcon = styled.div`
 	${({ sectorTitle }) => handleSectorIcon(sectorTitle)}
 	display: flex;
+	flex-shrink: 0;
 	height: 50px;
 	width: 70px;
 	background-position: center;
@@ -244,17 +245,19 @@ export const SectorTitle = styled.div`
 export const SubSectorWrapper = styled.div`
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	margin-top: 24px;
 `;
 export const SubSector = styled.div`
 	background: ${({ sectorTitle }) => handleDarkenColor(sectorTitle)};
 	margin-right: 12px;
+	margin-bottom: 10px;
 	display: flex;
 	flex-wrap: wrap;
 	border-radius: 25px;
 	padding: 10px 22px;
 	font-weight: 500;
-    font-size: 20px;
+  font-size: 20px;
 }
 `;
 export const SolutionInfo = styled.div`

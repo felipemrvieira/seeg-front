@@ -63,13 +63,35 @@ export const CardInfo = styled.div`
 	flex-direction: column;
 `;
 export const CardFooter = styled.div`
-	padding: 12px 32px;
+	padding: 12px 20px;
 	${({ sectorTitle }) => handleCardFootColor(sectorTitle)}
-	color: white;
-	font-size: 18px;
-	font-weight: normal;
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	margin-top: auto;
 	/* height: 65px; */
+`;
+
+export const SubsectorPill = styled.div`
+	/* padding: 12px 32px; */
+	/* ${({ sectorTitle }) => handleCardFootColor(sectorTitle)} */
+	color: white;
+	font-size: 15px;
+	font-weight: normal;
+	background: rgba(0, 0, 0, 0.2);
+	margin: 0 4px 8px 0;
+	padding: 6px 8px;
+	border-radius: 20px;
+	text-align: center;
+
+	width: 48%;
+
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+
+	&:hover {
+		width: inherit;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
 `;

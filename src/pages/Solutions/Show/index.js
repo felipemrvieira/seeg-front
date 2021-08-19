@@ -71,6 +71,7 @@ export default function Home() {
 	const [solution, setSolution] = useState({
 		sustainable_development_goals: [],
 		sector: {},
+		subsectors: '',
 	});
 	async function loadSolution() {
 		try {
@@ -85,6 +86,7 @@ export default function Home() {
 		loadSolution();
 	}, []);
 
+	const subsectors = solution.subsectors.replace(/\r?\n/g, ';').split(';');
 	// console.log(solution);
 	// const odsGoals = solution.sustainable_development_goals || [''];
 	return (
@@ -96,15 +98,11 @@ export default function Home() {
 					<SectorInfo>
 						<SectorTitle>{solution.sector.name}</SectorTitle>
 						<SubSectorWrapper>
-							<SubSector sectorTitle={solution.sector.name}>
-								Cultivo de arroz
-							</SubSector>
-							<SubSector sectorTitle={solution.sector.name}>
-								Fermentação entèrica
-							</SubSector>
-							<SubSector sectorTitle={solution.sector.name}>
-								Solos manejados
-							</SubSector>
+							{subsectors.map((subsector) => (
+								<SubSector sectorTitle={solution.sector.name}>
+									{subsector}
+								</SubSector>
+							))}
 						</SubSectorWrapper>
 					</SectorInfo>
 				</Sector>
