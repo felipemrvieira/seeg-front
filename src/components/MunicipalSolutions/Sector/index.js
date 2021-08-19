@@ -25,7 +25,7 @@ export default function Sector({ sectorInfo, isOdd }) {
 				</SectorInfo>
 			</ScrollReveal>
 			<ScrollReveal>
-				<SolutionCardWrapper>
+				<SolutionCardWrapper sectorTitle={sectorInfo.name}>
 					{sectorInfo.solutions.map((solution) => (
 						<SolutionCard
 							key={solution.number}
