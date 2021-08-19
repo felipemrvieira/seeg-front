@@ -10,7 +10,7 @@ import {
 } from './styles';
 
 export default function SectorCard({ sector }) {
-	console.log(sector);
+	// console.log(sector);
 	return (
 		<Card sectorTitle={sector.title}>
 			<SectorIcon sectorTitle={sector.title} />

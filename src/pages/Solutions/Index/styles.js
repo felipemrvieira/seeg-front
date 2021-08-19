@@ -28,7 +28,6 @@ const handleCardColor = (sectorTitle) => {
 	}
 };
 const handleBorderColor = (sectorTitle) => {
-	console.log(sectorTitle);
 	switch (sectorTitle) {
 		case 'Agropecuária':
 			return `border-color: ${darken(0.2, '#ed9742')} transparent;`;

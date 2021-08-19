@@ -35,7 +35,7 @@ function UserSignIn() {
 
 	async function onSubmit(data) {
 		console.log(signed);
-		console.log(data);
+		// console.log(data);
 		try {
 			const response = await api.post('auth/sign_in', data);
 			// const response = await axios.post(

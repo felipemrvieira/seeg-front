@@ -402,7 +402,7 @@ export const Meta2Title = styled.div`
 `;
 
 export const Meta2Text = styled.div`
-	font-size: 26px;
+	font-size: 18px;
 	color: #8e8d8b;
 	overflow: hidden;
 `;

@@ -70,6 +70,7 @@ export default function Home() {
 	const { id } = useParams();
 	const [solution, setSolution] = useState({
 		sustainable_development_goals: [],
+		applicable_population_ranges: '',
 		sector: {},
 		subsectors: '',
 	});
@@ -372,7 +373,7 @@ export default function Home() {
 				<ChallengeSectionTitle>Desafios</ChallengeSectionTitle>
 				<ChallengeSectionText
 					dangerouslySetInnerHTML={{
-						__html: solution.challenges,
+						__html: breakLineHelper(solution.challenges),
 					}}
 				/>
 			</ChallengeSection>

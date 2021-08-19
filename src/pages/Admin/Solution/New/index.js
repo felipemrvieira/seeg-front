@@ -25,7 +25,7 @@ function Solution() {
 
 	function onFormSubmit(e) {
 		e.preventDefault();
-		console.log('submited');
+		// console.log('submited');
 		fileUpload(file).then((response) => {
 			console.log(response.data);
 			toast.success('Informação cadastrada com sucesso!!');

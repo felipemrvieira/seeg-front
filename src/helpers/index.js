@@ -75,7 +75,7 @@ export function rangeHelper(range = []) {
 		.replaceAll('range_5', 'Faixa V - 500 mil a 1 milhão')
 		.replaceAll('range_6', 'Faixa VI - 1 milhão a 5 milhões')
 		.replaceAll('range_7', 'Faixa VII - 5 milhões ou mais')
-		.replaceAll(',', ', ');
+		.replaceAll(',', ', <br>');
 
 	return ran;
 }
