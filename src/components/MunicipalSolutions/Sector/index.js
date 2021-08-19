@@ -14,12 +14,12 @@ import ScrollReveal from '../ScrollReveal';
 
 export default function Sector({ sectorInfo, isOdd }) {
 	return (
-		<Section sectorTitle={sectorInfo.title} isOdd={isOdd}>
+		<Section sectorTitle={sectorInfo.name} isOdd={isOdd}>
 			<ScrollReveal>
 				<SectorInfo>
 					<SectorWrapper>
-						<SectorIcon sectorTitle={sectorInfo.title} />
-						<SectorTitle>{sectorInfo.title}</SectorTitle>
+						<SectorIcon sectorTitle={sectorInfo.name} />
+						<SectorTitle>{sectorInfo.name}</SectorTitle>
 					</SectorWrapper>
 					<SectorDescription>{sectorInfo.description}</SectorDescription>
 				</SectorInfo>
@@ -27,7 +27,7 @@ export default function Sector({ sectorInfo, isOdd }) {
 			<ScrollReveal>
 				<SolutionCardWrapper>
 					{sectorInfo.solutions.map((solution) => (
-						<SolutionCard sectorTitle={sectorInfo.title} solution={solution} />
+						<SolutionCard sectorTitle={sectorInfo.name} solution={solution} />
 					))}
 				</SolutionCardWrapper>
 			</ScrollReveal>

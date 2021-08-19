@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as Anchor } from 'react-router-dom';
 
 const handleCardColor = (sectorTitle) => {
 	switch (sectorTitle) {
@@ -7,6 +8,8 @@ const handleCardColor = (sectorTitle) => {
 		case 'Energia':
 			return 'background: #d94b2b;';
 		case 'MUT':
+			return 'background: #7cad41;';
+		case 'Mudança de Uso da Terra e Florestas':
 			return 'background: #7cad41;';
 		case 'Resíduos':
 			return 'background: #6bb7bf;';
@@ -20,6 +23,8 @@ const handleCardFootColor = (sectorTitle) => {
 			return 'background: #cd7217;';
 		case 'Energia':
 			return 'background: #c32f0e;';
+		case 'Mudança de Uso da Terra e Florestas':
+			return 'background: #518117;';
 		case 'MUT':
 			return 'background: #518117;';
 		case 'Resíduos':
@@ -29,7 +34,7 @@ const handleCardFootColor = (sectorTitle) => {
 	}
 };
 
-export const Card = styled.div`
+export const Card = styled(Anchor)`
 	${({ sectorTitle }) => handleCardColor(sectorTitle)}
 	margin: 20px;
 	width: 305px;
@@ -49,9 +54,9 @@ export const CardHeader = styled.div`
 	flex-direction: column;
 `;
 export const CardInfo = styled.div`
-	padding: 6px 32px 32px 32px;
+	padding: 6px 16px 32px 16px;
 	color: white;
-	font-size: 30px;
+	font-size: 25px;
 	line-height: 36px;
 	font-weight: bolder;
 	display: flex;
@@ -61,8 +66,10 @@ export const CardFooter = styled.div`
 	padding: 12px 32px;
 	${({ sectorTitle }) => handleCardFootColor(sectorTitle)}
 	color: white;
-	font-size: 28px;
+	font-size: 18px;
 	font-weight: normal;
 	display: flex;
 	flex-direction: column;
+	margin-top: auto;
+	/* height: 65px; */
 `;
