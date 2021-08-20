@@ -29,13 +29,14 @@ export default function Sector({ sectorInfo, isOdd }) {
 			</ScrollReveal>
 			<ScrollReveal>
 				<SolutionCardWrapper sectorTitle={sectorInfo.name}>
-					{sectorInfo.solutions.map((solution) => (
-						<SolutionCard
-							key={solution.number}
-							sectorTitle={sectorInfo.name}
-							solution={solution}
-						/>
-					))}
+					{sectorInfo.solutions &&
+						sectorInfo.solutions.map((solution) => (
+							<SolutionCard
+								key={solution.number}
+								sectorTitle={sectorInfo.name}
+								solution={solution}
+							/>
+						))}
 				</SolutionCardWrapper>
 			</ScrollReveal>
 		</Section>
@@ -43,6 +44,20 @@ export default function Sector({ sectorInfo, isOdd }) {
 }
 
 Sector.propTypes = {
-	sectorInfo: PropTypes.node.isRequired,
 	isOdd: PropTypes.node.isRequired,
+	sectorInfo: PropTypes.shape({
+		name: PropTypes.string,
+		solutions: PropTypes.arrayOf(
+			PropTypes.shape({
+				title: PropTypes.string,
+			})
+		),
+	}),
+};
+
+Sector.defaultProps = {
+	sectorInfo: {
+		name: 'nome da solucao',
+		solutions: [{ title: 'titulo' }, { title: 'titulo' }, { title: 'titulo' }],
+	},
 };

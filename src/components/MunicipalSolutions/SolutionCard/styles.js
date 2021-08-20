@@ -4,14 +4,19 @@ import { Link as Anchor } from 'react-router-dom';
 const handleCardColor = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
+		case 'Agropecuaria':
 			return 'background: #ed9742;';
 		case 'Energia':
+		case 'Energia elétrica':
 			return 'background: #d94b2b;';
+		case 'Transportes':
+			return 'background: #d94d6b;';
 		case 'MUT':
-			return 'background: #7cad41;';
 		case 'Mudança de Uso da Terra e Florestas':
+		case 'Mudanca de Uso da Terra e Florestas':
 			return 'background: #7cad41;';
 		case 'Resíduos':
+		case 'Residuos':
 			return 'background: #6bb7bf;';
 		default:
 			return 'background: grey;';
@@ -20,15 +25,20 @@ const handleCardColor = (sectorTitle) => {
 const handleCardFootColor = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
+		case 'Agropecuaria':
 			return 'background: #cd7217;';
 		case 'Energia':
+		case 'Energia elétrica':
 			return 'background: #c32f0e;';
-		case 'Mudança de Uso da Terra e Florestas':
-			return 'background: #518117;';
 		case 'MUT':
+		case 'Mudança de Uso da Terra e Florestas':
+		case 'Mudanca de Uso da Terra e Florestas':
 			return 'background: #518117;';
 		case 'Resíduos':
+		case 'Residuos':
 			return 'background: #277d86;';
+		case 'Transportes':
+			return 'background: #b73d57;';
 		default:
 			return 'background: grey;';
 	}

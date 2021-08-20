@@ -10,18 +10,19 @@ import residuosIcon from './assets/residuos.png';
 const handleCardColor = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
+		case 'Agropecuaria':
 			return 'background: #ed9742;';
 		case 'Energia elétrica':
-			return 'background: #d94b2b;';
 		case 'Energia':
 			return 'background: #d94b2b;';
-		case 'Transporte':
+		case 'Transportes':
 			return 'background: #d94d6b;';
 		case 'Mudança de Uso da Terra e Florestas':
-			return 'background: #7cad41;';
+		case 'Mudanca de Uso da Terra e Florestas':
 		case 'MUT':
 			return 'background: #7cad41;';
 		case 'Resíduos':
+		case 'Residuos':
 			return 'background: #6bb7bf;';
 		default:
 			return 'background: grey;';
@@ -30,16 +31,19 @@ const handleCardColor = (sectorTitle) => {
 const handleBorderColor = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
+		case 'Agropecuaria':
 			return `border-color: ${darken(0.2, '#ed9742')} transparent;`;
 		case 'Energia elétrica':
+		case 'Energia':
 			return `border-color: ${darken(0.2, '#d94b2b')} transparent;`;
-		case 'Transporte':
+		case 'Transportes':
 			return `border-color: ${darken(0.2, '#d94d6b')} transparent;`;
-		case 'Mudança de Uso da Terra e Florestas':
-			return `border-color: ${darken(0.2, '#7cad41')} transparent;`;
 		case 'MUT':
+		case 'Mudança de Uso da Terra e Florestas':
+		case 'Mudanca de Uso da Terra e Florestas':
 			return `border-color: ${darken(0.2, '#7cad41')} transparent;`;
 		case 'Resíduos':
+		case 'Residuos':
 			return `border-color: ${darken(0.2, '#6bb7bf')} transparent;`;
 		default:
 			return `border-color: ${darken(0.2, '#ed9742')} transparent;`;

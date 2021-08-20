@@ -123,3 +123,9 @@ export function solutionSubNameHelper(text) {
 	}
 	return text;
 }
+export function solutionsCounterHelper(solutions) {
+	if (solutions) {
+		return solutions.length;
+	}
+	return 0;
+}

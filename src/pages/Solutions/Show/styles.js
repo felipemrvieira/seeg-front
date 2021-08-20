@@ -72,7 +72,7 @@ const handleColor = (sectorTitle) => {
 			return 'background: #d94b2b;';
 		case 'Energia elétrica':
 			return 'background: #d94b2b;';
-		case 'Transporte':
+		case 'Transportes':
 			return 'background: #d94d6b;';
 		case 'Mudança de Uso da Terra e Florestas':
 			return 'background: #7cad41;';
@@ -92,7 +92,7 @@ const handleDarkenColor = (sectorTitle) => {
 			return `${darken(0.15, '#d94b2b')}`;
 		case 'Energia elétrica':
 			return `${darken(0.15, '#d94b2b')}`;
-		case 'Transporte':
+		case 'Transportes':
 			return `${darken(0.15, '#d94d6b')}`;
 		case 'Mudança de Uso da Terra e Florestas':
 			return `${darken(0.15, '#7cad41')}`;

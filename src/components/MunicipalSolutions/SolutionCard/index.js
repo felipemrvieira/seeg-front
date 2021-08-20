@@ -9,7 +9,10 @@ import {
 } from './styles';
 
 export default function SolutionCard({ solution, sectorTitle }) {
-	const subsectors = solution.subsectors.replace(/\r?\n/g, ';').split(';');
+	const subsectors =
+		(solution.subsectors &&
+			solution.subsectors.replace(/\r?\n/g, ';').split(';')) ||
+		[];
 
 	return (
 		<Card to={`/solutions/${solution.id}`} sectorTitle={sectorTitle}>
@@ -29,6 +32,21 @@ export default function SolutionCard({ solution, sectorTitle }) {
 }
 
 SolutionCard.propTypes = {
-	solution: PropTypes.node.isRequired,
-	sectorTitle: PropTypes.node.isRequired,
+	solution: PropTypes.shape({
+		title: PropTypes.string,
+		number: PropTypes.string,
+		subsectors: PropTypes.string,
+		id: PropTypes.string,
+	}),
+	sectorTitle: PropTypes.string,
+};
+
+SolutionCard.defaultProps = {
+	solution: {
+		title: 'titulo da solucao',
+		number: '#00',
+		subsectors: 'subsetores',
+		id: '0',
+	},
+	sectorTitle: 'titulo do setor',
 };

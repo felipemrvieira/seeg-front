@@ -14,7 +14,7 @@ import {
 	TextButton,
 	// MenuItem,
 } from './styles';
-import Image from './assets/image.png';
+import Image from './assets/faixa-87.png';
 import Nav from '../../Nav';
 import SectorCard from '../SectorCard';
 import Button from '../../Button';
@@ -27,24 +27,6 @@ import Button from '../../Button';
 // 	{ title: 'Resíduos', solutionsCount: '12' },
 // ];
 export default function Sector({ solutionsBySector }) {
-	// const energia = solutionsBySector.filter((el) => el.name === 'Energia')[0];
-	// const agropecuaria = solutionsBySector.filter(
-	// 	(el) => el.name === 'Agropecuária'
-	// )[0];
-	// const residuos = solutionsBySector.filter((el) => el.name === 'Resíduos')[0];
-	// const mut = solutionsBySector.filter(
-	// 	(el) => el.name === 'Mudança de Uso da Terra e Florestas'
-	// )[0];
-
-	// const energiaSolutions = energia.solutions;
-
-	// console.log(energiaSolutions);
-
-	// console.log(energia);
-	// console.log(agropecuaria);
-	// console.log(residuos);
-	// console.log(mut);
-	// console.log(result);
 	// console.log(solutionsBySector);
 	return (
 		<>
@@ -88,8 +70,9 @@ export default function Sector({ solutionsBySector }) {
 
 					<ScrollReveal>
 						<SectorCardContainer>
-							{/* <SectorCard sector={energia} />
-							<SectorCard sector={agropecuaria} />
+							{/* <SectorCard sector={agropecuaria} />
+							<SectorCard sector={newEnergia} />
+							<SectorCard sector={newTransportes} />
 							<SectorCard sector={residuos} />
 							<SectorCard sector={mut} /> */}
 							{solutionsBySector.map((sector) => (

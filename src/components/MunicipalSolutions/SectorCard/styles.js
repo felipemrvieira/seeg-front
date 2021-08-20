@@ -7,18 +7,19 @@ import residuosIcon from './assets/residuos.png';
 const handleCardColor = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
+		case 'Agropecuaria':
 			return 'background: #ed9742;';
-		case 'Energia elétrica':
-			return 'background: #d94b2b;';
-		case 'Transporte':
+		case 'Transportes':
 			return 'background: #d94d6b;';
 		case 'Energia':
+		case 'Energia elétrica':
 			return 'background: #d94b2b;';
 		case 'MUT':
-			return 'background: #7cad41;';
 		case 'Mudança de Uso da Terra e Florestas':
+		case 'Mudanca de Uso da Terra e Florestas':
 			return 'background: #7cad41;';
 		case 'Resíduos':
+		case 'Residuos':
 			return 'background: #6bb7bf;';
 		default:
 			return 'background: grey;';
@@ -28,16 +29,17 @@ const handleCardColor = (sectorTitle) => {
 const handleSectorIcon = (sectorTitle) => {
 	switch (sectorTitle) {
 		case 'Agropecuária':
+		case 'Agropecuaria':
 			return `background-image: url(${agroIcon});`;
 		case 'Energia elétrica':
-			return `background-image: url(${energiaIcon});`;
 		case 'Energia':
 			return `background-image: url(${energiaIcon});`;
 		case 'MUT':
-			return `background-image: url(${mutIcon});`;
 		case 'Mudança de Uso da Terra e Florestas':
+		case 'Mudanca de Uso da Terra e Florestas':
 			return `background-image: url(${mutIcon});`;
 		case 'Resíduos':
+		case 'Residuos':
 			return `background-image: url(${residuosIcon});`;
 		default:
 			return `background-image: url(${agroIcon});`;

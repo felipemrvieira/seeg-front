@@ -9,18 +9,22 @@ import {
 	SolutionsCount,
 	SolutionsLabel,
 } from './styles';
-import { solutionNameHelper, solutionSubNameHelper } from '../../../helpers';
+import {
+	solutionNameHelper,
+	solutionSubNameHelper,
+	solutionsCounterHelper,
+} from '../../../helpers';
 
 export default function SectorCard({ sector }) {
-	// console.log(sector);
-	console.log(sector.solutions.length);
 	return (
 		<Card sectorTitle={sector.name}>
 			<SectorIcon sectorTitle={sector.name} />
 			<SectorTitle>{solutionNameHelper(sector.name)}</SectorTitle>
 			<SectorSubTitle>{solutionSubNameHelper(sector.name)}</SectorSubTitle>
 			<SectorSolutions>
-				<SolutionsCount>{sector.solutions.length}</SolutionsCount>
+				<SolutionsCount>
+					{solutionsCounterHelper(sector.solutions)}
+				</SolutionsCount>
 				<SolutionsLabel>Soluções</SolutionsLabel>
 			</SectorSolutions>
 		</Card>
@@ -28,5 +32,15 @@ export default function SectorCard({ sector }) {
 }
 
 SectorCard.propTypes = {
-	sector: PropTypes.node.isRequired,
+	sector: PropTypes.shape({
+		name: PropTypes.string,
+		solutions: PropTypes.node,
+	}),
+};
+
+SectorCard.defaultProps = {
+	sector: {
+		name: 'nome da solucao',
+		solutions: [{ title: 'titulo' }],
+	},
 };
