@@ -27,7 +27,25 @@ import Button from '../../Button';
 // 	{ title: 'Resíduos', solutionsCount: '12' },
 // ];
 export default function Sector({ solutionsBySector }) {
-	console.log(solutionsBySector);
+	// const energia = solutionsBySector.filter((el) => el.name === 'Energia')[0];
+	// const agropecuaria = solutionsBySector.filter(
+	// 	(el) => el.name === 'Agropecuária'
+	// )[0];
+	// const residuos = solutionsBySector.filter((el) => el.name === 'Resíduos')[0];
+	// const mut = solutionsBySector.filter(
+	// 	(el) => el.name === 'Mudança de Uso da Terra e Florestas'
+	// )[0];
+
+	// const energiaSolutions = energia.solutions;
+
+	// console.log(energiaSolutions);
+
+	// console.log(energia);
+	// console.log(agropecuaria);
+	// console.log(residuos);
+	// console.log(mut);
+	// console.log(result);
+	// console.log(solutionsBySector);
 	return (
 		<>
 			<Nav />
@@ -70,11 +88,10 @@ export default function Sector({ solutionsBySector }) {
 
 					<ScrollReveal>
 						<SectorCardContainer>
-							{/* <SectorCard solution={sector} sectorTitle="Agropecuária" />
-						<SectorCard solution={sector} sectorTitle="Energia Elétrica" />
-						<SectorCard solution={sector} sectorTitle="Transporte" />
-						<SectorCard solution={sector} sectorTitle="MUT" />
-						<SectorCard solution={sector} sectorTitle="Resíduos" /> */}
+							{/* <SectorCard sector={energia} />
+							<SectorCard sector={agropecuaria} />
+							<SectorCard sector={residuos} />
+							<SectorCard sector={mut} /> */}
 							{solutionsBySector.map((sector) => (
 								<SectorCard sector={sector} />
 							))}

@@ -12,6 +12,7 @@ import {
 import { solutionNameHelper, solutionSubNameHelper } from '../../../helpers';
 
 export default function SectorCard({ sector }) {
+	// console.log(sector);
 	console.log(sector.solutions.length);
 	return (
 		<Card sectorTitle={sector.name}>
