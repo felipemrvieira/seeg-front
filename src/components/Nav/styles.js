@@ -38,7 +38,7 @@ export const Logo = styled.div`
 	background-size: contain;
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
 	padding: 8px 30px;
 	border-radius: 25px;
 	border: none;

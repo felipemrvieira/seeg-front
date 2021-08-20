@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 import Modal from 'react-bootstrap/Modal';
 import { logout } from '../../services/auth';
 
@@ -30,25 +30,30 @@ function Header() {
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="me-auto">
-							<Nav.Link as={Link} to="/">
+							{/* <Nav.Link as={Link} to="/">
 								Início
-							</Nav.Link>
+							</Nav.Link> */}
 							<Nav.Link as={Link} to="/solutions">
-								Soluções
+								Visualizar todas as soluções
 							</Nav.Link>
 
-							<NavDropdown title="Administrativo" id="basic-nav-dropdown">
+							{/* <NavDropdown title="Administrativo" id="basic-nav-dropdown">
 								<NavDropdown.Item as={Link} to="/admin/solutions">
 									Listar Soluções
 								</NavDropdown.Item>
 								<NavDropdown.Item as={Link} to="/admin/solutions/new">
 									Cadastrar Soluções
 								</NavDropdown.Item>
-							</NavDropdown>
+							</NavDropdown> */}
 						</Nav>
 					</Navbar.Collapse>
 					<Navbar.Collapse className="justify-content-end">
-						<Button onClick={() => setShowModal(true)}>Sair</Button>
+						{/* <a href="https://plataforma.seeg.eco.br">
+							Voltar para a plataforma de emissões
+						</a> */}
+						<Button href="https://plataforma.seeg.eco.br">
+							Voltar para a plataforma de emissões
+						</Button>
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>

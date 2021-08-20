@@ -4,7 +4,7 @@ import { getToken, getUid, getClient } from './auth';
 let API_URL = '';
 
 if (process.env.NODE_ENV === 'production') {
-	API_URL = 'http://plataforma.seeg.eco.br/api/v1';
+	API_URL = 'https://plataforma.seeg.eco.br/api/v1';
 } else {
 	API_URL = 'http://localhost:3000/api/v1';
 }
