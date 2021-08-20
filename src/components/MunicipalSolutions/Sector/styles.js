@@ -82,8 +82,8 @@ export const SectorTitle = styled.h2`
 `;
 export const SectorDescription = styled.p`
 	color: #8e8d8b;
-	font-size: 26px;
-	line-height: 36px;
+	font-size: 22px;
+	line-height: 34px;
 	font-weight: 300;
 `;
 

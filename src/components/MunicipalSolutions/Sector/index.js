@@ -11,8 +11,7 @@ import {
 } from './styles';
 import SolutionCard from '../SolutionCard';
 import ScrollReveal from '../ScrollReveal';
-
-import { sectorDescriptionHelper } from '../../../helpers';
+import { solutionNameHelper, sectorDescriptionHelper } from '../../../helpers';
 
 export default function Sector({ sectorInfo, isOdd }) {
 	return (
@@ -21,7 +20,7 @@ export default function Sector({ sectorInfo, isOdd }) {
 				<SectorInfo>
 					<SectorWrapper>
 						<SectorIcon sectorTitle={sectorInfo.name} />
-						<SectorTitle>{sectorInfo.name}</SectorTitle>
+						<SectorTitle>{solutionNameHelper(sectorInfo.name)}</SectorTitle>
 					</SectorWrapper>
 					<SectorDescription>
 						{sectorDescriptionHelper(sectorInfo.name)}

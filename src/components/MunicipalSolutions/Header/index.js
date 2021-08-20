@@ -102,9 +102,9 @@ export default function Sector({ solutionsBySector }) {
 						<Button to="solutions">
 							<TextButton>Ver todas as soluções</TextButton>
 						</Button>
-						<Button>
+						{/* <Button>
 							<TextButton>Entenda as soluções</TextButton>
-						</Button>
+						</Button> */}
 					</SubMenuContainer>
 				</Section2>
 			</div>

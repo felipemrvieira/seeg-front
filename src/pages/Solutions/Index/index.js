@@ -20,7 +20,12 @@ import {
 	Footer,
 } from './styles';
 
-import { solutionOfHelper, sectorHelper, impactHelper } from '../../../helpers';
+import {
+	solutionOfHelper,
+	sectorHelper,
+	impactHelper,
+	solutionNameHelper,
+} from '../../../helpers';
 import Nav from '../../../components/Nav';
 import api from '../../../services/api';
 // import ScrollReveal from '../../../components/MunicipalSolutions/ScrollReveal';
@@ -85,7 +90,9 @@ export default function Home() {
 						<SolutionTagWrapper>
 							<SolutionTag sectorTitle={solution.sector.name}>
 								<SolutionIcon sectorTitle={solution.sector.name} />
-								<SectorTitle>{solution.sector.name}</SectorTitle>
+								<SectorTitle>
+									{solutionNameHelper(solution.sector.name)}
+								</SectorTitle>
 							</SolutionTag>
 						</SolutionTagWrapper>
 						<SolutionInfoWrapper>

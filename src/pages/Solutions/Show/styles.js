@@ -264,9 +264,9 @@ export const SubSector = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	border-radius: 25px;
-	padding: 10px 22px;
+	padding: 3px 10px;
 	font-weight: 500;
-  font-size: 20px;
+  font-size: 15px;
 }
 `;
 export const SolutionInfo = styled.div`
@@ -275,15 +275,16 @@ export const SolutionInfo = styled.div`
 `;
 export const SolutionNumber = styled.div`
 	color: white;
-	font-size: 80px;
+	font-size: 56px;
 	@media (max-width: 900px) {
 		font-size: 42px;
 	}
 `;
 export const SolutionDescription = styled.div`
 	color: white;
-	font-size: 50px;
-	line-height: 60px;
+	font-size: 42px;
+	line-height: 46px;
+	margin: 5px 0;
 	@media (max-width: 900px) {
 		font-size: 28px;
 		line-height: 40px;
@@ -309,14 +310,14 @@ export const SectionTitle = styled.h2`
 	padding: 0;
 	margin: 0;
 	margin-bottom: 40px;
-	font-size: 46px;
+	font-size: 42px;
 	font-weight: 600;
 `;
 export const SectionParagraph = styled.p`
 	color: #838d8b;
 	padding: 0;
 	margin: 0;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 300;
 `;
 
@@ -369,14 +370,14 @@ export const MetaInfo = styled.div`
 	flex-direction: column;
 `;
 export const MetaTitle = styled.div`
-	font-size: 32px;
-	line-height: 32px;
+	font-size: 26px;
+	line-height: 28px;
 	font-weight: 500;
 	margin: 12px 0 24px 0;
 	color: #838d8b;
 `;
 export const MetaText = styled.div`
-	font-size: 26px;
+	font-size: 22px;
 	color: #838d8b;
 `;
 

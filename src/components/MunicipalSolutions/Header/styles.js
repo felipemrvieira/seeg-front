@@ -32,7 +32,7 @@ export const SectionTitle = styled.h2`
 
 export const SectionDescription = styled.p`
 	color: #6b6b6b;
-	font-size: 23px;
+	font-size: 20px;
 	font-weight: 300;
 	margin-bottom: 0;
 `;
@@ -40,7 +40,7 @@ export const SectionDescription = styled.p`
 export const SectionCapDescription = styled.p`
 	color: #6b6b6b;
 	font-weight: 300;
-	font-size: 22px;
+	font-size: 19px;
 	line-height: 36px;
 `;
 
