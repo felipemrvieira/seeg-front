@@ -682,3 +682,16 @@ export const Footer = styled.div`
 	background: #747474;
 	height: 62px;
 `;
+
+export const DownloadButton = styled.a`
+	background: #595959;
+	color: white;
+	text-align: center;
+	padding: 12px 32px;
+	text-transform: uppercase;
+	cursor: pointer;
+	width: 165px;
+	right: 0;
+	position: absolute;
+	font-weight: 500;
+`;

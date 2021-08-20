@@ -8,6 +8,7 @@ import {
 	regionHelper,
 	rangeHelper,
 	breakLineHelper,
+	solutionNumberHelper,
 } from '../../../helpers';
 import {
 	Header,
@@ -61,6 +62,7 @@ import {
 	ChallengeSectionTitle,
 	ChallengeSectionText,
 	Footer,
+	DownloadButton,
 } from './styles';
 import Nav from '../../../components/Nav';
 import api from '../../../services/api';
@@ -94,6 +96,13 @@ export default function Home() {
 		<>
 			<Nav />
 			<Header sectorTitle={solution.sector.name}>
+				<DownloadButton
+					href={`https://storage.cloud.google.com/seeg-solutions/seeg-solucoes_${solutionNumberHelper(
+						solution.number
+					)}.pdf`}
+				>
+					Download
+				</DownloadButton>
 				<Sector>
 					<SectorIcon sectorTitle={solution.sector.name} />
 					<SectorInfo>

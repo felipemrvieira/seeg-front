@@ -83,6 +83,10 @@ export function regionHelper(regions = []) {
 
 	return reg;
 }
+export function solutionNumberHelper(text) {
+	const reg = String(text).replaceAll('#', '');
+	return reg;
+}
 
 export function rangeHelper(range = []) {
 	const ran = String(range)
