@@ -239,48 +239,68 @@ export default function Home() {
 			</SectionMeta2>
 			<CategorySection>
 				<CategorySectionTitle>Categoria da ação</CategorySectionTitle>
-				{solution.action_category}
 				<CategoryItensWrapper>
 					<CategoryItem>
 						<CategoryIconWrapper>
-							<CategoryIcon categoryTitle="comunicacao" />
+							<CategoryIcon
+								categories={solution.action_category}
+								categoryTitle="comunicacao"
+							/>
 						</CategoryIconWrapper>
 						<CategoryText>Comunicação</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
 						<CategoryIconWrapper>
-							<CategoryIcon categoryTitle="educacao" />
+							<CategoryIcon
+								categories={solution.action_category}
+								categoryTitle="educacao"
+							/>
 						</CategoryIconWrapper>
 
 						<CategoryText>Educação</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
 						<CategoryIconWrapper>
-							<CategoryIcon categoryTitle="engajamento" />
+							<CategoryIcon
+								categories={solution.action_category}
+								categoryTitle="engajamento"
+							/>
 						</CategoryIconWrapper>
 						<CategoryText>Engajamento</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
 						<CategoryIconWrapper>
-							<CategoryIcon categoryTitle="infraestrutura" />
+							<CategoryIcon
+								categories={solution.action_category}
+								categoryTitle="infraestrutura"
+							/>
 						</CategoryIconWrapper>
 						<CategoryText>Infraestrutura</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
 						<CategoryIconWrapper>
-							<CategoryIcon categoryTitle="monitoramento" />
+							<CategoryIcon
+								categories={solution.action_category}
+								categoryTitle="monitoramento"
+							/>
 						</CategoryIconWrapper>
 						<CategoryText>Monitoramento</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
 						<CategoryIconWrapper>
-							<CategoryIcon categoryTitle="planejamento" />
+							<CategoryIcon
+								categories={solution.action_category}
+								categoryTitle="planejamento"
+							/>
 						</CategoryIconWrapper>
 						<CategoryText>Planejamento</CategoryText>
 					</CategoryItem>
 					<CategoryItem>
 						<CategoryIconWrapper>
-							<CategoryIcon categoryTitle="regramento" />
+							<CategoryIcon
+								categories={solution.action_category}
+								categoryTitle="regramento"
+							/>
 						</CategoryIconWrapper>
 						<CategoryText>Regramento</CategoryText>
 					</CategoryItem>

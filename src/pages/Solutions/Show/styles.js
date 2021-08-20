@@ -124,6 +124,16 @@ const handleSectorIcon = (sectorTitle) => {
 	}
 };
 
+const handleCategoryOpacity = (sectorTitle, categories) => {
+	if (categories) {
+		const titleIcon = sectorTitle.substring(0, 3).toLowerCase();
+		if (categories.toLowerCase().includes(titleIcon)) {
+			return '1';
+		}
+	}
+	return '15';
+};
+
 const handleMetaIcon = (sectorTitle) => {
 	// console.log(sectorTitle);
 	switch (sectorTitle) {
@@ -510,7 +520,10 @@ export const CategoryIcon = styled.div`
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
-	filter: brightness(15);
+	filter: brightness(
+		${({ categoryTitle, categories }) =>
+			handleCategoryOpacity(categoryTitle, categories)}
+	);
 `;
 
 export const CategoryText = styled.div`
