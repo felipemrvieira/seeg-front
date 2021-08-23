@@ -1,22 +1,4 @@
 import React from 'react';
-// import * as Yup from 'yup';
-// import { toast } from 'react-toastify';
-// import { useHistory } from 'react-router-dom';
-// import api from '../../../services/api';
-
-// import { Container } from './styles';
-// const schema = Yup.object().shape({
-// 	name: Yup.string().required('Insira o nome do usuário'),
-// 	email: Yup.string()
-// 		.email('Insira um email válido')
-// 		.required('O email é obrigatório'),
-// 	password: Yup.string()
-// 		.min(6, 'sua senha precisa ter pelo menos 6 caracteres')
-// 		.required('A senha é obrigatória'),
-// 	password_confirmation: Yup.string()
-// 		.oneOf([Yup.ref('password'), null], 'Passwords must match')
-// 		.required('Confirme sua senha'),
-// });
 
 function UserSignUp() {
 	// const history = useHistory();
