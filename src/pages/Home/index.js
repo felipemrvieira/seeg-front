@@ -25,11 +25,11 @@ export default function Home() {
 
 	const energia = solutionsBySector.filter((el) => el.name === 'Energia')[0];
 	const agropecuaria = solutionsBySector.filter(
-		(el) => el.name === 'Agropecuaria'
+		(el) => el.name === 'Agropecuária'
 	)[0];
-	const residuos = solutionsBySector.filter((el) => el.name === 'Residuos')[0];
+	const residuos = solutionsBySector.filter((el) => el.name === 'Resíduos')[0];
 	const mut = solutionsBySector.filter(
-		(el) => el.name === 'Mudanca de Uso da Terra e Florestas'
+		(el) => el.name === 'Mudança de Uso da Terra e Florestas'
 	)[0];
 
 	let transportesSolutions;
