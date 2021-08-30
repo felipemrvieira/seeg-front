@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import Select from 'react-select';
 
 import api from '../../services/api';
 
@@ -17,6 +16,7 @@ import {
 	Button,
 	EditButton,
 	Label,
+	Select,
 } from './styles';
 
 export default function Index({ disabled, id, solution }) {

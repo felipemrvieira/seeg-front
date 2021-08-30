@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import ReactSelect from 'react-select';
 
 const radius = '8px';
 
@@ -67,4 +68,7 @@ export const EditButton = styled(Link)`
 	text-transform: uppercase;
 
 	/* height: 32px; */
+`;
+export const Select = styled(ReactSelect)`
+	margin-bottom: 22px;
 `;
