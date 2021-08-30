@@ -1,10 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useEffect } from 'react';
+import { useForm, Controller } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import {
+	// solutionOfHelper,
+	sphereHelper,
+	sectorHelper,
+	impactHelper,
+} from '../../helpers';
+import {
+	odsOptions,
+	regionsOptions,
+	impactOptions,
+	rangesOptions,
+	sectorOptions,
+	sphereOptions,
+	solutionOfOptions,
+} from './form_options';
 
 import api from '../../services/api';
 
@@ -27,12 +42,20 @@ export default function Index({ disabled, id, solution }) {
 		watch,
 		reset,
 		formState: { errors },
+		control,
 	} = useForm();
 
-	const [,] = useState('');
+	// const [selectedSolutionOf, setSelectedSolutionOf] = useState({
+	// 	value: solution.solution_of,
+	// 	label: solutionOfHelper(solution.solution_of),
+	// });
 
 	useEffect(() => {
 		reset(solution);
+		// setSelectedSolutionOf({
+		// 	value: solution.solution_of,
+		// 	label: solutionOfHelper(solution.solution_of),
+		// });
 	}, [reset, solution]);
 
 	useEffect(() => {
@@ -107,6 +130,7 @@ export default function Index({ disabled, id, solution }) {
 
 	async function onSubmit(data) {
 		try {
+			console.log(data);
 			await api.patch(`/solutions/${id}`, data);
 			toast.success('Informação atualizada com sucesso!!');
 			history.push('/admin/solutions');
@@ -119,159 +143,10 @@ export default function Index({ disabled, id, solution }) {
 		}
 	}
 
-	const odsOptions = [
-		{ id: 'ods_01', title: 'ODS 01' },
-		{ id: 'ods_02', title: 'ODS 02' },
-		{ id: 'ods_03', title: 'ODS 03' },
-		{ id: 'ods_04', title: 'ODS 04' },
-		{ id: 'ods_05', title: 'ODS 05' },
-		{ id: 'ods_06', title: 'ODS 06' },
-		{ id: 'ods_07', title: 'ODS 07' },
-		{ id: 'ods_08', title: 'ODS 08' },
-		{ id: 'ods_09', title: 'ODS 09' },
-		{ id: 'ods_10', title: 'ODS 10' },
-		{ id: 'ods_11', title: 'ODS 11' },
-		{ id: 'ods_12', title: 'ODS 12' },
-		{ id: 'ods_13', title: 'ODS 13' },
-		{ id: 'ods_14', title: 'ODS 14' },
-		{ id: 'ods_15', title: 'ODS 15' },
-		{ id: 'ods_16', title: 'ODS 16' },
-		{ id: 'ods_17', title: 'ODS 17' },
-	].map((item) => ({
-		value: item.id,
-		label: item.title,
-	}));
-
-	const regionsOptions = [
-		{ id: 'north', title: 'Norte' },
-		{ id: 'north_east', title: 'Nordeste' },
-		{ id: 'midwest', title: 'Centro-Oeste' },
-		{ id: 'south', title: 'Sul' },
-		{ id: 'southeast', title: 'Sudeste' },
-	].map((item) => ({
-		value: item.id,
-		label: item.title,
-	}));
-
-	// function selectRegions(regions) {
-	// 	const arrayOfRegions = [];
-
-	// 	function setArrayOfRegion(item) {
-	// 		const index = regionsOptions.findIndex((x) => x.value === item);
-	// 		arrayOfRegions.push(regionsOptions[index]);
-	// 	}
-
-	// 	regions.forEach(setArrayOfRegion);
-	// 	return arrayOfRegions;
+	// function handleSolutionChange(newValue) {
+	// 	setSelectedSolutionOf(newValue);
 	// }
-
-	// const selectedRegions = selectRegions(solution.applicable_regions);
-	console.log(solution.applicable_regions);
-	// console.log(selectedRegions);
-
-	const rangesOptions = [
-		{ id: 'range_1', title: 'Faixa I - 0 a 10 mil' },
-		{ id: 'range_2', title: 'Faixa II - 10 mil a 50 mil' },
-		{ id: 'range_3', title: 'Faixa III - 50 mil a 100 mil' },
-		{ id: 'range_4', title: 'Faixa IV - 100 mil a 500 mil' },
-		{ id: 'range_5', title: 'Faixa V - 500 mil a 1 milhão' },
-		{ id: 'range_6', title: 'Faixa VI - 1 milhão a 5 milhões' },
-		{ id: 'range_7', title: 'Faixa VII - 5 milhões ou mais' },
-	].map((item) => ({
-		value: item.id,
-		label: item.title,
-	}));
-
-	const solutionOfOptions = [
-		{ id: 'mitigation', title: 'Mitigação' },
-		{ id: 'adaptation', title: 'Adaptação' },
-		{ id: 'mitigation_and_adaptation', title: 'Mitigação e Adaptação' },
-	].map((item) => ({
-		value: item.id,
-		label: item.title,
-	}));
-
-	function solutionOfHelper(solutionOf) {
-		switch (solutionOf) {
-			case 'mitigation':
-				return 'Mitigação';
-			case 'adaptation':
-				return 'Adaptaçåo';
-			case 'mitigation_and_adaptation':
-				return 'Mitigação e Adaptação';
-
-			default:
-				return 'Selecione';
-		}
-	}
-
-	const sphereOptions = [
-		{ id: 'state', title: 'Estadual' },
-		{ id: 'municipal', title: 'Municipal' },
-		{ id: 'cross', title: 'Transversal' },
-	].map((item) => ({
-		value: item.id,
-		label: item.title,
-	}));
-
-	function sphereHelper(impact) {
-		switch (impact) {
-			case 'state':
-				return 'Estadual';
-			case 'municipal':
-				return 'Municipal';
-			case 'cross':
-				return 'Transversal';
-
-			default:
-				return 'Selecione';
-		}
-	}
-	const sectorOptions = [
-		{ id: 'public_sector', title: 'Setor Público' },
-		{ id: 'private_sector', title: 'Setor Privado' },
-		{ id: 'public_and_private_sectors', title: 'Setores Público e Privado' },
-	].map((item) => ({
-		value: item.id,
-		label: item.title,
-	}));
-
-	function sectorHelper(impact) {
-		switch (impact) {
-			case 'public_sector':
-				return 'Setor Público';
-			case 'private_sector':
-				return 'Setor Privado';
-			case 'public_and_private_sectors':
-				return 'Setores Público e Privado';
-
-			default:
-				return 'Selecione';
-		}
-	}
-	const impactOptions = [
-		{ id: 'reduction', title: 'Redução' },
-		{ id: 'neutralization', title: 'Neutralização' },
-		{ id: 'removal', title: 'Remoção' },
-	].map((item) => ({
-		value: item.id,
-		label: item.title,
-	}));
-
-	function impactHelper(impact) {
-		switch (impact) {
-			case 'reduction':
-				return 'Redução';
-			case 'neutralization':
-				return 'Neutralização';
-			case 'removal':
-				return 'Remoção';
-
-			default:
-				return 'Selecione';
-		}
-	}
-
+	console.log(solutionOfOptions);
 	return (
 		<FormContainer>
 			{/* Visualização do texto formatado */}
@@ -303,18 +178,57 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onDescriptionEditorStateChange}
 				/>
-				<Label htmlFor="number">Solução de</Label>
-				<Select
+				<Label htmlFor="number">Solução de {solution.solution_of}</Label>
+
+				<Controller
+					name="solution_of"
+					control={control}
+					defaultValue={solutionOfOptions.map((c) => c.value)}
+					// render={({ field: { onChange } }) => (
+					render={({ field: { onChange, value, ref } }) => (
+						<Select
+							inputRef={ref}
+							// value={options.filter((c) => value.includes(c.value))}
+							onChange={(val) => onChange(val.value)}
+							options={solutionOfOptions}
+							// value={{
+							// 	label: 'solution.solution_of',
+							// 	value: 'solution.solution_of',
+							// }}
+
+							value={solutionOfOptions.filter((c) =>
+								value ? value.includes(c.value) : []
+							)}
+						/>
+
+						// <Select
+						// 	{...field}
+						// 	options={solutionOfOptions}
+						// 	onChange={(val) => onChange(val.value)}
+						// />
+					)}
+				/>
+				{/* <Controller
+					name="iceCreamType"
+					control={control}
+					defaultValue={selectedSolutionOf}
+					render={({ field }) => (
+						<Select
+							{...field}
+							options={solutionOfOptions}
+							value={selectedSolutionOf.value}
+							onChange={handleSolutionChange}
+						/>
+					)}
+				/> */}
+				{/* <Select
 					// isDisabled="true"
 					name="solution_of"
 					options={solutionOfOptions}
-					// onChange={handleSubjectChange}
+					onChange={handleSolutionChange}
 					placeholder="Selecione"
-					value={{
-						id: solution.solution_of,
-						label: solutionOfHelper(solution.solution_of),
-					}}
-				/>
+					value={selectedSolutionOf}
+				/> */}
 				<p className="Error">{errors.emailContent && 'Enter valid content'}</p>
 				<Label htmlFor="number">Guia de políticas públicas</Label>
 				<ReactQuill
@@ -603,7 +517,7 @@ Index.defaultProps = {
 		title: 'titulo',
 		description: 'descricao',
 		guiding_public_policies: 'Guia',
-		solution_of: 'Mitigação ou Adaptação',
+		solution_of: 'solução de ...',
 		impact_on_emissions: 'Impacto',
 		fundamental_sector: 'Setor fundamental',
 		sphere: 'Esfera',
