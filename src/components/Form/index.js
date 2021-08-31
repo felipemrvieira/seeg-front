@@ -5,12 +5,7 @@ import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import {
-	// solutionOfHelper,
-	sphereHelper,
-	sectorHelper,
-	impactHelper,
-} from '../../helpers';
+
 import {
 	odsOptions,
 	regionsOptions,
@@ -45,17 +40,8 @@ export default function Index({ disabled, id, solution }) {
 		control,
 	} = useForm();
 
-	// const [selectedSolutionOf, setSelectedSolutionOf] = useState({
-	// 	value: solution.solution_of,
-	// 	label: solutionOfHelper(solution.solution_of),
-	// });
-
 	useEffect(() => {
 		reset(solution);
-		// setSelectedSolutionOf({
-		// 	value: solution.solution_of,
-		// 	label: solutionOfHelper(solution.solution_of),
-		// });
 	}, [reset, solution]);
 
 	useEffect(() => {
@@ -143,17 +129,9 @@ export default function Index({ disabled, id, solution }) {
 		}
 	}
 
-	// function handleSolutionChange(newValue) {
-	// 	setSelectedSolutionOf(newValue);
-	// }
-	console.log(solutionOfOptions);
+	console.log(solutionOfOptions.map((c) => c.value));
 	return (
 		<FormContainer>
-			{/* Visualização do texto formatado */}
-			{/* <pre
-				dangerouslySetInnerHTML={{ __html: solution.guiding_public_policies }}
-			/> */}
-
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<Label htmlFor="number">Número da solução</Label>
 				<Input
@@ -178,57 +156,25 @@ export default function Index({ disabled, id, solution }) {
 					}
 					onChange={onDescriptionEditorStateChange}
 				/>
-				<Label htmlFor="number">Solução de {solution.solution_of}</Label>
+				<Label htmlFor="number">Solução de</Label>
 
 				<Controller
 					name="solution_of"
 					control={control}
 					defaultValue={solutionOfOptions.map((c) => c.value)}
-					// render={({ field: { onChange } }) => (
 					render={({ field: { onChange, value, ref } }) => (
 						<Select
 							inputRef={ref}
-							// value={options.filter((c) => value.includes(c.value))}
 							onChange={(val) => onChange(val.value)}
 							options={solutionOfOptions}
-							// value={{
-							// 	label: 'solution.solution_of',
-							// 	value: 'solution.solution_of',
-							// }}
-
 							value={solutionOfOptions.filter((c) =>
-								value ? value.includes(c.value) : []
+								// value ? value.includes(c.value) : []
+								value ? value === c.value : []
 							)}
 						/>
-
-						// <Select
-						// 	{...field}
-						// 	options={solutionOfOptions}
-						// 	onChange={(val) => onChange(val.value)}
-						// />
 					)}
 				/>
-				{/* <Controller
-					name="iceCreamType"
-					control={control}
-					defaultValue={selectedSolutionOf}
-					render={({ field }) => (
-						<Select
-							{...field}
-							options={solutionOfOptions}
-							value={selectedSolutionOf.value}
-							onChange={handleSolutionChange}
-						/>
-					)}
-				/> */}
-				{/* <Select
-					// isDisabled="true"
-					name="solution_of"
-					options={solutionOfOptions}
-					onChange={handleSolutionChange}
-					placeholder="Selecione"
-					value={selectedSolutionOf}
-				/> */}
+
 				<p className="Error">{errors.emailContent && 'Enter valid content'}</p>
 				<Label htmlFor="number">Guia de políticas públicas</Label>
 				<ReactQuill
@@ -269,25 +215,42 @@ export default function Index({ disabled, id, solution }) {
 				/>
 
 				<Label htmlFor="number">Regiões Aplicáveis</Label>
-				<Select
-					// isDisabled="true"
+				<Controller
 					name="regions"
-					isMulti
-					options={regionsOptions}
-					// onChange={handleSubjectChange}
-					placeholder="Selecione"
-
-					// defaultValue={selectedRegions}
-					// defaultValue={selectRegions(solution.applicable_regions)}
-					// defaultValue={[regionsOptions[2], regionsOptions[3]]}
-
-					// value={{
-					// 	id: solution.fundamental_sector,
-					// 	label: sectorHelper(solution.fundamental_sector),
-					// }}
+					control={control}
+					defaultValue={regionsOptions.map((c) => c.value)}
+					render={({ field: { onChange, value, ref } }) => (
+						<Select
+							isMulti
+							inputRef={ref}
+							onChange={(val) => onChange(val.value)}
+							options={regionsOptions}
+							value={regionsOptions.filter((c) =>
+								// value ? value.includes(c.value) : []
+								value ? value === c.value : []
+							)}
+						/>
+					)}
 				/>
 
 				<Label htmlFor="number">Faixas Populacionais Aplicáveis</Label>
+				<Controller
+					name="ranges"
+					control={control}
+					defaultValue={rangesOptions.map((c) => c.value)}
+					render={({ field: { onChange, value, ref } }) => (
+						<Select
+							isMulti
+							inputRef={ref}
+							onChange={(val) => onChange(val.value)}
+							options={rangesOptions}
+							value={rangesOptions.filter((c) =>
+								// value ? value.includes(c.value) : []
+								value ? value === c.value : []
+							)}
+						/>
+					)}
+				/>
 				<Select
 					// isDisabled="true"
 					name="regions"
@@ -305,28 +268,39 @@ export default function Index({ disabled, id, solution }) {
 				<Label htmlFor="number">
 					Setor Fundamental para a realização da solução
 				</Label>
-				<Select
-					// isDisabled="true"
-					name="sector"
-					options={sectorOptions}
-					// onChange={handleSubjectChange}
-					placeholder="Selecione"
-					value={{
-						id: solution.fundamental_sector,
-						label: sectorHelper(solution.fundamental_sector),
-					}}
+				<Controller
+					name="fundamental_sector"
+					control={control}
+					defaultValue={sectorOptions.map((c) => c.value)}
+					render={({ field: { onChange, value, ref } }) => (
+						<Select
+							inputRef={ref}
+							onChange={(val) => onChange(val.value)}
+							options={sectorOptions}
+							value={sectorOptions.filter((c) =>
+								// value ? value.includes(c.value) : []
+								value ? value === c.value : []
+							)}
+						/>
+					)}
 				/>
+
 				<Label htmlFor="number">Impacto sobre as Emissões</Label>
-				<Select
-					// isDisabled="true"
-					name="impact"
-					options={impactOptions}
-					// onChange={handleSubjectChange}
-					placeholder="Selecione"
-					value={{
-						id: solution.impact_on_emissions,
-						label: impactHelper(solution.impact_on_emissions),
-					}}
+				<Controller
+					name="impact_on_emissions"
+					control={control}
+					defaultValue={impactOptions.map((c) => c.value)}
+					render={({ field: { onChange, value, ref } }) => (
+						<Select
+							inputRef={ref}
+							onChange={(val) => onChange(val.value)}
+							options={impactOptions}
+							value={impactOptions.filter((c) =>
+								// value ? value.includes(c.value) : []
+								value ? value === c.value : []
+							)}
+						/>
+					)}
 				/>
 				<Label htmlFor="number">Categoria da ação</Label>
 				<ReactQuill
@@ -390,16 +364,21 @@ export default function Index({ disabled, id, solution }) {
 					onChange={onEcomomicEditorStateChange}
 				/>
 				<Label htmlFor="number">Esfera</Label>
-				<Select
-					// isDisabled="true"
+				<Controller
 					name="sphere"
-					options={sphereOptions}
-					// onChange={handleSubjectChange}
-					placeholder="Selecione"
-					value={{
-						id: solution.sphere,
-						label: sphereHelper(solution.sphere),
-					}}
+					control={control}
+					defaultValue={sphereOptions.map((c) => c.value)}
+					render={({ field: { onChange, value, ref } }) => (
+						<Select
+							inputRef={ref}
+							onChange={(val) => onChange(val.value)}
+							options={sphereOptions}
+							value={sphereOptions.filter((c) =>
+								// value ? value.includes(c.value) : []
+								value ? value === c.value : []
+							)}
+						/>
+					)}
 				/>
 				<Label htmlFor="number">Modo de operação municipal</Label>
 				<ReactQuill
