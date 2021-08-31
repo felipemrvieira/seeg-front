@@ -216,18 +216,17 @@ export default function Index({ disabled, id, solution }) {
 
 				<Label htmlFor="number">Regiões Aplicáveis</Label>
 				<Controller
-					name="regions"
+					name="applicable_regions"
 					control={control}
 					defaultValue={regionsOptions.map((c) => c.value)}
 					render={({ field: { onChange, value, ref } }) => (
 						<Select
 							isMulti
 							inputRef={ref}
-							onChange={(val) => onChange(val.value)}
+							onChange={(val) => onChange(val.map((c) => c.value))}
 							options={regionsOptions}
-							value={regionsOptions.filter((c) =>
-								// value ? value.includes(c.value) : []
-								value ? value === c.value : []
+							value={regionsOptions.filter(
+								(c) => value && value.includes(c.value)
 							)}
 						/>
 					)}
@@ -235,36 +234,22 @@ export default function Index({ disabled, id, solution }) {
 
 				<Label htmlFor="number">Faixas Populacionais Aplicáveis</Label>
 				<Controller
-					name="ranges"
+					name="applicable_population_ranges"
 					control={control}
 					defaultValue={rangesOptions.map((c) => c.value)}
 					render={({ field: { onChange, value, ref } }) => (
 						<Select
 							isMulti
 							inputRef={ref}
-							onChange={(val) => onChange(val.value)}
+							onChange={(val) => onChange(val.map((c) => c.value))}
 							options={rangesOptions}
-							value={rangesOptions.filter((c) =>
-								// value ? value.includes(c.value) : []
-								value ? value === c.value : []
+							value={rangesOptions.filter(
+								(c) => value && value.includes(c.value)
 							)}
 						/>
 					)}
 				/>
-				<Select
-					// isDisabled="true"
-					name="regions"
-					isMulti
-					options={rangesOptions}
-					// onChange={handleSubjectChange}
-					placeholder="Selecione"
-					defaultValue={[rangesOptions[2], rangesOptions[3]]}
 
-					// value={{
-					// 	id: solution.fundamental_sector,
-					// 	label: sectorHelper(solution.fundamental_sector),
-					// }}
-				/>
 				<Label htmlFor="number">
 					Setor Fundamental para a realização da solução
 				</Label>
@@ -315,19 +300,19 @@ export default function Index({ disabled, id, solution }) {
 				/>
 
 				<Label htmlFor="number">Objetivos do desenvolvimento sustentável</Label>
-				<Select
-					// isDisabled="true"
-					name="regions"
-					isMulti
-					options={odsOptions}
-					// onChange={handleSubjectChange}
-					placeholder="Selecione"
-					defaultValue={[odsOptions[2], odsOptions[3]]}
-
-					// value={{
-					// 	id: solution.fundamental_sector,
-					// 	label: sectorHelper(solution.fundamental_sector),
-					// }}
+				<Controller
+					name="sustainable_development_goals"
+					control={control}
+					defaultValue={odsOptions.map((c) => c.value)}
+					render={({ field: { onChange, value, ref } }) => (
+						<Select
+							isMulti
+							inputRef={ref}
+							onChange={(val) => onChange(val.map((c) => c.value))}
+							options={odsOptions}
+							value={odsOptions.filter((c) => value && value.includes(c.value))}
+						/>
+					)}
 				/>
 
 				<Label htmlFor="number">Cobenefícios ambientais</Label>
