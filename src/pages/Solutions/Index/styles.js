@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { Link as Anchor } from 'react-router-dom';
 import { darken } from 'polished';
 
-import agroIcon from './assets/agro.png';
-import energiaIcon from './assets/energia.png';
-import mutIcon from './assets/mut.png';
-import residuosIcon from './assets/residuos.png';
+import agroIcon from './assets/agropecuaria.svg';
+import energiaIcon from './assets/energia.svg';
+import mutIcon from './assets/mut.svg';
+import residuosIcon from './assets/residuos.svg';
 
 const handleCardColor = (sectorTitle) => {
 	switch (sectorTitle) {
@@ -133,11 +133,12 @@ export const SolutionTag = styled.div`
 export const SolutionIcon = styled.div`
 	${({ sectorTitle }) => handleSectorIcon(sectorTitle)}
 	display: flex;
-	height: 80px;
-	width: 109px;
+	height: 96px;
+	width: 132px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
+	filter: grayscale(100%) brightness(200%);
 `;
 
 export const SectorTitle = styled.div`

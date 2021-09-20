@@ -2,10 +2,10 @@ import styled from 'styled-components';
 // import { Link as Anchor } from 'react-router-dom';
 import { darken } from 'polished';
 
-import agroIcon from './assets/agro.png';
-import energiaIcon from './assets/energia.png';
-import mutIcon from './assets/mut.png';
-import residuosIcon from './assets/residuos.png';
+import agroIcon from './assets/agropecuaria.svg';
+import energiaIcon from './assets/energia.svg';
+import mutIcon from './assets/mut.svg';
+import residuosIcon from './assets/residuos.svg';
 
 import atores from './assets/meta/atores.png';
 import esfera from './assets/meta/esfera.png';
@@ -110,8 +110,8 @@ const handleSectorIcon = (sectorTitle) => {
 		case 'Agropecuária':
 			return `background-image: url(${agroIcon});`;
 		case 'Energia':
-			return `background-image: url(${energiaIcon});`;
 		case 'Energia elétrica':
+		case 'Transporte':
 			return `background-image: url(${energiaIcon});`;
 		case 'MUT':
 			return `background-image: url(${mutIcon});`;
@@ -241,8 +241,9 @@ export const SectorIcon = styled.div`
 	${({ sectorTitle }) => handleSectorIcon(sectorTitle)}
 	display: flex;
 	flex-shrink: 0;
-	height: 50px;
-	width: 70px;
+	height: 96px;
+	width: 132px;
+	filter: grayscale(100%) brightness(200%);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;

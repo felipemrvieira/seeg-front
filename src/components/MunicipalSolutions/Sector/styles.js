@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import agroIcon from './assets/agro.png';
-import energiaIcon from './assets/energia.png';
-import mutIcon from './assets/mut.png';
-import residuosIcon from './assets/residuos.png';
+import agroIcon from './assets/agropecuaria.svg';
+import energiaIcon from './assets/energia.svg';
+import mutIcon from './assets/mut.svg';
+import residuosIcon from './assets/residuos.svg';
 
 const handleColor = (sectorTitle) => {
 	switch (sectorTitle) {
@@ -33,6 +33,7 @@ const handleSectorIcon = (sectorTitle) => {
 			return `background-image: url(${agroIcon});`;
 		case 'Energia':
 		case 'Energia elétrica':
+		case 'Transportes':
 			return `background-image: url(${energiaIcon});`;
 		case 'MUT':
 		case 'Mudança de Uso da Terra e Florestas':
@@ -64,18 +65,21 @@ export const SectorInfo = styled.h2`
 export const SectorWrapper = styled.div`
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 `;
 
 export const SectorIcon = styled.div`
 	${({ sectorTitle }) => handleSectorIcon(sectorTitle)}
 	display: flex;
-	height: 80px;
-	width: 109px;
-	margin-right: 24px;
+	height: 96px;
+	width: 132px;
+	/* margin-right: 24px; */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 	flex-shrink: 0;
+	filter: grayscale(100%) brightness(66%);
+
 	@media (max-width: 900px) {
 		height: 40px;
 		width: 55px;

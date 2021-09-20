@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import agroIcon from './assets/agro.png';
-import energiaIcon from './assets/energia.png';
-import mutIcon from './assets/mut.png';
-import residuosIcon from './assets/residuos.png';
+import agroIcon from './assets/agropecuaria.svg';
+import energiaIcon from './assets/energia.svg';
+import mutIcon from './assets/mut.svg';
+import residuosIcon from './assets/residuos.svg';
 
 const handleCardColor = (sectorTitle) => {
 	switch (sectorTitle) {
@@ -33,6 +33,7 @@ const handleSectorIcon = (sectorTitle) => {
 			return `background-image: url(${agroIcon});`;
 		case 'Energia elétrica':
 		case 'Energia':
+		case 'Transportes':
 			return `background-image: url(${energiaIcon});`;
 		case 'MUT':
 		case 'Mudança de Uso da Terra e Florestas':
@@ -67,12 +68,13 @@ export const Card = styled.div`
 export const SectorIcon = styled.div`
 	${({ sectorTitle }) => handleSectorIcon(sectorTitle)}
 	display: flex;
-	height: 80px;
-	width: 109px;
+	height: 96px;
+	width: 132px;
 	background-position: left;
 	background-repeat: no-repeat;
 	background-size: contain;
 	flex-shrink: 0;
+	filter: grayscale(100%) brightness(300%);
 `;
 
 export const SectorTitle = styled.div`
